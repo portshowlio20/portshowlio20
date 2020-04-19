@@ -19,6 +19,8 @@ get_header();
 		<h1 style="color: red;">I edited this file from GitHub!</h1>
 		<h1 style="color: blue;">I edited this file from my MacBook!</h1>
 		<h1 style="color: purple;">Vivian edited this file from <em>HER</em> MacBook!</h1>
+		<h1 style="color: pink;">Jenny did NOT edit this file from <em>HER</em> MacBook!</h1>
+		
 		<?php
 		if ( have_posts() ) :
 
