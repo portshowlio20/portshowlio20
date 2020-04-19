@@ -2,6 +2,10 @@
 /**
  * portshowlio20 functions and definitions
  *
+ * 🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳
+ * 🚨🚨 NOTE: everything is default execpt for stuff on line 159 and on! 🚨🚨
+ * 🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠
+ *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package portshowlio20
@@ -13,38 +17,10 @@ if ( ! defined( '_S_VERSION' ) ) {
 }
 
 if ( ! function_exists( 'portshowlio20_setup' ) ) :
-	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
-	 *
-	 * Note that this function is hooked into the after_setup_theme hook, which
-	 * runs before the init hook. The init hook is too late for some features, such
-	 * as indicating support for post thumbnails.
-	 */
 	function portshowlio20_setup() {
-		/*
-		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on portshowlio20, use a find and replace
-		 * to change 'portshowlio20' to the name of your theme in all the template files.
-		 */
 		load_theme_textdomain( 'portshowlio20', get_template_directory() . '/languages' );
-
-		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
-
-		/*
-		 * Let WordPress manage the document title.
-		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
-		 * provide it for us.
-		 */
 		add_theme_support( 'title-tag' );
-
-		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		 */
 		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
@@ -52,7 +28,7 @@ if ( ! function_exists( 'portshowlio20_setup' ) ) :
 			array(
 				'menu-1' => esc_html__( 'Primary', 'portshowlio20' ),
 			)
-		);
+    );
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -145,11 +121,8 @@ add_action( 'widgets_init', 'portshowlio20_widgets_init' );
 function portshowlio20_scripts() {
 	wp_enqueue_style( 'portshowlio20-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'portshowlio20-style', 'rtl', 'replace' );
-
 	wp_enqueue_script( 'portshowlio20-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
 	wp_enqueue_script( 'portshowlio20-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), _S_VERSION, true );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -183,3 +156,87 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Limit options for users with "author" role:
+ * 1. Redirect most admin pages to Projects admin page
+ * 2. Remove admin panel menu items (on the left)
+ * 3. Remove admin bar menu items (on the top)
+ * 4. Remove unecessary input fields on Profile page
+ */
+$user = wp_get_current_user();
+if ( in_array( 'author', (array) $user->roles ) ) {
+
+  // 1.
+  add_action('admin_init', 'portshowlio20_admin_pages_redirect');
+  function portshowlio20_admin_pages_redirect() {
+    global $pagenow;
+    $admin_pages = array(
+      'about.php',
+      'index.php',
+      'upload.php',
+      // 'edit.php', this breaks things
+      'edit.php?post_type=page',
+      'edit-tags.php',
+      'edit-tags.php',
+      'edit-comments.php',
+      'link-manager.php',
+      'tools.php',
+      'options-writing.php',
+      'options-reading.php',
+      'options-discussion.php',
+      'options-media.php',
+      'options-privacy.php',
+      'options-permalink.php',
+    );
+
+    if(in_array($pagenow, $admin_pages)){
+      wp_redirect( 'edit.php?post_type=projects' ); exit;
+    }
+  }
+
+  // 2.
+  add_action( 'admin_menu', 'portshowlio20_remove_menu_items', 99 );
+  function portshowlio20_remove_menu_items(){
+    remove_menu_page( 'index.php' ); // Dashboard
+    remove_menu_page( 'upload.php' ); // Dashboard
+    remove_menu_page( 'edit.php' ); // Posts
+    remove_menu_page( 'link-manager.php' ); // Links
+    remove_menu_page( 'edit-comments.php' ); // Comments
+    remove_menu_page( 'edit.php?post_type=page' ); // Pages
+    remove_menu_page( 'tools.php' ); // Tools
+  }
+
+  // 3.
+  add_action('admin_bar_menu', 'portshowlio20_remove_from_admin_bar', 999);
+  function portshowlio20_remove_from_admin_bar($wp_admin_bar) {
+    $wp_admin_bar->remove_node('comments');
+    $wp_admin_bar->remove_node('new-content');
+    $wp_admin_bar->remove_node('wp-logo');
+    $wp_admin_bar->remove_node('customize');
+  }
+
+  // 4.
+  add_action( 'admin_footer', 'portshowlio20_remove_profile_fields' );
+  function portshowlio20_remove_profile_fields()
+  {
+    ?>
+    <script>
+      jQuery(document).ready( function($) {
+        $('#your-profile').children('h2').remove(); // All headers
+        $('input#rich_editing').closest('table').remove() // Personal Options content
+        $('input#user_login').closest('tr').remove(); // Username
+        $('input#nickname').closest('tr').remove(); // Nickname (required)
+        $('select#display_name').closest('tr').remove(); // Display my name as...
+        $('input#url').closest('tr').remove(); // Website (will handle with ACF)
+        $('textarea#description').closest('table').remove(); // About
+
+        // INSERT header for ACF section
+        $('<h2>Student Info</h2>').insertBefore( $('.acf-field').closest('table') );
+
+        // Wrap sections TBD...
+        $('#your-profile').children('table:lt(3)').wrapAll( "<div class='new'></div>" );;
+      });
+    </script>
+    <?php
+  }
+}
