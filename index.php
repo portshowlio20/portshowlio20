@@ -24,6 +24,7 @@ get_header();
 		<h1 style="color: yellow;">Test</h1>
 		<h1 style="color: tomato;">Tomato Test</h1>
 		<h1 style="color: tomato;">I'm gonna test something</h1>
+		<h1 style="color: tomato;">Okay, also testing</h1>
 
 		<?php
 		if ( have_posts() ) :
