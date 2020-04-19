@@ -18,6 +18,7 @@ get_header();
 	<main id="primary" class="site-main">
 		<h1 style="color: red;">I edited this file from GitHub!</h1>
 		<h1 style="color: blue;">I edited this file from my MacBook!</h1>
+		<h1 style="color: purple;">Vivian edited this file from <em>HER</em> MacBook!</h1>
 		<?php
 		if ( have_posts() ) :
 
