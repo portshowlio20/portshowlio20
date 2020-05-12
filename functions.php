@@ -225,7 +225,8 @@ if ( in_array( 'author', (array) $user->roles ) ) {
         $('#your-profile').children('h2').remove(); // All headers
         $('input#rich_editing').closest('table').remove() // Personal Options content
         $('input#user_login').closest('tr').remove(); // Username
-        $('input#nickname').closest('tr').remove(); // Nickname (required)
+        // $('input#nickname').closest('tr').remove(); // Nickname (required)
+        $('input#nickname').closest('tr').css("display", "none"); // Nickname (required)
         $('select#display_name').closest('tr').remove(); // Display my name as...
         $('input#url').closest('tr').remove(); // Website (will handle with ACF)
         $('textarea#description').closest('table').remove(); // About
