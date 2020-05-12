@@ -16,6 +16,9 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
+
+  <style>.featured-image{max-width:640px;}</style>
+
   <?php
     $loop = new WP_Query( array( 'post_type' => 'projects') );
     if ( $loop->have_posts() ) :
@@ -23,35 +26,25 @@ get_header();
 
             <a href="<?php the_permalink(); ?>">
               <div class="image">
-                  <?php if ( the_field("featured_image") ) { ?>
-                      <div class="featured-image">
-                        <img src="https://images.unsplash.com/photo-1502175353174-a7a70e73b362?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2540&q=80" alt="">
-                        <img src="<?php echo the_field("featured_image") ?>" alt="<?php echo get_the_title(); ?>" />
-                      </div>
-                  <?php } ?>
-                  <?php if ( the_field("feature_video") ) { ?>
-                      <div class="featured-video">
-                          <pre><?php echo the_field("feature_video") ?></pre>
-                      </div>
-                  <?php } ?>
+                <div class="featured-image">
+                  <img class="my_class" <?php responsive_image(get_field( 'featured_image' ),'thumb-640','640px'); ?>  alt="text" />
+                </div>
               </div>
               <div class="project-meta">
-                      <h2><?php echo get_the_title(); ?></h2>
-                      <ul>
-                      <?php
-                        $terms = get_the_terms($post->ID, 'category');
-                        $categories = [];
+                <h2><?php echo get_the_title(); ?></h2>
+                <ul><?php
+                  $terms = get_the_terms($post->ID, 'category');
+                  $categories = [];
 
-                        if( $terms ) {
-                            foreach ($terms as $category) {
-                                $categories[] = $category->name;
-                            }
-                        }
+                  if( $terms ) {
+                      foreach ($terms as $category) {
+                          $categories[] = $category->name;
+                      }
+                  }
 
-                        $categories = implode(', ', $categories);
-                        echo $categories
-                      ?>
-                      </ul>
+                  $categories = implode(', ', $categories);
+                  echo $categories
+                ?></ul>
               </div>
             </a>
 
