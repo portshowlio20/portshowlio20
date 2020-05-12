@@ -23,9 +23,10 @@ get_header();
 
             <a href="<?php the_permalink(); ?>">
               <div class="image">
-                  <?php if ( the_field("feature_image") ) { ?>
+                  <?php if ( the_field("featured_image") ) { ?>
                       <div class="featured-image">
-                          <pre><?php echo the_field("feature_image") ?></pre>
+                        <img src="https://images.unsplash.com/photo-1502175353174-a7a70e73b362?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2540&q=80" alt="">
+                        <img src="<?php echo the_field("featured_image") ?>" alt="<?php echo get_the_title(); ?>" />
                       </div>
                   <?php } ?>
                   <?php if ( the_field("feature_video") ) { ?>
