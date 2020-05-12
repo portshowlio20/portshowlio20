@@ -1,0 +1,15 @@
+{
+  "files.exclude": {
+    "**/.gitignore": true,
+    "**/.vscode": true,
+    "**/.eslintrc": true,
+    "**/.stylelintrc.json": true,
+    "**/composer.json": true,
+    "**/package.json": true,
+    "**/phpcs.xml.dist": true,
+    "**/README.md": true,
+    "**/readme.txt": true
+  },
+  "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"],
+  "liveSassCompile.settings.showOutputWindow": false
+}
