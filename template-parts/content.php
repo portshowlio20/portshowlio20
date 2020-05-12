@@ -27,6 +27,7 @@
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
+    <pre><?php echo portshowlio20_posted_by();?></pre>
 	</header><!-- .entry-header -->
 
 	<?php portshowlio20_post_thumbnail(); ?>

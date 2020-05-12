@@ -16,47 +16,49 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-		<h1 style="color: red;">I edited this file from GitHub!</h1>
-		<h1 style="color: purple;">Vivian edited this file from <em>HER</em> MacBook!</h1>
-		<h1 style="color: pink;">Jenny did NOT edit this file from <em>HER</em> MacBook!</h1>
-		<h1 style="color: green;">Dylan did NOT edit this file from <em>HIS</em> MacBook!</h1>
+  <?php
+    $loop = new WP_Query( array( 'post_type' => 'projects') );
+    if ( $loop->have_posts() ) :
+        while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
+            <a href="<?php the_permalink(); ?>">
+              <div class="image">
+                  <?php if ( the_field("feature_image") ) { ?>
+                      <div class="featured-image">
+                          <pre><?php echo the_field("feature_image") ?></pre>
+                      </div>
+                  <?php } ?>
+                  <?php if ( the_field("feature_video") ) { ?>
+                      <div class="featured-video">
+                          <pre><?php echo the_field("feature_video") ?></pre>
+                      </div>
+                  <?php } ?>
+              </div>
+              <div class="project-meta">
+                      <h2><?php echo get_the_title(); ?></h2>
+                      <ul>
+                      <?php
+                        $terms = get_the_terms($post->ID, 'category');
+                        $categories = [];
 
-		<?php
-		if ( have_posts() ) :
+                        if( $terms ) {
+                            foreach ($terms as $category) {
+                                $categories[] = $category->name;
+                            }
+                        }
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
+                        $categories = implode(', ', $categories);
+                        echo $categories
+                      ?>
+                      </ul>
+              </div>
+            </a>
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
+        <?php endwhile;
+    endif;
+    wp_reset_postdata();
+  ?>
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

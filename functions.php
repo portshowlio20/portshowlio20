@@ -196,7 +196,7 @@ if ( in_array( 'author', (array) $user->roles ) ) {
 
   // 2.
   add_action( 'admin_menu', 'portshowlio20_remove_menu_items', 99 );
-  function portshowlio20_remove_menu_items(){
+  function portshowlio20_remove_menu_items() {
     remove_menu_page( 'index.php' ); // Dashboard
     remove_menu_page( 'upload.php' ); // Dashboard
     remove_menu_page( 'edit.php' ); // Posts
@@ -239,4 +239,69 @@ if ( in_array( 'author', (array) $user->roles ) ) {
     </script>
     <?php
   }
+}
+
+/**
+ * Add jQuery script to "projects" custom post type page in order to:
+ * 1. limit the number of categories users can add
+ */
+add_action('admin_enqueue_scripts', 'my_acf_extension_enqueue');
+function my_acf_extension_enqueue($hook) {
+  # Not our screen, bail out
+  if( 'post-new.php' !== $hook )
+  return;
+
+  # Not our post type, bail out
+  global $typenow;
+  if( 'projects' !== $typenow )
+  return;
+
+  // 1.
+  $handle = 'acfMultiSelectLimit';
+  $src = get_stylesheet_directory_uri() . '/js/acfMultiSelectLimit.js';
+  $deps = array('jquery', 'acf-input');
+
+  wp_register_script($handle, $src, $deps, false, true);
+  wp_enqueue_script($handle, $src, $deps, false, true);
+}
+
+/**
+ * Validate the categories input incase they add a custom category at the end!
+ */
+add_filter('acf/validate_value/name=project_type', 'my_acf_validate_value', 10, 4);
+function my_acf_validate_value( $valid, $value, $field, $input_name ) {
+    // Bail early if value is already invalid.
+    if( $valid !== true ) {
+        return $valid;
+    }
+    // Prevent value from saving if it contains the companies old name.
+    if( is_array($value) && count($value) >4 !== false ) {
+        return __( "You may only pick up to 4 types." );
+    }
+    return $valid;
+}
+
+/**
+ * Give authors power to create categories
+ */
+add_action( 'admin_init', 'add_manage_cat_to_author_role', 10, 0 );
+function add_manage_cat_to_author_role() {
+  if ( ! current_user_can( 'author' ) )
+      return;
+
+  // here you should check if the role already has_cap already and if so, abort/return;
+  if ( current_user_can( 'author' ) )
+  {
+      $GLOBALS['wp_roles']->add_cap( 'author','manage_categories' );
+  }
+}
+
+/**
+ * Rename "author/" slug to "student/"
+ */
+add_action('init', 'cng_author_base');
+function cng_author_base() {
+    global $wp_rewrite;
+    $author_slug = 'student'; // change slug name
+    $wp_rewrite->author_base = $author_slug;
 }
