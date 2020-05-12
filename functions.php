@@ -283,16 +283,16 @@ function my_acf_validate_value( $valid, $value, $field, $input_name ) {
 
 /**
  * Give authors power to create categories
+ * (this is so that students can add their own areas of focus)
  */
 add_action( 'admin_init', 'add_manage_cat_to_author_role', 10, 0 );
 function add_manage_cat_to_author_role() {
   if ( ! current_user_can( 'author' ) )
-      return;
+    return;
 
   // here you should check if the role already has_cap already and if so, abort/return;
-  if ( current_user_can( 'author' ) )
-  {
-      $GLOBALS['wp_roles']->add_cap( 'author','manage_categories' );
+  if ( current_user_can( 'author' ) ) {
+    $GLOBALS['wp_roles']->add_cap( 'author','manage_categories' );
   }
 }
 
