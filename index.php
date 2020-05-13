@@ -18,7 +18,24 @@ get_header(); ?>
 
   <style>.featured-image{max-width:75px;}</style>
 
+  <div id="toggleResult" style="width: 100%; height: 2rem;"></div>
+
   <form method="POST" id="filter" action="">
+
+
+   <div>
+      <div>
+        <input type="radio" id="works-toggle" name="mainToggle" value="works"
+              checked>
+        <label for="works-toggle">Works</label>
+      </div>
+
+      <div>
+        <input type="radio" id="students-toggle" name="mainToggle" value="students">
+        <label for="students-toggle">Students</label>
+      </div>
+   </div>
+
   <?php
   $cat_args = [
     'exclude' => [1], // "Uncategorized"
@@ -41,7 +58,7 @@ get_header(); ?>
   ?>
   </form>
 
-  <div id="work" style="">
+  <div id="response" style="">
   <?php
   $loop = new WP_Query(['post_type' => 'projects']);
   if ($loop->have_posts()):

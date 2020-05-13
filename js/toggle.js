@@ -3,33 +3,23 @@
 // Loading state: https://makitweb.com/display-loading-image-when-ajax-call-is-in-progress/
 (function ($) {
   $(document).ready(function () {
-    var values = [];
-    $("#filter")
-      .find("input[type=checkbox]")
-      .each(function () {
-        values.push($(this).val());
-      });
-
-    $("#filter").on("change", "input[type=checkbox]", function (e) {
+    var toggle;
+    $("#filter").on("change", "input[type=radio]", function (e) {
       e.preventDefault();
 
-      var $this = $(this);
-
-      if ($this.is(":checked")) {
-        values.push($this.val());
-      } else {
-        values = values.filter((x) => x != $this.val());
+      if ($(this).val() == "works") {
+        toggle = "works";
+      } else if ($(this).val() == "students") {
+        toggle = "students";
       }
 
-      // console.log("values", values);
-
-      var categories = values;
+      // console.log(toggle);
 
       $.ajax({
         url: wp_ajax.ajax_url,
         data: {
-          action: "filter",
-          categories: categories,
+          action: "toggle",
+          toggle: toggle,
           security: wp_ajax.security,
         },
         type: "post",

@@ -370,6 +370,88 @@ function addImageSizes()
   // add_image_size( 'homepage-thumb', 220, 180, true ); // (cropped)
 }
 
+add_action('wp_enqueue_scripts', 'add_toggle_script');
+function add_toggle_script()
+{
+  wp_enqueue_script(
+    'toggle', // name your script so that you can attach other scripts and de-register, etc.
+    get_template_directory_uri() . '/js/toggle.js', // this is the location of your script file
+    ['jquery'], // this array lists the scripts upon which your script depends
+    null,
+    true
+  );
+
+  wp_localize_script('toggle', 'wp_ajax', [
+    'ajax_url' => admin_url('admin-ajax.php'),
+    'security' => wp_create_nonce('wp-ajax-nonce'),
+  ]);
+}
+
+add_action('wp_ajax_nopriv_toggle', 'toggle_ajax');
+add_action('wp_ajax_toggle', 'toggle_ajax');
+
+function toggle_ajax()
+{
+  if (!check_ajax_referer('wp-ajax-nonce', 'security', false)) {
+    wp_send_json_error('Invalid security token sent.');
+    wp_die();
+  }
+
+  $toggle = $_POST['toggle'];
+  echo '<pre>';
+  var_dump($toggle);
+  echo '</pre>';
+
+  if (isset($toggle) && $toggle == 'students') {
+    $users = get_users();
+    echo '<pre>';
+    var_dump($users);
+    echo '</pre>';
+  } elseif (isset($toggle) && $toggle == 'works') {
+    $loop = new WP_Query(['post_type' => 'projects']);
+    if ($loop->have_posts()):
+      while ($loop->have_posts()):
+        $loop->the_post(); ?>
+
+            <a href="<?php the_permalink(); ?>">
+              <div class="image">
+                <div class="featured-image">
+                  <img class="my_class" <?php responsive_image(
+                    get_field('featured_image'),
+                    'thumb-640',
+                    '640px'
+                  ); ?>  alt="text" />
+                </div>
+              </div>
+              <div class="project-meta">
+                <h2><?php echo get_the_title(); ?></h2>
+                <ul><?php
+                $terms = get_the_terms($post->ID, 'category');
+                $categories = [];
+                if ($terms) {
+                  foreach ($terms as $category) {
+                    $categories[] = $category->name;
+                  }
+                }
+
+                if ($categories) {
+                  foreach ($categories as $category) {
+                    echo '<li>' . $category . '</li>';
+                  }
+                }
+                ?></ul>
+              </div>
+            </a>
+
+        <?php
+      endwhile;
+    endif;
+    wp_reset_postdata();
+  }
+
+  die();
+}
+
 /**
  * AJAX filter script
  */
