@@ -14,28 +14,34 @@
 
 get_header(); ?>
 
-	<main id="primary" class="site-main">
+  <main id="primary" class="site-main">
 
-  <style>.featured-image{max-width:640px;}</style>
+  <style>.featured-image{max-width:75px;}</style>
 
-  <?php if (
-    $terms = get_terms([
-      'taxonomy' => 'category', // to make it simple I use default categories
-      'orderby' => 'name',
-    ])
-  ):
-    // if categories exist, display the dropdown
-    echo '<select name="categoryfilter"><option value="">Select category...</option>';
-    foreach ($terms as $term):
-      echo '<option value="' .
-        $term->term_id .
-        '">' .
-        $term->name .
-        '</option>'; // ID of the category as an option value
-    endforeach;
-    echo '</select>';
-  endif; ?>
+  <form method="POST" id="filter" action="">
+  <?php
+  $cat_args = [
+    'exclude' => [1], // "Uncategorized"
+    'option_all' => 'All',
+  ];
 
+  $categories = get_categories($cat_args);
+
+  foreach ($categories as $cat): ?>
+      <div>
+        <input
+          type="checkbox"
+          id="<?php echo $cat->name; ?>"
+          value="<?php echo $cat->term_id; ?>"
+          checked
+        >
+        <label for="<?php echo $cat->name; ?>"><?php echo $cat->name; ?></label>
+      </div>
+    <?php endforeach;
+  ?>
+  </form>
+
+  <div id="work" style="">
   <?php
   $loop = new WP_Query(['post_type' => 'projects']);
   if ($loop->have_posts()):
@@ -57,15 +63,17 @@ get_header(); ?>
                 <ul><?php
                 $terms = get_the_terms($post->ID, 'category');
                 $categories = [];
-
                 if ($terms) {
                   foreach ($terms as $category) {
                     $categories[] = $category->name;
                   }
                 }
 
-                $categories = implode(', ', $categories);
-                echo $categories;
+                if ($categories) {
+                  foreach ($categories as $category) {
+                    echo '<li>' . $category . '</li>';
+                  }
+                }
                 ?></ul>
               </div>
             </a>
@@ -75,6 +83,7 @@ get_header(); ?>
   endif;
   wp_reset_postdata();
   ?>
+  </div>
 	</main><!-- #main -->
 
 <?php get_footer();
