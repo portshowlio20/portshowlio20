@@ -28,7 +28,7 @@
 
 	<header id="masthead" class="site-header">
 		<div>
-    <!-- site title is an <h1> on homepage, but a <p> on everyother page -->
+    <!-- site title is an <h1> on homepage, but a <p> on every other page -->
 			<?php
 			if ( is_front_page() && is_home() ) :
 				?>
