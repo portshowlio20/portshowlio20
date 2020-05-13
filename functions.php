@@ -386,6 +386,7 @@ function add_filter_script()
 
   wp_localize_script('filter', 'wp_ajax', [
     'ajax_url' => admin_url('admin-ajax.php'),
+    'security' => wp_create_nonce('wp-ajax-nonce'),
   ]);
 }
 
@@ -394,6 +395,11 @@ add_action('wp_ajax_filter', 'filter_ajax');
 
 function filter_ajax()
 {
+  if (!check_ajax_referer('wp-ajax-nonce', 'security', false)) {
+    wp_send_json_error('Invalid security token sent.');
+    wp_die();
+  }
+
   $categories = $_POST['categories'];
   echo '<pre>';
   var_dump($categories);
@@ -404,12 +410,15 @@ function filter_ajax()
   ];
 
   if (isset($categories)) {
+    $categories = array_map('intval', $categories);
     $args['category__in'] = $categories;
   }
 
   echo '<pre>';
   var_dump($args['category__in']);
   echo '</pre>';
+
+  // 🤔 how to handle "NULL" response 🤷‍♂️
 
   $loop = new WP_Query($args);
   if ($loop->have_posts()):

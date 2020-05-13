@@ -1,5 +1,6 @@
 // YT#1: https://www.youtube.com/watch?v=lz-daH9ZajU
-// YT#2: https://www.youtube.com/watch?v=Z0Jw226QKAM
+// YT#2: https://www.youtube.com/watch?v=Z0Jw226QKAM (nonce for security??)
+// Loading state: https://makitweb.com/display-loading-image-when-ajax-call-is-in-progress/
 (function ($) {
   $(document).ready(function () {
     var values = [];
@@ -29,13 +30,23 @@
 
       $.ajax({
         url: wp_ajax.ajax_url,
-        data: { action: "filter", categories: categories },
+        data: {
+          action: "filter",
+          categories: categories,
+          security: wp_ajax.security,
+        },
         type: "post",
+        beforeSend: function () {
+          $("#work").css("background", "red");
+        },
         success: function (result) {
           $("#work").html(result);
         },
         error: function (result) {
           console.warn(result);
+        },
+        complete: function () {
+          $("#work").css("background", "white");
         },
       });
     });
