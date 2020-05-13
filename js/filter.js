@@ -1,3 +1,5 @@
+// YT#1: https://www.youtube.com/watch?v=lz-daH9ZajU
+// YT#2: https://www.youtube.com/watch?v=Z0Jw226QKAM
 (function ($) {
   $(document).ready(function () {
     var values = [];
