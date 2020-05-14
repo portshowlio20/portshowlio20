@@ -18,12 +18,13 @@ get_header(); ?>
 
   <style>.featured-image{max-width:75px;}</style>
 
-  <div id="toggleResult" style="width: 100%; height: 2rem;"></div>
+  <div id="toggleResult" style="width: 100%;">
+  </div>
 
-  <form method="POST" id="filter" action="">
+  <form method="POST" id="filter" action="" style="display: flex;">
 
 
-   <div>
+   <div id="works-student-toggle">
       <div>
         <input type="radio" id="works-toggle" name="mainToggle" value="works"
               checked>
@@ -36,6 +37,7 @@ get_header(); ?>
       </div>
    </div>
 
+   <div id="works-filters">
   <?php
   $cat_args = [
     'exclude' => [1], // "Uncategorized"
@@ -43,19 +45,42 @@ get_header(); ?>
   ];
 
   $categories = get_categories($cat_args);
-
   foreach ($categories as $cat): ?>
-      <div>
+      <div >
         <input
           type="checkbox"
-          id="<?php echo $cat->name; ?>"
+          id="works-<?php echo $cat->slug; ?>"
           value="<?php echo $cat->term_id; ?>"
           checked
         >
-        <label for="<?php echo $cat->name; ?>"><?php echo $cat->name; ?></label>
+        <label for="works-<?php echo $cat->slug; ?>"><?php echo $cat->name; ?></label>
       </div>
     <?php endforeach;
   ?>
+  </div>
+
+  <div id="students-filters">
+
+  <!-- 🚨 THE VALUE OF THE VALUE ATTR ASSIGNED HERE SHOULD BE QUESTIONED -->
+  <?php
+  $field = get_field_object('field_5e9bda27eb0bd');
+  if ($field['choices']): ?>
+        <?php foreach ($field['choices'] as $value => $label): ?>
+        <div>
+          <input
+            type="checkbox"
+            id="students-<?php echo $label; ?>"
+            value="<?php echo $label; ?>"
+            checked
+          >
+          <label for="students-<?php echo $label; ?>"><?php echo $label; ?></label>
+        </div>
+        <?php endforeach; ?>
+    <?php endif;
+  ?>
+
+  </div>
+
   </form>
 
   <div id="response" style="">

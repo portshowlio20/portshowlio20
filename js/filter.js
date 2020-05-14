@@ -3,33 +3,66 @@
 // Loading state: https://makitweb.com/display-loading-image-when-ajax-call-is-in-progress/
 (function ($) {
   $(document).ready(function () {
-    var values = [];
-    $("#filter")
+    // 1. init variables
+    var toggle = "works"; // initial state set here
+    var worksFilters = [];
+    var studentsFilters = [];
+
+    // 2. set state of listed/dynamic variables
+    // 2a. worksFilters
+    $("#filter #works-filters")
       .find("input[type=checkbox]")
       .each(function () {
-        values.push($(this).val());
+        worksFilters.push($(this).val());
       });
 
-    $("#filter").on("change", "input[type=checkbox]", function (e) {
+    // 2b. studentsFilters
+    $("#filter #students-filters")
+      .find("input[type=checkbox]")
+      .each(function () {
+        studentsFilters.push($(this).val());
+      });
+
+    // 3. listen to any <input> change on our form
+    $("#filter").on("change", "input", function (e) {
       e.preventDefault();
 
-      var $this = $(this);
-
-      if ($this.is(":checked")) {
-        values.push($this.val());
-      } else {
-        values = values.filter((x) => x != $this.val());
+      // 4a. update toggle state
+      if ($(this).val() == "works") {
+        toggle = "works";
+      } else if ($(this).val() == "students") {
+        toggle = "students";
       }
 
-      // console.log("values", values);
+      // 4a. update worksFilters state
+      var parentDivId = $(this).parents()[1].id; // 🚨 brittle!!
 
-      var categories = values;
+      if (parentDivId == "works-filters" && $(this).is(":checked")) {
+        console.log($(this), "is checked");
+        worksFilters.push($(this).val());
+      } else {
+        console.log($(this), "is NOT checked");
+        worksFilters = worksFilters.filter((x) => x != $(this).val());
+      }
+
+      // 4a. update studentsFilters state
+      if (parentDivId == "students-filters" && $(this).is(":checked")) {
+        studentsFilters.push($(this).val());
+      } else {
+        studentsFilters = studentsFilters.filter((x) => x != $(this).val());
+      }
+
+      // console.log("toggle", toggle);
+      // console.log("worksFilters", worksFilters);
+      // console.log("studentsFilters", studentsFilters);
 
       $.ajax({
         url: wp_ajax.ajax_url,
         data: {
           action: "filter",
-          categories: categories,
+          toggle: toggle,
+          worksFilters: worksFilters,
+          studentsFilters: studentsFilters,
           security: wp_ajax.security,
         },
         type: "post",
@@ -40,6 +73,7 @@
           $("#response").html(result);
         },
         error: function (result) {
+          // console.warn(result);
           console.warn(result.status, result.statusText);
         },
         complete: function () {
