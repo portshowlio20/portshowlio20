@@ -4,23 +4,48 @@
 (function ($) {
   $(document).ready(function () {
     // 1. init variables
-    var toggle = "works"; // initial state set here
+    var toggle = $("#works-student-toggle input:checked").val(); // initial state set here
     var worksFilters = [];
     var studentsFilters = [];
+
+    // #?. fix for checkbox state misalignment
+    $("#filter #works-toggle").on("click", function () {
+      $("#filter #works-filters")
+        .find("input[type=checkbox]")
+        .each(function () {
+          if ($(this).is(":checked")) {
+            worksFilter.push($(this).val());
+          }
+        });
+    });
+
+    $("#filter #students-toggle").on("click", function () {
+      $("#filter #students-filters")
+        .find("input[type=checkbox]")
+        .each(function () {
+          if ($(this).is(":checked")) {
+            studentsFilter.push($(this).val());
+          }
+        });
+    });
 
     // 2. set state of listed/dynamic variables
     // 2a. worksFilters
     $("#filter #works-filters")
       .find("input[type=checkbox]")
       .each(function () {
-        worksFilters.push($(this).val());
+        if ($(this).is(":checked")) {
+          worksFilters.push($(this).val());
+        }
       });
 
     // 2b. studentsFilters
     $("#filter #students-filters")
       .find("input[type=checkbox]")
       .each(function () {
-        studentsFilters.push($(this).val());
+        if ($(this).is(":checked")) {
+          studentsFilters.push($(this).val());
+        }
       });
 
     // 3. listen to any <input> change on our form
@@ -78,6 +103,32 @@
           $("#response").css("background", "white");
         },
       });
+    });
+
+    // ajax call on load to load the the current filters!
+    $.ajax({
+      url: wp_ajax.ajax_url,
+      data: {
+        action: "filter",
+        toggle: toggle,
+        worksFilters: worksFilters,
+        studentsFilters: studentsFilters,
+        security: wp_ajax.security,
+      },
+      type: "post",
+      beforeSend: function () {
+        $("#response").css("background", "red");
+      },
+      success: function (result) {
+        $("#response").html(result);
+      },
+      error: function (result) {
+        // console.warn(result);
+        console.warn(result.status, result.statusText);
+      },
+      complete: function () {
+        $("#response").css("background", "white");
+      },
     });
   });
 })(jQuery);

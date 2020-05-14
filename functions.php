@@ -446,7 +446,10 @@ function filter_ajax()
   //        b. works filters
   //        c. students filters
 
-  if ($works_filters == null || $students_filters == null) {
+  if (
+    ($works_filters == null && $toggle == "works") ||
+    ($students_filters == null && $toggle == "students")
+  ) {
     echo '<pre>';
     echo 'For best results, please select at least one filter. 🙄';
     echo '</pre>';
@@ -491,14 +494,39 @@ function filter_ajax()
     endif;
     wp_reset_postdata();
   } elseif ($toggle == "students") {
-    $students_query = get_users($students_args);
+    $students_query = new WP_User_Query($students_args);
 
-    echo '<pre>';
-    var_dump($students_query);
-    echo '</pre>';
-    // echo '<pre>';
-    // var_dump($students_filters);
-    // echo '</pre>';
+    if (!empty($students_query->results)) {
+      foreach ($students_query->results as $student) {
+
+        $student_id = $student->ID;
+        $link = esc_url(get_author_posts_url($student_id));
+        $aof_list = get_field('focus', 'user_' . $student_id);
+        ?>
+
+        <div>
+
+          <pre>
+          <?php var_dump($aof_list); ?>
+
+          </pre>
+
+          <a href="<?php echo $link; ?>">
+          <?php echo $student->display_name; ?>
+          </a>
+          <ul>
+            <?php foreach ($aof_list as $aof) {
+              echo '<li>' . $aof . '</li>';
+            } ?>
+          </ul>
+        </div>
+     <?php
+      }
+    } else {
+      echo 'No students found.';
+    }
+    // aaaaaand reset ...
+    wp_reset_query();
   }
 
   die();
