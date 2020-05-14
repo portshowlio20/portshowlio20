@@ -38,10 +38,8 @@
       var parentDivId = $(this).parents()[1].id; // 🚨 brittle!!
 
       if (parentDivId == "works-filters" && $(this).is(":checked")) {
-        console.log($(this), "is checked");
         worksFilters.push($(this).val());
       } else {
-        console.log($(this), "is NOT checked");
         worksFilters = worksFilters.filter((x) => x != $(this).val());
       }
 

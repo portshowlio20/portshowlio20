@@ -63,7 +63,7 @@ get_header(); ?>
 
   <!-- 🚨 THE VALUE OF THE VALUE ATTR ASSIGNED HERE SHOULD BE QUESTIONED -->
   <?php
-  $field = get_field_object('field_5e9bda27eb0bd'); // 🚨 field key is also brittle !!
+  $field = get_field_object('field_5ebcb0894d37a'); // 🚨 field key is also brittle !!
   if ($field['choices']): ?>
         <?php foreach ($field['choices'] as $value => $label): ?>
         <div>
