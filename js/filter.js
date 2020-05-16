@@ -8,6 +8,14 @@
     var worksFilters = [];
     var studentsFilters = [];
 
+    if (toggle === "works") {
+      $("#works-filters").addClass("is-active");
+      $("#students-filters").removeClass("is-active");
+    } else if (toggle === "students") {
+      $("#students-filters").addClass("is-active");
+      $("#works-filters").removeClass("is-active");
+    }
+
     // #?. fix for checkbox state misalignment
     $("#filter #works-toggle").on("click", function () {
       $("#filter #works-filters")
@@ -57,6 +65,14 @@
         toggle = "works";
       } else if ($(this).val() == "students") {
         toggle = "students";
+      }
+
+      if (toggle === "works") {
+        $("#works-filters").addClass("is-active");
+        $("#students-filters").removeClass("is-active");
+      } else if (toggle === "students") {
+        $("#students-filters").addClass("is-active");
+        $("#works-filters").removeClass("is-active");
       }
 
       // 4a. update worksFilters state
