@@ -4,7 +4,7 @@
 (function ($) {
   $(document).ready(function () {
     // 1. init variables
-    var toggle = $("#works-student-toggle input:checked").val(); // initial state set here
+    var toggle = $("#works-students-toggle input:checked").val(); // initial state set here
     var worksFilters = [];
     var studentsFilters = [];
 

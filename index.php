@@ -24,7 +24,7 @@ get_header(); ?>
   <form method="POST" id="filter" action="" style="display: flex;">
 
 
-   <div id="works-student-toggle">
+   <div id="works-students-toggle">
       <div>
         <input type="radio" id="works-toggle" name="mainToggle" value="works"
               checked>
