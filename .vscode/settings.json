@@ -6,10 +6,13 @@
     "**/.stylelintrc.json": true,
     "**/composer.json": true,
     "**/package.json": true,
+    "**/package-lock.json": true,
     "**/phpcs.xml.dist": true,
     "**/README.md": true,
-    "**/readme.txt": true
+    "**/readme.txt": true,
+    "**/node_modules": true
   },
   "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"],
-  "liveSassCompile.settings.showOutputWindow": false
+  "liveSassCompile.settings.showOutputWindow": false,
+  "editor.formatOnSave": true
 }
