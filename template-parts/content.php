@@ -28,6 +28,38 @@
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
     <pre><?php echo portshowlio20_posted_by();?></pre>
+
+    <pre>
+    <?php
+      $all_meta_for_user = get_user_meta( get_the_author_meta( 'ID' ) );
+      echo $all_meta_for_user['first_name'][0];
+    ?>
+    <?php
+      $all_meta_for_user = get_user_meta( get_the_author_meta( 'ID' ) );
+      echo $all_meta_for_user['social_media_instagram'][0];
+    ?>
+    <?php
+      $all_meta_for_user = get_user_meta( get_the_author_meta( 'ID' ) );
+      if ( $all_meta_for_user['social_media_youtube'][0] ) :
+        ?>
+        <div><?php echo $all_meta_for_user['social_media_youtube'][0]?></div>
+        <?php else : ?>
+        <div>no youtube</div>
+    <?php endif; ?>
+    <?php
+      $all_meta_for_user = get_user_meta( get_the_author_meta( 'ID' ) );
+      echo $all_meta_for_user['_instagram'][0];
+    ?>
+
+    </pre>
+
+<pre>
+    <?php
+      $all_meta_for_user = get_user_meta( get_the_author_meta( 'ID' ) );
+      print_r( $all_meta_for_user );
+    ?>
+</pre>
+
 	</header><!-- .entry-header -->
 
 	<?php portshowlio20_post_thumbnail(); ?>
