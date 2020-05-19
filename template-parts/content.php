@@ -8,6 +8,19 @@
  */
 ?>
 
+<style>
+  .flexible-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px dotted green;
+    margin-bottom: 4rem;
+  }
+
+  .section-info-title {
+    color: red;
+  }
+</style>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
@@ -33,38 +46,72 @@
   ?>
     <pre><?php echo portshowlio20_posted_by(); ?></pre>
 
-    <pre>
-    <?php
-    $all_meta_for_user = get_user_meta(get_the_author_meta('ID'));
-    echo $all_meta_for_user['first_name'][0];
-    echo ' ';
-    echo $all_meta_for_user['last_name'][0];
-    ?>
-    <?php
-    $all_meta_for_user = get_user_meta(get_the_author_meta('ID'));
-    echo $all_meta_for_user['social_media_instagram'][0];
-    ?>
-    <?php
-    $all_meta_for_user = get_user_meta(get_the_author_meta('ID'));
-    if ($all_meta_for_user['social_media_youtube'][0]): ?>
-        <?php echo $all_meta_for_user['social_media_youtube'][0]; ?>
-        <?php else: ?>
-        no youtube
-    <?php endif;
-    ?>
-    <?php
-    $all_meta_for_user = get_user_meta(get_the_author_meta('ID'));
-    echo $all_meta_for_user['focus'][0];
-    ?>
 
-    </pre>
+<div class="test">
 
-<pre>
-    <?php
-    $all_meta_for_user = get_user_meta(get_the_author_meta('ID'));
-    print_r($all_meta_for_user);
-    ?>
-</pre>
+      <!-- Anna messing with flex content shiet -->
+      <?php if (have_rows('content_blocks')): ?>
+        <?php while (have_rows('content_blocks')):
+          the_row(); ?>
+
+            <?php if (get_row_layout() == 'full_width_text'): ?>
+
+                <?php get_template_part(
+                  'components/flexible-layouts/section',
+                  'fullwidthtext'
+                ); ?>
+
+            <?php elseif (get_row_layout() == 'full_width_image'): ?>
+
+                <?php get_template_part(
+                  'components/flexible-layouts/section',
+                  'fullwidthimage'
+                ); ?>
+
+            <?php elseif (get_row_layout() == 'full_width_gallery'): ?>
+                <?php get_template_part(
+                  'components/flexible-layouts/section',
+                  'fullwidthgallery'
+                ); ?>
+
+            <?php elseif (get_row_layout() == 'full_width_video'): ?>
+
+              <?php get_template_part(
+                'components/flexible-layouts/section',
+                'fullwidthvideo'
+              ); ?>
+
+            <?php elseif (get_row_layout() == 'text_and_image'): ?>
+
+              <?php get_template_part(
+                'components/flexible-layouts/section',
+                'textandimage'
+              ); ?>
+
+
+            <?php elseif (get_row_layout() == 'text_and_gallery'): ?>
+
+              <?php get_template_part(
+                'components/flexible-layouts/section',
+                'textandgallery'
+              ); ?>
+
+
+            <?php elseif (get_row_layout() == 'text_and_video'): ?>
+
+              <?php get_template_part(
+                'components/flexible-layouts/section',
+                'textandvideo'
+              ); ?>
+
+            <?php endif; ?>
+        <?php
+        endwhile; ?>
+      <?php endif; ?>
+
+<!-- The end of Anna messing with flex content shiet -->
+
+</div>
 
 	</header><!-- .entry-header -->
 
