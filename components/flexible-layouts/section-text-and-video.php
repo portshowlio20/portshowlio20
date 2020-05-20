@@ -7,7 +7,7 @@ $video_side = get_sub_field("video")["video_side"];
 ?>
 
 <section class="flexible-section">
-  <span class="section-info-title">textandvideo</span>
+  <span class="section-info-title">text and video</span>
 
   <?php if ($video_side == "right"): ?>
   <div class="text">

@@ -61,34 +61,34 @@
 
                 <?php get_template_part(
                   'components/flexible-layouts/section',
-                  'fullwidthtext'
+                  'full-width-text'
                 ); ?>
 
             <?php elseif (get_row_layout() == 'full_width_image'): ?>
 
                 <?php get_template_part(
                   'components/flexible-layouts/section',
-                  'fullwidthimage'
+                  'full-width-image'
                 ); ?>
 
             <?php elseif (get_row_layout() == 'full_width_gallery'): ?>
                 <?php get_template_part(
                   'components/flexible-layouts/section',
-                  'fullwidthgallery'
+                  'full-width-gallery'
                 ); ?>
 
             <?php elseif (get_row_layout() == 'full_width_video'): ?>
 
               <?php get_template_part(
                 'components/flexible-layouts/section',
-                'fullwidthvideo'
+                'full-width-video'
               ); ?>
 
             <?php elseif (get_row_layout() == 'text_and_image'): ?>
 
               <?php get_template_part(
                 'components/flexible-layouts/section',
-                'textandimage'
+                'text-and-image'
               ); ?>
 
 
@@ -96,7 +96,7 @@
 
               <?php get_template_part(
                 'components/flexible-layouts/section',
-                'textandgallery'
+                'text-and-gallery'
               ); ?>
 
 
@@ -104,7 +104,7 @@
 
               <?php get_template_part(
                 'components/flexible-layouts/section',
-                'textandvideo'
+                'text-and-video'
               ); ?>
 
             <?php endif; ?>

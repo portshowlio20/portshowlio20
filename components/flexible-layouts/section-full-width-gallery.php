@@ -3,7 +3,7 @@ $images = get_sub_field('gallery');
 $gallery_caption = get_sub_field('gallery_caption');
 if ($images): ?>
 <section class="flexible-section">
-  <span class="section-info-title">fullwidthgallery</span>
+  <span class="section-info-title">full width gallery</span>
   <ul>
       <?php foreach ($images as $image): ?>
           <li>

@@ -6,7 +6,7 @@ $image_caption = get_sub_field("image")["image_caption"];
 $image_side = get_sub_field("image")["image_side"];
 ?>
 <section class="flexible-section">
-  <span class="section-info-title">textandimage</span>
+  <span class="section-info-title">text and image</span>
 
   <?php if ($image_side == "right"): ?>
   <div class="text">

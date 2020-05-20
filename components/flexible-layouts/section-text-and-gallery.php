@@ -7,7 +7,7 @@ $gallery_caption = get_sub_field("gallery")["gallery_caption"];
 if ($images): ?>
 
 <section class="flexible-section">
-  <span class="section-info-title">textandgallery</span>
+  <span class="section-info-title">text and gallery</span>
 
   <?php if ($gallery_side == "right"): ?>
   <div class="text">
