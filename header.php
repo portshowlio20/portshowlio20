@@ -30,8 +30,7 @@
   </a>
 
   <header id="masthead" class="site-header">
-    <div>
-      <!-- site title is an <h1> on homepage, but a <p> on every other page -->
+    <div class="container">
       <?php if (is_front_page() && is_home()): ?>
         <h1 class="site-title">
           <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">

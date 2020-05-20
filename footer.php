@@ -8,11 +8,10 @@
  *
  * @package portshowlio20
  */
-
 ?>
 
 	<footer class="site-footer">
-		<div>
+		<div class="container">
 			footer
 		</div>
 	</footer>

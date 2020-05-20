@@ -23,33 +23,36 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php
-  if (is_singular()):
-    the_title('<h1 class="entry-title">', '</h1>');
-  else:
-    the_title(
-      '<h2 class="entry-title"><a href="' .
-        esc_url(get_permalink()) .
-        '" rel="bookmark">',
-      '</a></h2>'
-    );
-  endif;
+    <?php
+    if (is_singular()):
+      the_title('<h1 class="entry-title">', '</h1>');
+    else:
+      the_title(
+        '<h2 class="entry-title"><a href="' .
+          esc_url(get_permalink()) .
+          '" rel="bookmark">',
+        '</a></h2>'
+      );
+    endif;
 
-  if ('post' === get_post_type()): ?>
-			<div class="entry-meta">
-				<?php
-    portshowlio20_posted_on();
-    portshowlio20_posted_by();
+    if ('post' === get_post_type()): ?>
+            <div class="entry-meta">
+              <?php
+              portshowlio20_posted_on();
+              portshowlio20_posted_by();
+              ?>
+            </div><!-- .entry-meta -->
+          <?php endif;
     ?>
-			</div><!-- .entry-meta -->
-		<?php endif;
-  ?>
-    <pre><?php echo portshowlio20_posted_by(); ?></pre>
+    <?php echo portshowlio20_posted_by(); ?></pre>
+	</header><!-- .entry-header -->
 
+	<?php portshowlio20_post_thumbnail(); ?>
 
-<div class="test">
+	<div class="entry-content">
 
-      <!-- Anna messing with flex content shiet -->
+    <div class="test">
+
       <?php if (have_rows('content_blocks')): ?>
         <?php while (have_rows('content_blocks')):
           the_row(); ?>
@@ -108,44 +111,9 @@
         <?php
         endwhile; ?>
       <?php endif; ?>
-
-<!-- The end of Anna messing with flex content shiet -->
-
-</div>
-
-	</header><!-- .entry-header -->
-
-	<?php portshowlio20_post_thumbnail(); ?>
-
-	<div class="entry-content">
-		<?php
-  the_content(
-    sprintf(
-      wp_kses(
-        /* translators: %s: Name of current post. Only visible to screen readers */
-        __(
-          'Continue reading<span class="screen-reader-text"> "%s"</span>',
-          'portshowlio20'
-        ),
-        [
-          'span' => [
-            'class' => [],
-          ],
-        ]
-      ),
-      wp_kses_post(get_the_title())
-    )
-  );
-
-  wp_link_pages([
-    'before' =>
-      '<div class="page-links">' . esc_html__('Pages:', 'portshowlio20'),
-    'after' => '</div>',
-  ]);
-  ?>
+    </div>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php portshowlio20_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
