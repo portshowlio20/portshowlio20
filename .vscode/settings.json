@@ -12,6 +12,13 @@
     "**/readme.txt": true,
     "**/node_modules": true
   },
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/"
+    }
+  ],
   "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"],
   "liveSassCompile.settings.showOutputWindow": false,
   "editor.formatOnSave": true
