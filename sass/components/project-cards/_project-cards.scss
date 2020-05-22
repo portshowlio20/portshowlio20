@@ -1,0 +1,42 @@
+.project-card {
+  display: grid;
+  // @media screen and (max-width: 511px) {
+  //   grid-column: span 1 / -1 !important;
+  // }
+}
+
+@media screen and (max-width: 511px) {
+  .spacer {
+    display: none;
+  }
+}
+
+.project-image {
+  position: relative;
+}
+
+.project-image > img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-meta {
+  grid-column: 1 / -1;
+}
+
+.areas-of-focus {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.areas-of-focus li:not(:last-child)::after {
+  content: ",\00a0";
+}
+
+@import "./square-small";
+@import "./square-medium";
+@import "./square-large";
+@import "./rectangle-medium";
+@import "./rectangle-large";

@@ -1,0 +1,40 @@
+$rectangle-large-col: 4;
+$rectangle-large-row: 4;
+
+.rectangle-large {
+  grid-template-columns: repeat(
+    $rectangle-large-col,
+    minmax($main-grid-unit, 1fr)
+  );
+  grid-template-rows: repeat(
+    $rectangle-large-row,
+    minmax($main-grid-unit, 1fr)
+  );
+  grid-gap: 1rem;
+  grid-column: span $rectangle-large-col;
+  grid-row: span $rectangle-large-row;
+
+  > .project-image {
+    grid-column: span $rectangle-large-col;
+    grid-row: 1 / #{$rectangle-large-col};
+  }
+
+  > .project-meta {
+    grid-row: $rectangle-large-row;
+  }
+
+  @media screen and (max-width: 511px) {
+    grid-template-columns: repeat(3, minmax($main-grid-unit, 1fr));
+    grid-column: span 3;
+    grid-row: span 3;
+
+    > .project-image {
+      grid-column: span 3;
+      grid-row: span 2;
+    }
+
+    > .project-meta {
+      grid-row: 3;
+    }
+  }
+}

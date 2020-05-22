@@ -1,0 +1,85 @@
+.mailchimp {
+  label span {
+    opacity: 0.5;
+  }
+
+  .mc-field-group,
+  .clear {
+    margin-top: 1rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="submit"] {
+    width: 100%;
+    border: none;
+    margin: 0;
+    padding: 0.5em 0.5em;
+    font-size: 1rem;
+    margin-top: 0.25em;
+    background: none;
+    color: var(--white);
+    border: 1px solid var(--white);
+    // padding-bottom: calc(0.5em + 3px);
+    // background-size: 100% 3px;
+    // background-repeat: no-repeat;
+    // background-position: center bottom;
+    // background-image: linear-gradient(
+    //   140deg,
+    //   var(--orangered),
+    //   var(--tan) 40%,
+    //   var(--green) 50%,
+    //   var(--blue) 60%,
+    //   var(--peach) 80%,
+    //   var(--orangered)
+    // );
+  }
+
+  input[type="submit"] {
+    background: none;
+    padding: calc(0.75rem + 1.5px) 0.5rem;
+    cursor: pointer;
+    font-size: 0.78rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 1rem;
+  }
+
+  #mc_embed_signup input.mce_inline_error {
+    border-color: var(--orangered);
+  }
+
+  #mc_embed_signup div.mce_inline_error {
+    background: var(--orangered);
+    font-size: 0.78rem;
+  }
+
+  #mc_embed_signup_scroll {
+    @media screen and (min-width: 1140px) {
+      position: relative;
+      display: flex;
+
+      .mc-field-group {
+        margin-right: 1rem;
+      }
+
+      .mc-field-group:nth-child(1) {
+        width: 35%;
+      }
+
+      .clear {
+        align-self: flex-end;
+      }
+
+      #mc-embedded-subscribe {
+        padding: calc(1.5rem - 14px);
+      }
+
+      #mce-responses {
+        position: absolute;
+        transform: translateY(100%);
+      }
+    }
+  }
+}

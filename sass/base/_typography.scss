@@ -1,0 +1,53 @@
+body {
+  font-size: 16px;
+  font-family: "HK Grotesk", sans-serif;
+}
+
+.headline {
+  font-family: Ogg, serif;
+  // line-height: 5.67rem; // this is what branding wants....
+  line-height: 1;
+
+  font-size: 3rem;
+  margin-bottom: 3rem;
+
+  @media screen and (min-width: 511px) {
+    font-size: 4rem;
+    margin-bottom: 4rem;
+  }
+  @media screen and (min-width: 640px) {
+    font-size: 4.67rem;
+    margin-bottom: 4.67rem;
+  }
+}
+
+.subhead {
+  font-size: 1.56rem;
+  margin-bottom: 1.56rem;
+  line-height: 1.78rem; // this is what branding wants....
+}
+
+.body {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.56rem; // this is what branding wants....
+}
+
+.caption {
+  font-size: 0.78rem;
+  margin-bottom: 0.78rem;
+  // line-height: 1rem; // this is what branding wants....
+}
+
+.pull-quote {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  // line-height: 2.42rem; // this is what branding wants....
+}
+
+a {
+  text-decoration: underline;
+  text-decoration-skip: edges;
+  text-decoration-skip-ink: auto;
+  color: var(--black);
+}

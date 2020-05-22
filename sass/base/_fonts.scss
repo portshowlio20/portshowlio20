@@ -1,0 +1,33 @@
+// path is relative to the COMPILED style.css file! 🚨
+@font-face {
+  font-family: "Ogg";
+  src: url("./fonts/ogg/Ogg-Regular.woff2") format("woff2"),
+    url("./fonts/ogg/Ogg-Regular.woff") format("woff"),
+    url("./fonts/ogg/Ogg-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Ogg";
+  src: url("./fonts/ogg/Ogg-Light.woff2") format("woff2"),
+    url("./fonts/ogg/Ogg-Light.woff") format("woff"),
+    url("./fonts/ogg/Ogg-Light.ttf") format("truetype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Ogg";
+  src: url("./fonts/ogg/Ogg-LightItalic.woff2") format("woff2"),
+    url("./fonts/ogg/Ogg-LightItalic.woff") format("woff"),
+    url("./fonts/ogg/Ogg-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "HK Grotesk";
+  src: url("./fonts/hk-grotesk/HKGrotesk-Regular.woff2") format("woff2"),
+    url("./fonts/hk-grotesk/HKGrotesk-Regular.woff") format("woff"),
+    url("./fonts/hk-grotesk/HKGrotesk-Regular.eot") format("eot");
+  font-weight: 400;
+}

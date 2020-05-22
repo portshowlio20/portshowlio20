@@ -1,0 +1,35 @@
+.filled-black .glyph {
+  fill: var(--black);
+  stroke: none;
+}
+
+.stroked-black .glyph {
+  fill: none;
+  stroke: var(--black);
+  stroke-width: 1px;
+  vector-effect: non-scaling-stroke;
+  shape-rendering: crispedges;
+}
+
+.filled-white .glyph {
+  fill: var(--white);
+  stroke: none;
+}
+
+.stroked-white .glyph {
+  fill: none;
+  stroke: var(--white);
+  stroke-width: 1px;
+  vector-effect: non-scaling-stroke;
+  shape-rendering: crispedges;
+}
+
+// sample styles
+.list-reset {
+  display: flex;
+  margin-bottom: 0.5rem;
+  .glyph-wrap {
+    width: 1rem;
+    margin-right: 0.5rem;
+  }
+}

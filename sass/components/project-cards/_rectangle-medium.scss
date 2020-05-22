@@ -1,0 +1,25 @@
+$rectangle-medium-col: 3;
+$rectangle-medium-row: 3;
+
+.rectangle-medium {
+  grid-template-columns: repeat(
+    $rectangle-medium-col,
+    minmax($main-grid-unit, 1fr)
+  );
+  grid-template-rows: repeat(
+    $rectangle-medium-row,
+    minmax($main-grid-unit, 1fr)
+  );
+  grid-gap: 1rem;
+  grid-column: span $rectangle-medium-col;
+  grid-row: span $rectangle-medium-row;
+
+  > .project-image {
+    grid-column: span $rectangle-medium-col;
+    grid-row: 1 / #{$rectangle-medium-col};
+  }
+
+  > .project-meta {
+    grid-row: $rectangle-medium-row;
+  }
+}

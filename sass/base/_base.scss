@@ -1,0 +1,54 @@
+:root {
+  // --red: #eb3638;
+  --tan: #f1ead4;
+  --milky-way: var(--tan);
+  --peach: #f2c1bd;
+  --afterglow: var(--peach);
+  --orange: #f08c21;
+  --super-nova: var(--orange);
+  --orangered: #f1604d;
+  --solar-flare: var(--orangered);
+  --green: #aeccab;
+  --nebula: var(--green);
+  --blue: #476da5;
+  --dark-matter: var(--blue);
+
+  --black: #000000;
+  --white: #ffffff;
+
+  --primary: var(--blue);
+  --secondary-01: var(--orange);
+  --secondary-02: var(--tan);
+  --accent-01: var(--peach);
+  --accent-02: var(--orangered);
+  --accent-03: var(--green);
+}
+
+$phone: 375px;
+$big-phone: 511px;
+$tablet: 768px;
+$laptop: 1000px;
+$desktop: 1200px;
+
+img {
+  width: 100%;
+}
+
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @media screen and (min-width: $phone) {
+    padding: 0 2rem;
+  }
+  @media screen and (min-width: $big-phone) {
+    padding: 0 $site-padding;
+  }
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

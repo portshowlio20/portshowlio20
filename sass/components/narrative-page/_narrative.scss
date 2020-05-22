@@ -1,0 +1,161 @@
+#narrative {
+  .narrative {
+    background: #000;
+    color: #fff;
+    height: 200vh;
+    pointer-events: none;
+  }
+
+  .headline {
+    font-family: Ogg, serif;
+    font-size: 3rem;
+    line-height: 1.2;
+
+    @media screen and (min-width: 511px) {
+      font-size: 4rem;
+    }
+    @media screen and (min-width: 640px) {
+      font-size: 4.67rem;
+    }
+  }
+
+  .headline .char {
+    opacity: 0;
+  }
+
+  // kerning 🤓
+  span[data-word="We"] span[data-char="e"] {
+    margin-left: -0.15em;
+  }
+
+  .headline-wrap {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+  }
+
+  .headline-wrap .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .shape-wrap {
+    margin-top: -100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+    border: 1px solid green;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .vh-spacer {
+    height: 100vh;
+    border: 1px solid red;
+    z-index: -2;
+    pointer-events: none;
+  }
+
+  .shape {
+    transform-origin: 50% 0%;
+    min-width: 100vw;
+    height: 0;
+    padding-top: 100%;
+    overflow: hidden;
+    border-radius: 0 0 50% 50%;
+    pointer-events: none;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .shape:nth-child(1) {
+    background: #000;
+  }
+  .shape:nth-child(2) {
+    z-index: -1;
+  }
+
+  #our-planets {
+    min-height: 100vh;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .planets {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .planets .headline {
+    position: relative;
+    grid-column: 1;
+    grid-row: 1;
+    z-index: 100;
+  }
+
+  .planet {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .big-momma {
+    width: 60vh;
+    height: 60vh;
+  }
+
+  .planet-one {
+    width: 20vh;
+    height: 20vh;
+    right: -95%;
+    top: -15%;
+  }
+
+  .planet-two {
+    width: 30vh;
+    height: 30vh;
+    right: 50%;
+    z-index: -1;
+    top: -35%;
+  }
+
+  .planet-three {
+    width: 35vh;
+    height: 35vh;
+    z-index: -1;
+    right: -40%;
+    top: -40%;
+  }
+
+  .planet-four {
+    width: 25vh;
+    height: 25vh;
+    left: 50%;
+    bottom: -30%;
+  }
+
+  .planet-five {
+    width: 15vh;
+    height: 15vh;
+    right: 75%;
+    bottom: -20%;
+  }
+}

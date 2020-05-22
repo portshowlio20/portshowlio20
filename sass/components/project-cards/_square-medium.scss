@@ -1,0 +1,22 @@
+$square-medium-col: 3;
+$square-medium-row: 4;
+
+.square-medium {
+  grid-template-columns: repeat(
+    $square-medium-col,
+    minmax($main-grid-unit, 1fr)
+  );
+  grid-template-rows: repeat($square-medium-row, minmax($main-grid-unit, 1fr));
+  grid-gap: 1rem;
+  grid-column: span $square-medium-col;
+  grid-row: span $square-medium-row;
+
+  > .project-image {
+    grid-column: span $square-medium-col;
+    grid-row: span $square-medium-col;
+  }
+
+  > .project-meta {
+    grid-row: $square-medium-row;
+  }
+}

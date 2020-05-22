@@ -1,0 +1,38 @@
+$square-large-col: 4;
+$square-large-row: 5;
+
+.square-large {
+  grid-template-columns: repeat(
+    $square-large-col,
+    minmax($main-grid-unit, 1fr)
+  );
+  grid-template-rows: repeat($square-large-row, minmax($main-grid-unit, 1fr));
+  grid-gap: 1rem;
+  grid-column: span $square-large-col;
+  grid-row: span $square-large-row;
+
+  > .project-image {
+    grid-column: span $square-large-col;
+    grid-row: span $square-large-col;
+  }
+
+  > .project-meta {
+    grid-row: $square-large-row;
+  }
+
+  @media screen and (max-width: 511px) {
+    grid-template-columns: repeat(3, minmax($main-grid-unit, 1fr));
+    grid-template-rows: repeat(4, minmax($main-grid-unit, 1fr));
+    grid-column: span 3;
+    grid-row: span 4;
+
+    > .project-image {
+      grid-column: span 3;
+      grid-row: span 3;
+    }
+
+    > .project-meta {
+      grid-row: 4;
+    }
+  }
+}

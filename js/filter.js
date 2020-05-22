@@ -1,107 +1,155 @@
-// YT#1: https://www.youtube.com/watch?v=lz-daH9ZajU
-// YT#2: https://www.youtube.com/watch?v=Z0Jw226QKAM (nonce for security??)
-// Loading state: https://makitweb.com/display-loading-image-when-ajax-call-is-in-progress/
 (function ($) {
   $(document).ready(function () {
-    // 1. init variables
-    var toggle = $("#works-students-toggle input:checked").val(); // initial state set here
-    var worksFilters = [];
-    var studentsFilters = [];
+    var filters = $('#aof-filters input[type="checkbox"]');
+    var filterHeading = $("#filter-heading");
+    var filterContent = $(".filter-content");
+    var filterActive = $("#filter-active");
+    var filterActiveGlyph = $("#filter-active-glyph");
+    var filterDropdownToggle = $("#filter-dropdown-toggle");
+    var checked, toggle;
+    var activeFilters = [];
 
-    if (toggle === "works") {
-      $("#works-filters").addClass("is-active");
-      $("#students-filters").removeClass("is-active");
-    } else if (toggle === "students") {
-      $("#students-filters").addClass("is-active");
-      $("#works-filters").removeClass("is-active");
+    function checkboxStatus() {
+      checked = [];
+      filters.each(function () {
+        if ($(this).prop("checked")) {
+          checked.push($(this));
+        }
+      });
     }
 
-    // #?. fix for checkbox state misalignment
-    $("#filter #works-toggle").on("click", function () {
-      $("#filter #works-filters")
-        .find("input[type=checkbox]")
-        .each(function () {
-          if ($(this).is(":checked")) {
-            worksFilter.push($(this).val());
-          }
-        });
+    filters.each(function () {
+      $(this).change(function () {
+        checkboxStatus();
+
+        // if any checkboxes are check
+        if (checked.length > 0) {
+          // update heading and make sure it's interactive
+          handleFilterHeading(true);
+        }
+
+        // if all other checkboxes were checked..
+        if (checked.length === filters.length - 1) {
+          // ..uncheck all filters..
+          filters.each(function () {
+            $(this).prop("checked", false);
+          });
+          // ..and check the one that was clicked
+          $(this).prop("checked", true);
+
+          // update heading and make sure it's interactive
+          handleFilterHeading(true);
+        }
+
+        // if no checkboxes were checked, reset all to checked:
+        if (checked.length === 0) {
+          filters.each(function () {
+            $(this).prop("checked", true);
+          });
+          // update heading
+          handleFilterHeading(false);
+        }
+
+        // update the displays (plural) of active checked
+        checkboxStatus();
+        handleActiveChecked();
+      });
     });
 
-    $("#filter #students-toggle").on("click", function () {
-      $("#filter #students-filters")
-        .find("input[type=checkbox]")
-        .each(function () {
-          if ($(this).is(":checked")) {
-            studentsFilter.push($(this).val());
-          }
-        });
+    // on form change, send ajax
+    $("#filter").change(function () {
+      handleFormChange();
     });
 
-    // 2. set state of listed/dynamic variables
-    // 2a. worksFilters
-    $("#filter #works-filters")
-      .find("input[type=checkbox]")
-      .each(function () {
-        if ($(this).is(":checked")) {
-          worksFilters.push($(this).val());
+    filterDropdownToggle.on("click", function () {
+      // TODO: potentially handle roation of chevron with css animation (aka adding/removing a class here)
+      handleToggleSlide();
+    });
+
+    $(document).click(function (e) {
+      //if you click on anything except the modal itself or the "open modal" link, close the modal
+      if (
+        !$(e.target).closest("#filter").length &&
+        filterContent.is(":visible")
+      ) {
+        handleToggleSlide();
+      }
+    });
+
+    function handleFormChange() {
+      checkboxStatus();
+      activeFilters = [];
+      checked.forEach(function (check) {
+        activeFilters.push(check.val());
+      });
+      toggle = $("#works-students-toggle input:checked").val();
+
+      ajaxRequest();
+    }
+
+    function handleFilterHeading(clearAllFilters) {
+      // clearAllFilters is a boolean:
+      // true = display "clear all filters"
+      // false = display "select a discipline..."
+
+      if (!clearAllFilters) {
+        filterHeading.html("Select a discipline to apply a filter");
+      } else {
+        filterHeading.html("Clear all filters");
+
+        filterHeading.on("click", function () {
+          checkboxStatus();
+
+          filters.each(function () {
+            $(this).prop("checked", true);
+          });
+
+          handleFilterHeading(false);
+
+          // update the displays (plural) of active checked
+          checkboxStatus();
+          handleActiveChecked();
+          handleFormChange();
+        });
+      }
+    }
+
+    function handleActiveChecked() {
+      if (checked.length === filters.length) {
+        filterActive.html("");
+        filterActiveGlyph.html("");
+      } else {
+        var activeList = [];
+        checked.forEach(function (checkbox) {
+          activeList.push(checkbox.val());
+        });
+        filterActive.html(activeList);
+        filterActiveGlyph.html(activeList);
+      }
+    }
+
+    function handleToggleSlide() {
+      // TODO: custom easing + different easing + duration on close by redefining options in each if statement
+      // var options = { duration: 400, easing: easing.speedInOut };
+      filterContent.slideToggle(400, function () {
+        if (filterContent.is(":visible")) {
+          filterDropdownToggle.children().last().html("/\\");
+          // TODO: remove "clear filters" from filter-header
+        } else {
+          filterDropdownToggle.children().last().html("\\/");
+          // TODO: add "clear filters" from filter-header
+          // TODO: will need to code functionailty for that fucker
         }
       });
+    }
 
-    // 2b. studentsFilters
-    $("#filter #students-filters")
-      .find("input[type=checkbox]")
-      .each(function () {
-        if ($(this).is(":checked")) {
-          studentsFilters.push($(this).val());
-        }
-      });
-
-    // 3. listen to any <input> change on our form
-    $("#filter").on("change", "input", function (e) {
-      e.preventDefault();
-
-      // 4a. update toggle state
-      if ($(this).val() == "works") {
-        toggle = "works";
-      } else if ($(this).val() == "students") {
-        toggle = "students";
-      }
-
-      if (toggle === "works") {
-        $("#works-filters").addClass("is-active");
-        $("#students-filters").removeClass("is-active");
-      } else if (toggle === "students") {
-        $("#students-filters").addClass("is-active");
-        $("#works-filters").removeClass("is-active");
-      }
-
-      // 4a. update worksFilters state
-      var parentDivId = $(this).parents()[1].id; // 🚨 brittle!!
-
-      if (parentDivId == "works-filters" && $(this).is(":checked")) {
-        worksFilters.push($(this).val());
-      } else {
-        worksFilters = worksFilters.filter((x) => x != $(this).val());
-      }
-
-      // 4a. update studentsFilters state
-      if (parentDivId == "students-filters" && $(this).is(":checked")) {
-        studentsFilters.push($(this).val());
-      } else {
-        studentsFilters = studentsFilters.filter((x) => x != $(this).val());
-      }
-
-      // console.log("toggle", toggle);
-      // console.log("worksFilters", worksFilters);
-      // console.log("studentsFilters", studentsFilters);
-
+    function ajaxRequest() {
       $.ajax({
         url: wp_ajax.ajax_url,
         data: {
           action: "filter",
           toggle: toggle,
-          worksFilters: worksFilters,
-          studentsFilters: studentsFilters,
+          filters: activeFilters,
           security: wp_ajax.security,
         },
         type: "post",
@@ -119,32 +167,9 @@
           $("#response").css("background", "white");
         },
       });
-    });
+    }
 
-    // ajax call on load to load the the current filters!
-    $.ajax({
-      url: wp_ajax.ajax_url,
-      data: {
-        action: "filter",
-        toggle: toggle,
-        worksFilters: worksFilters,
-        studentsFilters: studentsFilters,
-        security: wp_ajax.security,
-      },
-      type: "post",
-      beforeSend: function () {
-        $("#response").css("background", "red");
-      },
-      success: function (result) {
-        $("#response").html(result);
-      },
-      error: function (result) {
-        // console.warn(result);
-        console.warn(result.status, result.statusText);
-      },
-      complete: function () {
-        $("#response").css("background", "white");
-      },
-    });
+    handleFormChange();
+    ajaxRequest();
   });
 })(jQuery);

@@ -1,0 +1,69 @@
+// containers
+.filter {
+  margin: 4rem 0;
+}
+
+#filter {
+  border: 1px dotted tomato;
+  width: 100%;
+}
+
+.filter-header,
+.filter-content-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.filter-content {
+  display: none;
+}
+
+// toggle
+#works-students-toggle {
+  display: flex;
+}
+
+#filter-dropdown-toggle {
+  display: flex;
+}
+
+#aof-filters {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  padding: 2rem;
+  border: 1px solid green;
+
+  > div {
+    flex: 1 1 20%;
+  }
+}
+
+// input#works-toggle,
+// input#students-toggle {
+// //   appearance: none;
+// //   width: 0.1%;
+// //   opacity: 0;
+// //   height: 4px;
+// //   background: #000;
+// //   margin: 0;
+// //   transition: width 0.4s ease;
+
+// //   + label {
+// //     opacity: 0.5;
+// //     transition: opacity 0.3s ease;
+// //   }
+// }
+// input#works-toggle:checked,
+// input#students-toggle:checked {
+//   // transition: width 1s ease;
+//   // opacity: 1;
+//   // color: var(--blue);
+//   // width: 100%;
+//   // + label {
+//   //   opacity: 1;
+//   // }
+// }

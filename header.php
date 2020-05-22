@@ -25,10 +25,6 @@
 
 <div id="page" class="site">
 
-  <a class="skip-link screen-reader-text" href="#primary">
-    <?php esc_html_e('Skip to content', 'portshowlio20'); ?>
-  </a>
-
   <header id="masthead" class="site-header">
     <div class="container">
       <?php if (is_front_page() && is_home()): ?>

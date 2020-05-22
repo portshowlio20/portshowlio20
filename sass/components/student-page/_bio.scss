@@ -1,0 +1,53 @@
+#student-page {
+  .biosection {
+    // display: flex;
+    // padding: 1rem;
+    border-left: 1px solid var(--black);
+    border-bottom: 1px solid var(--black);
+    grid-template-rows: unset;
+    grid-auto-rows: unset;
+    padding: 4rem 0;
+  }
+  .studentimg img {
+    border-radius: 50%;
+    --radius: 20rem;
+    width: var(--radius);
+    height: var(--radius);
+    overflow: hidden;
+    position: relative;
+    left: calc(var(--radius) / 4 * -1);
+  }
+  .studentimg {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    grid-column: span 3;
+  }
+  img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+  }
+
+  .social {
+    align-self: flex-start;
+  }
+
+  .social-media-links {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .bio p {
+    max-width: 55ch;
+  }
+  .bio {
+    grid-column: 4 / span 6;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .studentname {
+    padding: 1rem;
+  }
+}
