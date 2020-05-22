@@ -8,13 +8,15 @@
  *
  * @package portshowlio20
  */
-?>
 
-	<footer class="site-footer">
+if (!is_front_page()): ?>
+    <footer class="site-footer">
 		<div class="container">
 			footer
 		</div>
 	</footer>
+<?php else:endif; ?>
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

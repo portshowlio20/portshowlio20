@@ -3,7 +3,7 @@
  * portshowlio20 functions and definitions
  *
  * 🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳
- * 🚨🚨 NOTE: everything is default execpt for stuff on line 159 and on! 🚨🚨
+ * 🚨🚨 NOTE: everything is default execpt for stuff on line 165 and on! 🚨🚨
  * 🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
@@ -162,9 +162,15 @@ if (defined('JETPACK__VERSION')) {
   require get_template_directory() . '/inc/jetpack.php';
 }
 
-require_once get_template_directory() . '/functions/limit-authors.php';
-require_once get_template_directory() . '/functions/limit-focus-to-four.php';
-require_once get_template_directory() . '/functions/author-to-student.php';
+require_once get_template_directory() . '/functions/wp-admin/limit-authors.php';
+require_once get_template_directory() . '/functions/wp-admin/limit-focus.php';
+require_once get_template_directory() .
+  '/functions/wp-admin/author-to-student.php';
 require_once get_template_directory() . '/functions/responsive-images.php';
-require_once get_template_directory() . '/functions/spacer-shuffle.php';
-require_once get_template_directory() . '/functions/filter.php';
+require_once get_template_directory() . '/functions/redirect-to-splash.php';
+require_once get_template_directory() . '/functions/scripts/filter.php';
+require_once get_template_directory() . '/functions/scripts/global-scripts.php';
+require_once get_template_directory() . '/functions/scripts/splash-scripts.php';
+require_once get_template_directory() . '/functions/scripts/spacer-shuffle.php';
+// load scripts based on template page
+// https://mekshq.com/include-javascriptonly-on-specific-wordpress-page-templates/

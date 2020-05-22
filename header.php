@@ -25,6 +25,7 @@
 
 <div id="page" class="site">
 
+<?php if (!is_front_page()): ?>
   <header id="masthead" class="site-header">
     <div class="container">
       <?php if (is_front_page() && is_home()): ?>
@@ -42,4 +43,7 @@
       <?php endif; ?>
     </div>
   </header>
+<?php else:endif; ?>
+
+
 
