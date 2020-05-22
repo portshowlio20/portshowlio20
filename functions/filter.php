@@ -81,11 +81,9 @@ function filter_ajax()
     $works_query = new WP_Query($works_args);
     if ($works_query->have_posts()):
       while ($works_query->have_posts()):
-        $works_query->the_post(); ?>
-
-          <?php get_template_part('components/grid-cards/project', 'card'); ?>
-
-        <?php
+        $works_query->the_post();
+        // TODO: randomly add .spacer divs here! (instead of with js!)
+        get_template_part('components/grid-cards/project', 'card');
       endwhile;
     endif;
     wp_reset_postdata();

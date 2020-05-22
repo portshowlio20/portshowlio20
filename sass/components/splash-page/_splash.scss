@@ -211,30 +211,6 @@ $offset: calc(#{$radius} / 2.5 * -1);
       // -webkit-text-fill-color: transparent;
       animation: color-change 20s ease-in-out infinite;
     }
-
-    @keyframes color-change {
-      0% {
-        color: var(--primary);
-      }
-      12% {
-        color: var(--accent-01);
-      }
-      25% {
-        color: var(--secondary-02);
-      }
-      50% {
-        color: var(--secondary-01);
-      }
-      62% {
-        color: var(--accent-02);
-      }
-      75% {
-        color: var(--accent-03);
-      }
-      100% {
-        color: var(--primary);
-      }
-    }
   }
 
   .bot {

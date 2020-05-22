@@ -54,3 +54,45 @@ img {
   margin: 0;
   padding: 0;
 }
+
+@keyframes color-change {
+  0% {
+    color: var(--primary);
+  }
+  12% {
+    color: var(--accent-01);
+  }
+  25% {
+    color: var(--secondary-02);
+  }
+  50% {
+    color: var(--secondary-01);
+  }
+  62% {
+    color: var(--accent-02);
+  }
+  75% {
+    color: var(--accent-03);
+  }
+  100% {
+    color: var(--primary);
+  }
+}
+
+@keyframes color-change-on-white {
+  0% {
+    color: var(--primary);
+  }
+  25% {
+    color: var(--accent-01);
+  }
+  50% {
+    color: var(--secondary-01);
+  }
+  75% {
+    color: var(--accent-02);
+  }
+  100% {
+    color: var(--primary);
+  }
+}

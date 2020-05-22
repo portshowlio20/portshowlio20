@@ -626,6 +626,90 @@ img {
   padding: 0;
 }
 
+@-webkit-keyframes color-change {
+  0% {
+    color: var(--primary);
+  }
+  12% {
+    color: var(--accent-01);
+  }
+  25% {
+    color: var(--secondary-02);
+  }
+  50% {
+    color: var(--secondary-01);
+  }
+  62% {
+    color: var(--accent-02);
+  }
+  75% {
+    color: var(--accent-03);
+  }
+  100% {
+    color: var(--primary);
+  }
+}
+
+@keyframes color-change {
+  0% {
+    color: var(--primary);
+  }
+  12% {
+    color: var(--accent-01);
+  }
+  25% {
+    color: var(--secondary-02);
+  }
+  50% {
+    color: var(--secondary-01);
+  }
+  62% {
+    color: var(--accent-02);
+  }
+  75% {
+    color: var(--accent-03);
+  }
+  100% {
+    color: var(--primary);
+  }
+}
+
+@-webkit-keyframes color-change-on-white {
+  0% {
+    color: var(--primary);
+  }
+  25% {
+    color: var(--accent-01);
+  }
+  50% {
+    color: var(--secondary-01);
+  }
+  75% {
+    color: var(--accent-02);
+  }
+  100% {
+    color: var(--primary);
+  }
+}
+
+@keyframes color-change-on-white {
+  0% {
+    color: var(--primary);
+  }
+  25% {
+    color: var(--accent-01);
+  }
+  50% {
+    color: var(--secondary-01);
+  }
+  75% {
+    color: var(--accent-02);
+  }
+  100% {
+    color: var(--primary);
+  }
+}
+
 @font-face {
   font-family: "Ogg";
   src: url("./fonts/ogg/Ogg-Regular.woff2") format("woff2"), url("./fonts/ogg/Ogg-Regular.woff") format("woff"), url("./fonts/ogg/Ogg-Regular.ttf") format("truetype");
@@ -705,6 +789,16 @@ a {
           text-decoration-skip: edges;
   text-decoration-skip-ink: auto;
   color: var(--black);
+}
+
+a:hover {
+  -webkit-animation: color-change-on-white 10s ease-in-out infinite;
+          animation: color-change-on-white 10s ease-in-out infinite;
+}
+
+.project-image:hover + a {
+  -webkit-animation: color-change-on-white 10s ease-in-out infinite;
+          animation: color-change-on-white 10s ease-in-out infinite;
 }
 
 .header {
@@ -1384,7 +1478,7 @@ footer {
   padding: 4rem;
 }
 
-body {
+#page {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1680,54 +1774,6 @@ main {
   color: var(--accent-02);
   -webkit-animation: color-change 20s ease-in-out infinite;
           animation: color-change 20s ease-in-out infinite;
-}
-
-@-webkit-keyframes color-change {
-  0% {
-    color: var(--primary);
-  }
-  12% {
-    color: var(--accent-01);
-  }
-  25% {
-    color: var(--secondary-02);
-  }
-  50% {
-    color: var(--secondary-01);
-  }
-  62% {
-    color: var(--accent-02);
-  }
-  75% {
-    color: var(--accent-03);
-  }
-  100% {
-    color: var(--primary);
-  }
-}
-
-@keyframes color-change {
-  0% {
-    color: var(--primary);
-  }
-  12% {
-    color: var(--accent-01);
-  }
-  25% {
-    color: var(--secondary-02);
-  }
-  50% {
-    color: var(--secondary-01);
-  }
-  62% {
-    color: var(--accent-02);
-  }
-  75% {
-    color: var(--accent-03);
-  }
-  100% {
-    color: var(--primary);
-  }
 }
 
 @media screen and (min-width: 1000px) {

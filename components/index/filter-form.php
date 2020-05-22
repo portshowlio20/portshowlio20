@@ -5,11 +5,11 @@
         <div id="works-students-toggle">
           <div class="toggle-option">
             <input type="radio" id="works-toggle" name="mainToggle" value="works" checked>
-            <label for="works-toggle">Works</label>
+            <label for="works-toggle" class="subhead">Works</label>
           </div>
           <div class="toggle-option">
             <input type="radio" id="students-toggle" name="mainToggle" value="students">
-            <label for="students-toggle">Students</label>
+            <label for="students-toggle" class="subhead">Students</label>
           </div>
         </div>
         <div id="filter-dropdown-toggle">
