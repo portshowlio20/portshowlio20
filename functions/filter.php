@@ -37,7 +37,6 @@ function filter_ajax()
   $filters = $_POST['filters'];
 
   // 3. prepare args for queries (works filters, students filters)
-  // 3a. works filters
   $works_args = [
     'post_type' => 'projects',
   ];
@@ -69,11 +68,7 @@ function filter_ajax()
     ];
   }
 
-  // 4. create conditional queries based on:
-  //        a. toggle state
-  //        b. works filters
-  //        c. students filters
-
+  // 4. create conditional WP queries based on:
   if ($filters == null && $toggle == "works") {
     echo '<pre>';
     echo "Can't find any works. For best results, please select at least one filter. 🙄";
@@ -88,35 +83,7 @@ function filter_ajax()
       while ($works_query->have_posts()):
         $works_query->the_post(); ?>
 
-            <a href="<?php the_permalink(); ?>">
-              <div class="image">
-                <div class="featured-image">
-                  <img class="my_class" <?php responsive_image(
-                    get_field('featured_image'),
-                    'thumb-640',
-                    '640px'
-                  ); ?>  alt="text" />
-                </div>
-              </div>
-              <div class="project-meta">
-                <h2><?php echo get_the_title(); ?></h2>
-                <ul><?php
-                $terms = get_the_terms($post->ID, 'category');
-                $categories = [];
-                if ($terms) {
-                  foreach ($terms as $category) {
-                    $categories[] = $category->name;
-                  }
-                }
-
-                if ($categories) {
-                  foreach ($categories as $category) {
-                    echo '<li>' . $category . '</li>';
-                  }
-                }
-                ?></ul>
-              </div>
-            </a>
+          <?php get_template_part('components/grid-cards/project', 'card'); ?>
 
         <?php
       endwhile;
@@ -152,9 +119,8 @@ function filter_ajax()
      <?php
       }
     } else {
-      echo 'No students found.';
+      echo "Nothin' found. Try some new filters!";
     }
-    // aaaaaand reset ...
     wp_reset_query();
   }
 

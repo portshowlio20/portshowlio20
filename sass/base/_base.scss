@@ -1,5 +1,4 @@
 :root {
-  // --red: #eb3638;
   --tan: #f1ead4;
   --milky-way: var(--tan);
   --peach: #f2c1bd;
@@ -23,6 +22,9 @@
   --accent-02: var(--orangered);
   --accent-03: var(--green);
 }
+
+$max-width: 1200px;
+$site-padding: 2rem;
 
 $phone: 375px;
 $big-phone: 511px;

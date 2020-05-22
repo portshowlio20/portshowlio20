@@ -16,8 +16,6 @@ get_header(); ?>
 
   <main id="primary" class="site-main">
 
-  <style>.featured-image{max-width:75px;}</style>
-
   <?php get_template_part('components/index/filter', 'form'); ?>
   <?php get_template_part('components/index/filter', 'response'); ?>
 

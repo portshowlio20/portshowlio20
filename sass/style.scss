@@ -1,9 +1,8 @@
 // base & universal styles
-@import "./base/variables";
 @import "./base/sanitize";
+@import "./base/base";
 @import "./base/fonts";
 @import "./base/typography";
-@import "./base/base";
 
 // specific component styles
 @import "./components/header";
