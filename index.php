@@ -14,7 +14,7 @@
 
 get_header(); ?>
 
-  <main id="primary" class="site-main">
+  <main id="index" class="site-main">
 
   <?php get_template_part('components/index/filter', 'form'); ?>
   <?php get_template_part('components/index/filter', 'response'); ?>

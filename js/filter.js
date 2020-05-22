@@ -59,6 +59,9 @@
     // on form change, send ajax
     $("#filter").change(function () {
       handleFormChange();
+
+      // TODO: append class to .grid that states the active toggle
+      // then ONLY add spacer divs to .grid if it is in works state
     });
 
     filterDropdownToggle.on("click", function () {
@@ -165,6 +168,8 @@
         },
         complete: function () {
           $("#response").css("background", "white");
+          addSpacerDivs(document.querySelector("#index .grid"));
+          shuffleElements(document.querySelectorAll("#index .project-card"));
         },
       });
     }

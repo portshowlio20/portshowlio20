@@ -166,4 +166,5 @@ require_once get_template_directory() . '/functions/limit-authors.php';
 require_once get_template_directory() . '/functions/limit-focus-to-four.php';
 require_once get_template_directory() . '/functions/author-to-student.php';
 require_once get_template_directory() . '/functions/responsive-images.php';
+require_once get_template_directory() . '/functions/spacer-shuffle.php';
 require_once get_template_directory() . '/functions/filter.php';
