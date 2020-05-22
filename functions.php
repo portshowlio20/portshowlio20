@@ -171,6 +171,6 @@ require_once get_template_directory() . '/functions/redirect-to-splash.php';
 require_once get_template_directory() . '/functions/scripts/filter.php';
 require_once get_template_directory() . '/functions/scripts/global-scripts.php';
 require_once get_template_directory() . '/functions/scripts/splash-scripts.php';
-require_once get_template_directory() . '/functions/scripts/spacer-shuffle.php';
+require_once get_template_directory() . '/functions/scripts/index-scripts.php';
 // load scripts based on template page
 // https://mekshq.com/include-javascriptonly-on-specific-wordpress-page-templates/
