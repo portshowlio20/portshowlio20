@@ -135,7 +135,7 @@ $offset: calc(#{$radius} / 2.5 * -1);
     max-width: 45ch;
 
     @media screen and (min-width: $phone) {
-      margin-bottom: 2rem;
+      margin-bottom: 4rem;
     }
 
     @media screen and (min-width: $tablet) {
