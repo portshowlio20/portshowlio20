@@ -117,14 +117,14 @@ function portshowlio20_scripts()
   wp_style_add_data('portshowlio20-style', 'rtl', 'replace');
   wp_enqueue_script(
     'portshowlio20-navigation',
-    get_template_directory_uri() . '/js/navigation.js',
+    get_template_directory_uri() . '/js/underscores/navigation.js',
     [],
     _S_VERSION,
     true
   );
   wp_enqueue_script(
     'portshowlio20-skip-link-focus-fix',
-    get_template_directory_uri() . '/js/skip-link-focus-fix.js',
+    get_template_directory_uri() . '/js/underscores/skip-link-focus-fix.js',
     [],
     _S_VERSION,
     true

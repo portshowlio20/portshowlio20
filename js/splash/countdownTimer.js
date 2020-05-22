@@ -19,3 +19,6 @@ function countdownTimer() {
   document.getElementById("minutes").innerHTML = parts.minutes;
   document.getElementById("seconds").innerHTML = parts.seconds;
 }
+
+countdownTimer();
+setInterval(countdownTimer, 1000);
