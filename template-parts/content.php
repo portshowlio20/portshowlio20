@@ -23,28 +23,77 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-    <?php
-    if (is_singular()):
-      the_title('<h1 class="entry-title">', '</h1>');
-    else:
-      the_title(
-        '<h2 class="entry-title"><a href="' .
-          esc_url(get_permalink()) .
-          '" rel="bookmark">',
-        '</a></h2>'
-      );
-    endif;
+    <div class="container">
+      <h1 class="entry-title"><?php the_title(); ?></h1>
+      <div>
+        <span class="section-info-title">Tagline</span>
+        <span><?php the_field('tagline'); ?></span>
+      </div>
+      <div>
+        <span class="section-info-title">Project tags</span>
+        <ul class="areas-of-focus">
+          <?php
+          $tags = get_field('project_tags');
+          foreach ($tags as $tag) {
+            echo '<li>' . $tag->name . '</li>';
+          }
+          ?>
+        </ul>
+      </div>
 
-    if ('post' === get_post_type()): ?>
-            <div class="entry-meta">
-              <?php
-              portshowlio20_posted_on();
-              portshowlio20_posted_by();
-              ?>
-            </div><!-- .entry-meta -->
-          <?php endif;
-    ?>
-    <?php echo portshowlio20_posted_by(); ?></pre>
+      <div>
+
+      <?php if (get_field('group_project') == 'no') { ?>
+        <span class="section-info-title">Your roles</span>
+        <!-- TODO: get user/author info... have fun! -->
+        <a href="#" alt="a link to your student page">
+          <h2><?php echo get_the_author(); ?></h2>
+          <img src="" alt="your headshot goes here">
+          <ul class="your-roles">
+            <?php
+            $tags = get_field('your_roles');
+            foreach ($tags as $tag) {
+              echo '<li>' . $tag->name . '</li>';
+            }
+            ?>
+          </ul>
+        </a>
+      <?php } elseif (get_field('group_project') == 'yes') { ?>
+        <span class="section-info-title">Collaborators</span>
+        <!-- TODO: get user/author info... have fun! -->
+        <ul>
+          <li>
+            <a href="#" alt="a link to your student page">
+              <h2><?php echo get_the_author(); ?></h2>
+              <img src="" alt="your headshot goes here">
+              <ul class="your-roles">
+                <?php
+                $tags = get_field('your_roles');
+                foreach ($tags as $tag) {
+                  echo '<li>' . $tag->name . '</li>';
+                }
+                ?>
+              </ul>
+            </a>
+          </li>
+
+<pre><?php var_dump(get_field('collaborators')); ?></pre>
+<?php
+$collabs = get_field('collaborators');
+
+foreach ($collabs as $collab) { ?>
+  <li><pre><?php var_dump($collab); ?></pre></li>
+<?php }
+?>
+
+
+
+        </ul>
+      <?php } ?>
+
+
+      </div>
+    </div>
 	</header><!-- .entry-header -->
 
 	<?php portshowlio20_post_thumbnail(); ?>

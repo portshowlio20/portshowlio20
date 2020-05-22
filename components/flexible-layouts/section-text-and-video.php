@@ -7,27 +7,29 @@ $video_side = get_sub_field("video")["video_side"];
 ?>
 
 <section class="flexible-section">
-  <span class="section-info-title">text and video</span>
+  <div class="container">
+    <span class="section-info-title">text and video</span>
 
-  <?php if ($video_side == "right"): ?>
-  <div class="text">
-    <h3><?php echo $title; ?></h3>
-    <p><?php echo $content; ?></p>
-  </div>
-  <div class="video">
-    <?php echo $video; ?>
-    <span><?php echo $video_caption; ?></span>
-  </div>
-  <?php else: ?>
-    <div class="video">
-    <?php echo $video; ?>
-    <span><?php echo $video_caption; ?></span>
-  </div>
+    <?php if ($video_side == "right"): ?>
     <div class="text">
-    <h3><?php echo $title; ?></h3>
-    <p><?php echo $content; ?></p>
+      <h3><?php echo $title; ?></h3>
+      <p><?php echo $content; ?></p>
+    </div>
+    <div class="video">
+      <?php echo $video; ?>
+      <span><?php echo $video_caption; ?></span>
+    </div>
+    <?php else: ?>
+      <div class="video">
+      <?php echo $video; ?>
+      <span><?php echo $video_caption; ?></span>
+    </div>
+      <div class="text">
+      <h3><?php echo $title; ?></h3>
+      <p><?php echo $content; ?></p>
+    </div>
+
+
+    <?php endif; ?>
   </div>
-
-
-  <?php endif; ?>
 </section>
