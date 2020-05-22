@@ -16,6 +16,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
+  <?php if (is_front_page()): ?>
+  <title>Portshowlio 2020 / SCCA</title>
+  <?php endif; ?>
+
 	<?php wp_head(); ?>
 </head>
 
