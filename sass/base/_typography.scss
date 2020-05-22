@@ -56,6 +56,7 @@ a {
 a:hover {
   animation: color-change-on-white 10s ease-in-out infinite;
 }
+
 // how to work eith project card?
 .project-image:hover + a {
   animation: color-change-on-white 10s ease-in-out infinite;
