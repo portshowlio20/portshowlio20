@@ -124,7 +124,7 @@
               <div class="mailchimp">
                 <p class="caption beep-boop">[ Beep boop ]</p>
                 <p>
-                  Join our network to receive our latest transimissions.
+                  Join our network to receive our latest transmissions.
                 </p>
                 <!-- Begin Mailchimp Signup Form -->
                 <div id="mc_embed_signup">
