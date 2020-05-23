@@ -178,10 +178,8 @@
         complete: function () {
           canvasNoise();
           $("#response").css("background", "white");
-          // TODO: these two commented out functions should be handled by PHP?
-          // https://stackoverflow.com/questions/5459011/php-random-reorder-of-elements
+          // TODO: add random amount of spacer divs through PHP (filter.php specifically? also maybe filter-response.php? )
           // addSpacerDivs(document.querySelector("#index .grid"));
-          // shuffleElements(document.querySelectorAll("#index .project-card"));
           const placeholders = document.querySelectorAll("#index .placeholder");
           placeholders.forEach((element) => placeholderFade(element));
         },

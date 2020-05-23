@@ -823,26 +823,26 @@ a:hover {
 .grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(100px, 1fr))[10];
-      grid-template-columns: repeat(10, minmax(100px, 1fr));
-  grid-auto-rows: 100px;
+  -ms-grid-columns: (minmax(99px, 1fr))[10];
+      grid-template-columns: repeat(10, minmax(99px, 1fr));
+  grid-auto-rows: 99px;
   grid-auto-flow: dense;
   grid-gap: 1rem;
 }
 
 @media screen and (max-width: 1200px) {
   .grid {
-    -ms-grid-columns: (minmax(100px, 1fr))[auto-fit];
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    grid-auto-rows: 100px;
+    -ms-grid-columns: (minmax(99px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(99px, 1fr));
+    grid-auto-rows: 99px;
   }
 }
 
 @media screen and (max-width: 511px) {
   .grid {
-    -ms-grid-columns: (minmax(100px, 1fr))[3];
-        grid-template-columns: repeat(3, minmax(100px, 1fr));
-    grid-auto-rows: 100px;
+    -ms-grid-columns: (minmax(99px, 1fr))[3];
+        grid-template-columns: repeat(3, minmax(99px, 1fr));
+    grid-auto-rows: 99px;
   }
 }
 
@@ -1334,10 +1334,10 @@ a:hover {
 }
 
 .square-small {
-  -ms-grid-columns: (minmax(100px, 1fr))[2];
-      grid-template-columns: repeat(2, minmax(100px, 1fr));
-  -ms-grid-rows: (minmax(100px, 1fr))[3];
-      grid-template-rows: repeat(3, minmax(100px, 1fr));
+  -ms-grid-columns: (minmax(99px, 1fr))[2];
+      grid-template-columns: repeat(2, minmax(99px, 1fr));
+  -ms-grid-rows: (minmax(99px, 1fr))[3];
+      grid-template-rows: repeat(3, minmax(99px, 1fr));
   grid-gap: 1rem;
   grid-column: span 2;
   grid-row: span 3;
@@ -1354,10 +1354,10 @@ a:hover {
 }
 
 .square-medium {
-  -ms-grid-columns: (minmax(100px, 1fr))[3];
-      grid-template-columns: repeat(3, minmax(100px, 1fr));
-  -ms-grid-rows: (minmax(100px, 1fr))[4];
-      grid-template-rows: repeat(4, minmax(100px, 1fr));
+  -ms-grid-columns: (minmax(99px, 1fr))[3];
+      grid-template-columns: repeat(3, minmax(99px, 1fr));
+  -ms-grid-rows: (minmax(99px, 1fr))[4];
+      grid-template-rows: repeat(4, minmax(99px, 1fr));
   grid-gap: 1rem;
   grid-column: span 3;
   grid-row: span 4;
@@ -1374,10 +1374,10 @@ a:hover {
 }
 
 .square-large {
-  -ms-grid-columns: (minmax(100px, 1fr))[4];
-      grid-template-columns: repeat(4, minmax(100px, 1fr));
-  -ms-grid-rows: (minmax(100px, 1fr))[5];
-      grid-template-rows: repeat(5, minmax(100px, 1fr));
+  -ms-grid-columns: (minmax(99px, 1fr))[4];
+      grid-template-columns: repeat(4, minmax(99px, 1fr));
+  -ms-grid-rows: (minmax(99px, 1fr))[5];
+      grid-template-rows: repeat(5, minmax(99px, 1fr));
   grid-gap: 1rem;
   grid-column: span 4;
   grid-row: span 5;
@@ -1395,10 +1395,10 @@ a:hover {
 
 @media screen and (max-width: 511px) {
   .square-large {
-    -ms-grid-columns: (minmax(100px, 1fr))[3];
-        grid-template-columns: repeat(3, minmax(100px, 1fr));
-    -ms-grid-rows: (minmax(100px, 1fr))[4];
-        grid-template-rows: repeat(4, minmax(100px, 1fr));
+    -ms-grid-columns: (minmax(99px, 1fr))[3];
+        grid-template-columns: repeat(3, minmax(99px, 1fr));
+    -ms-grid-rows: (minmax(99px, 1fr))[4];
+        grid-template-rows: repeat(4, minmax(99px, 1fr));
     grid-column: span 3;
     grid-row: span 4;
   }
@@ -1413,10 +1413,10 @@ a:hover {
 }
 
 .rectangle-medium {
-  -ms-grid-columns: (minmax(100px, 1fr))[3];
-      grid-template-columns: repeat(3, minmax(100px, 1fr));
-  -ms-grid-rows: (minmax(100px, 1fr))[3];
-      grid-template-rows: repeat(3, minmax(100px, 1fr));
+  -ms-grid-columns: (minmax(99px, 1fr))[3];
+      grid-template-columns: repeat(3, minmax(99px, 1fr));
+  -ms-grid-rows: (minmax(99px, 1fr))[3];
+      grid-template-rows: repeat(3, minmax(99px, 1fr));
   grid-gap: 1rem;
   grid-column: span 3;
   grid-row: span 3;
@@ -1435,10 +1435,10 @@ a:hover {
 }
 
 .rectangle-large {
-  -ms-grid-columns: (minmax(100px, 1fr))[4];
-      grid-template-columns: repeat(4, minmax(100px, 1fr));
-  -ms-grid-rows: (minmax(100px, 1fr))[4];
-      grid-template-rows: repeat(4, minmax(100px, 1fr));
+  -ms-grid-columns: (minmax(99px, 1fr))[4];
+      grid-template-columns: repeat(4, minmax(99px, 1fr));
+  -ms-grid-rows: (minmax(99px, 1fr))[4];
+      grid-template-rows: repeat(4, minmax(99px, 1fr));
   grid-gap: 1rem;
   grid-column: span 4;
   grid-row: span 4;
@@ -1458,8 +1458,8 @@ a:hover {
 
 @media screen and (max-width: 511px) {
   .rectangle-large {
-    -ms-grid-columns: (minmax(100px, 1fr))[3];
-        grid-template-columns: repeat(3, minmax(100px, 1fr));
+    -ms-grid-columns: (minmax(99px, 1fr))[3];
+        grid-template-columns: repeat(3, minmax(99px, 1fr));
     grid-column: span 3;
     grid-row: span 3;
   }
