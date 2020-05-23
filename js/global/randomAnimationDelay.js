@@ -30,5 +30,4 @@ function randomAnimationDelay(elms) {
   }
 }
 
-console.log(document.links);
 randomAnimationDelay(document.links);

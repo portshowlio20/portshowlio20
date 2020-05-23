@@ -1,7 +1,6 @@
 "use strict";
 
 function shuffleElements(elems) {
-  console.log("shuffle", elems);
   var allElems = (function () {
     var ret = [],
       l = elems.length;

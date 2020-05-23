@@ -18,6 +18,14 @@
       });
     }
 
+    // on load, check if filters are set, if so update the filter heading!
+    checkboxStatus();
+    // if any checkboxes are check
+    if (checked.length > 0) {
+      // update heading and make sure it's interactive
+      handleFilterHeading(true);
+    }
+
     filters.each(function () {
       $(this).change(function () {
         checkboxStatus();
@@ -157,6 +165,7 @@
         },
         type: "post",
         beforeSend: function () {
+          // TODO: add animtion instead of "background: red"
           $("#response").css("background", "red");
         },
         success: function (result) {
@@ -167,9 +176,14 @@
           console.warn(result.status, result.statusText);
         },
         complete: function () {
+          canvasNoise();
           $("#response").css("background", "white");
-          addSpacerDivs(document.querySelector("#index .grid"));
-          shuffleElements(document.querySelectorAll("#index .project-card"));
+          // TODO: these two commented out functions should be handled by PHP?
+          // https://stackoverflow.com/questions/5459011/php-random-reorder-of-elements
+          // addSpacerDivs(document.querySelector("#index .grid"));
+          // shuffleElements(document.querySelectorAll("#index .project-card"));
+          const placeholders = document.querySelectorAll("#index .placeholder");
+          placeholders.forEach((element) => placeholderFade(element));
         },
       });
     }
