@@ -6,6 +6,10 @@
   .mc-field-group,
   .clear {
     margin-top: 1rem;
+
+    @media screen and (min-width: $laptop) {
+      margin-top: 0;
+    }
   }
 
   input[type="text"],
@@ -45,6 +49,13 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin-top: 1rem;
+    background-color: var(--black);
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+
+  input[type="submit"]:hover {
+    color: var(--black);
+    background-color: var(--white);
   }
 
   #mc_embed_signup input.mce_inline_error {

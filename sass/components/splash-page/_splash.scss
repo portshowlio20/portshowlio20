@@ -1,4 +1,5 @@
 $radius: 80vh;
+$laptop-radius: 150vh;
 $offset: calc(#{$radius} / 2.5 * -1);
 
 #splash {
@@ -28,6 +29,13 @@ $offset: calc(#{$radius} / 2.5 * -1);
     @media screen and (min-width: $tablet) {
       position: absolute;
     }
+    @media screen and (min-width: $laptop) {
+      right: 0;
+      height: $laptop-radius;
+      top: 50%;
+      transform: translateX(50%) translateY(-50%);
+      z-index: 0;
+    }
   }
 
   .text-block-wrapper {
@@ -36,9 +44,15 @@ $offset: calc(#{$radius} / 2.5 * -1);
       order: 2;
       width: 50%;
     }
+    @media screen and (min-width: $laptop) {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+    }
   }
 
   .da-countdown {
+    pointer-events: none;
     order: 2;
     display: flex;
     justify-content: space-between;
@@ -61,6 +75,15 @@ $offset: calc(#{$radius} / 2.5 * -1);
     height: $radius;
     left: $offset;
     top: $offset;
+
+    @media screen and (min-width: $laptop) {
+      width: $laptop-radius;
+      height: $laptop-radius;
+      // max-height: 100vw;
+      // max-width: 100vw;
+      left: 0;
+      top: 0;
+    }
   }
 
   .time-segment {
@@ -69,7 +92,6 @@ $offset: calc(#{$radius} / 2.5 * -1);
     @media screen and (min-width: $tablet) {
       display: flex;
       align-items: baseline;
-      // justify-content: center;
       width: 85%;
       transform: translateX(3rem);
     }
@@ -77,10 +99,10 @@ $offset: calc(#{$radius} / 2.5 * -1);
     @media screen and (min-width: 834px) {
       transform: translateX(2.25rem);
     }
-    @media screen and (min-width: $laptop) {
+    @media screen and (min-width: $big-tablet) {
       transform: translateX(0.75rem);
     }
-    @media screen and (min-width: $desktop) {
+    @media screen and (min-width: $laptop) {
       transform: translateX(0);
     }
 
@@ -135,12 +157,22 @@ $offset: calc(#{$radius} / 2.5 * -1);
     max-width: 45ch;
 
     @media screen and (min-width: $phone) {
-      margin-bottom: 4rem;
+      margin-bottom: 2rem;
     }
 
     @media screen and (min-width: $tablet) {
       max-width: unset;
       margin-top: calc(#{$radius} + #{$offset} + 4rem);
+    }
+
+    @media screen and (min-width: $laptop) {
+      margin: 0;
+      background: var(--black);
+      z-index: 100;
+    }
+
+    @media screen and (min-width: $laptop) and (max-height: 850px) {
+      max-width: 55ch;
     }
 
     .top,
@@ -155,7 +187,7 @@ $offset: calc(#{$radius} / 2.5 * -1);
     }
 
     .mid {
-      @media screen and (min-width: $laptop) {
+      @media screen and (min-width: $big-tablet) {
         padding-top: 3rem;
         padding-bottom: 3rem;
       }
@@ -168,8 +200,12 @@ $offset: calc(#{$radius} / 2.5 * -1);
 
   .logo-stacked {
     margin: 0.5rem 0;
-    @media screen and (min-width: $laptop) {
+    @media screen and (min-width: $big-tablet) {
       margin: 2rem 1.5rem;
+    }
+    @media screen and (min-width: $laptop) {
+      max-width: 75%;
+      margin: 0 auto;
     }
   }
 
@@ -182,15 +218,32 @@ $offset: calc(#{$radius} / 2.5 * -1);
     font-size: 1rem;
     margin-bottom: 1rem;
     line-height: 1.56rem;
-    @media screen and (min-width: $laptop) {
+    @media screen and (min-width: $big-tablet) {
       font-size: 1.56rem;
       margin-bottom: 1.56rem;
       line-height: 1.78rem;
+    }
+    @media screen and (min-width: $laptop) and (max-height: 850px) {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      line-height: 1.56rem;
+      margin-top: -0.5em;
+      margin-bottom: 2rem;
     }
   }
 
   .mailchimp {
     margin-top: 4rem;
+
+    @media screen and (min-width: $laptop) {
+      margin-top: 3rem;
+    }
+
+    .optional {
+      @media screen and (min-width: $laptop) and (max-height: 850px) {
+        display: none;
+      }
+    }
 
     p:not(.caption) {
       margin-bottom: 1rem;
@@ -211,10 +264,34 @@ $offset: calc(#{$radius} / 2.5 * -1);
       // -webkit-text-fill-color: transparent;
       animation: color-change 20s ease-in-out infinite;
     }
+
+    @keyframes color-change {
+      0% {
+        color: var(--primary);
+      }
+      12% {
+        color: var(--accent-01);
+      }
+      25% {
+        color: var(--secondary-02);
+      }
+      50% {
+        color: var(--secondary-01);
+      }
+      62% {
+        color: var(--accent-02);
+      }
+      75% {
+        color: var(--accent-03);
+      }
+      100% {
+        color: var(--primary);
+      }
+    }
   }
 
   .bot {
-    @media screen and (min-width: $laptop) {
+    @media screen and (min-width: $big-tablet) {
       display: flex;
       justify-content: space-between;
       padding: 0 !important;
@@ -226,13 +303,13 @@ $offset: calc(#{$radius} / 2.5 * -1);
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0;
-    @media screen and (min-width: $laptop) {
+    @media screen and (min-width: $big-tablet) {
       justify-content: flex-start;
       padding: 2rem;
     }
 
     li {
-      @media screen and (min-width: $laptop) {
+      @media screen and (min-width: $big-tablet) {
         margin-right: 1rem;
       }
     }
@@ -240,14 +317,14 @@ $offset: calc(#{$radius} / 2.5 * -1);
 
   .social-media-links .logo-emblem {
     margin-top: 0.25em;
-    @media screen and (min-width: $laptop) {
+    @media screen and (min-width: $big-tablet) {
       display: none;
     }
   }
 
   .hide-me {
     display: none;
-    @media screen and (min-width: $laptop) {
+    @media screen and (min-width: $big-tablet) {
       display: flex;
       align-items: center;
       justify-content: center;
