@@ -2,7 +2,7 @@
   <div class="container">
     <div id="response" class="grid">
       <?php
-      $loop = new WP_Query(['post_type' => 'projects']);
+      $loop = new WP_Query(['post_type' => 'projects', 'orderby' => 'rand']);
       if ($loop->have_posts()):
         while ($loop->have_posts()):
           $loop->the_post();

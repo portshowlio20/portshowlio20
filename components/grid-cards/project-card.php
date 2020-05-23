@@ -5,18 +5,33 @@ $project_card_classes = [
   'square-large',
   'rectangle-medium',
   'rectangle-large',
-]; ?>
-<div class="project-card <?php echo $project_card_classes[rand(0, 4)]; ?>">
+];
+$random_card_class = $project_card_classes[rand(0, 4)];
+$featured_images = get_field('featured_image');
+?>
+<div class="project-card <?php echo $random_card_class; ?>">
   <div class="project-image">
     <a href="<?php the_permalink(); ?>">
       <div class="placeholder">
         <div class="gradient gradient-10"></div>
       </div>
+      <?php if (strpos($random_card_class, 'square') === false) { ?>
       <img <?php responsive_image(
-        get_field('featured_image'),
+        $featured_images['rectangle'],
         'thumb-640',
         '640px'
-      ); ?>  alt="<?php echo get_the_title(); ?>" />
+      ); ?>  alt="<?php echo get_the_title(); ?>"
+        loading="lazy"
+       />
+      <?php } else { ?>
+        <img <?php responsive_image(
+          $featured_images['square'],
+          'thumb-640',
+          '640px'
+        ); ?>  alt="<?php echo get_the_title(); ?>"
+          loading="lazy"
+        />
+      <?php } ?>
       </div>
     </a>
   <div class="project-meta">
