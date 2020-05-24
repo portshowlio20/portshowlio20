@@ -98,3 +98,12 @@ img {
     color: var(--primary);
   }
 }
+
+@keyframes bg-gradient-scroll {
+  from {
+    background-position: left center;
+  }
+  to {
+    background-position: 200% center;
+  }
+}

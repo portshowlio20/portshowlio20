@@ -315,17 +315,6 @@ $tall-offset: calc(#{$tall-radius} / 2.5 * -1);
     .beep-boop {
       margin-bottom: 0.25em;
       color: var(--accent-02);
-      // background: linear-gradient(
-      //   140deg,
-      //   var(--orangered),
-      //   var(--green) 25%,
-      //   var(--blue) 50%,
-      //   var(--peach) 75%,
-      //   var(--orangered)
-      // );
-      // background-clip: text;
-      // -webkit-background-clip: text;
-      // -webkit-text-fill-color: transparent;
       animation: color-change 20s ease-in-out infinite;
     }
   }
