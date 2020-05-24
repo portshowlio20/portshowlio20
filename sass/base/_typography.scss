@@ -62,12 +62,12 @@ a:hover {
     var(--peach) 75%,
     var(--orangered)
   );
-  background-size: 200% 100%;
+  background-size: 400% 100%;
   background-repeat: repeat;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: bg-gradient-scroll 5s linear infinite;
+  animation: bg-gradient-scroll 20s linear infinite;
 }
 
 // how to work eith project card?
