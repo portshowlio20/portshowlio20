@@ -69,8 +69,3 @@ a:hover {
   -webkit-text-fill-color: transparent;
   animation: bg-gradient-scroll 20s linear infinite;
 }
-
-// how to work eith project card?
-.project-image:hover + a {
-  animation: color-change-on-white 10s ease-in-out infinite;
-}

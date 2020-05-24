@@ -18,6 +18,11 @@
 
   .section-info-title {
     color: red;
+    margin-right: 1rem;
+  }
+
+  .pp {
+    max-width: 50px;
   }
 </style>
 
@@ -29,7 +34,7 @@
         <span class="section-info-title">Tagline</span>
         <span><?php the_field('tagline'); ?></span>
       </div>
-      <div>
+      <div style="display: flex;">
         <span class="section-info-title">Project tags</span>
         <ul class="areas-of-focus">
           <?php
@@ -41,15 +46,22 @@
         </ul>
       </div>
 
-      <div>
+      <div style="display: flex;">
 
-      <?php if (get_field('group_project') == 'no') { ?>
+     <?php
+     $author = get_user_meta($post->post_author);
+     $author_headshot_without_mask = $author['headshots_without_mask'];
+     ?>
         <span class="section-info-title">Your roles</span>
         <!-- TODO: get user/author info... have fun! -->
         <a href="#" alt="a link to your student page">
-          <h2><?php echo get_the_author(); ?></h2>
-          <img src="" alt="your headshot goes here">
-          <ul class="your-roles">
+          <h2><?php the_author(); ?></h2>
+          <img class="pp" <?php responsive_image(
+            $author_headshot_without_mask[0],
+            'thumb-640',
+            '640px'
+          ); ?> alt="your headshot goes here">
+          <ul class="your-roles list-reset areas-of-focus">
             <?php
             $tags = get_field('your_roles');
             if ($tags) {
@@ -60,38 +72,55 @@
             ?>
           </ul>
         </a>
-      <?php } elseif (get_field('group_project') == 'yes') { ?>
+      <?php if (get_field('group_project') == 'yes') {
+
+        $author = get_user_meta($post->post_author);
+        $author_headshot_without_mask = $author['headshots_without_mask'];
+        ?>
         <span class="section-info-title">Collaborators</span>
         <!-- TODO: get user/author info... have fun! -->
-        <ul>
-          <li>
-            <a href="#" alt="a link to your student page">
-              <h2><?php echo get_the_author(); ?></h2>
-              <img src="" alt="your headshot goes here">
-              <ul class="your-roles">
-                <?php
-                $tags = get_field('your_roles');
-                foreach ($tags as $tag) {
-                  echo '<li>' . $tag->name . '</li>';
-                }
-                ?>
-              </ul>
-            </a>
-          </li>
+        <ul class="list-reset">
 
-<pre><?php var_dump(get_field('collaborators')); ?></pre>
-<?php
-$collabs = get_field('collaborators');
+          <?php if (have_rows('collaborators')): ?>
+            <?php while (have_rows('collaborators')):
 
-foreach ($collabs as $collab) { ?>
-  <li><pre><?php var_dump($collab); ?></pre></li>
-<?php }
-?>
+              the_row();
+
+              $collaborator = get_sub_field('collaborator');
+              $name = $collaborator['name']['display_name'];
+              $roles = $collaborator['roles'];
+              $user = get_user_meta($collaborator['name']['ID']);
+              $headshot_without_mask = $user['headshots_without_mask'];
+              ?>
+
+                <li>
+
+                  <a href="">
+                    <h2><?= $name ?></h2>
+                    <img class="pp" <?php responsive_image(
+                      $headshot_without_mask[0],
+                      'thumb-640',
+                      '640px'
+                    ); ?> alt="thier headshot goes here">
+                    <h4>Roles</h4>
+                    <ul class="your-roles list-reset areas-of-focus">
+                      <?php foreach ($roles as $role) {
+                        echo '<li>' . $role->name . '</li>';
+                      } ?>
+                    </ul>
+                  </a>
+                </li>
 
 
+            <?php
+            endwhile; ?>
+
+
+          <?php endif; ?>
 
         </ul>
-      <?php } ?>
+      <?php
+      } ?>
 
 
       </div>

@@ -820,11 +820,6 @@ a:hover {
           animation: bg-gradient-scroll 20s linear infinite;
 }
 
-.project-image:hover + a {
-  -webkit-animation: color-change-on-white 10s ease-in-out infinite;
-          animation: color-change-on-white 10s ease-in-out infinite;
-}
-
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
