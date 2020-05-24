@@ -217,7 +217,7 @@
               </div>
             </div>
             <div class="bot">
-              <ul class="social-media-links list-reset">
+              <ul class="scca-on-the-net list-reset">
                 <li>
                   <a
                     href="https://www.instagram.com/creative_academy/"

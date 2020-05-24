@@ -1,6 +1,8 @@
 $radius: 80vh;
 $laptop-radius: 150vh;
+$tall-radius: 100vh;
 $offset: calc(#{$radius} / 2.5 * -1);
+$tall-offset: calc(#{$tall-radius} / 2.5 * -1);
 
 #splash {
   background: var(--black);
@@ -12,6 +14,7 @@ $offset: calc(#{$radius} / 2.5 * -1);
     overflow: hidden;
     position: relative;
   }
+
   .not-grid {
     display: flex;
     flex-direction: column;
@@ -29,7 +32,25 @@ $offset: calc(#{$radius} / 2.5 * -1);
     @media screen and (min-width: $tablet) {
       position: absolute;
     }
+
     @media screen and (min-width: $laptop) {
+      left: 0;
+      right: unset;
+      height: $laptop-radius;
+      top: 50%;
+      transform: translateX(50%) translateY(-50%);
+      z-index: 0;
+    }
+
+    @media screen and (min-width: $laptop) and (min-height: $tall) {
+      height: calc(#{$tall-radius} + #{$tall-offset} + 2rem);
+      transform: none;
+      top: 0;
+      left: 0;
+      right: unset;
+    }
+
+    @media screen and (min-width: $big-boi) {
       right: 0;
       height: $laptop-radius;
       top: 50%;
@@ -40,11 +61,24 @@ $offset: calc(#{$radius} / 2.5 * -1);
 
   .text-block-wrapper {
     order: 3;
+
     @media screen and (min-width: $tablet) {
       order: 2;
       width: 50%;
     }
+
     @media screen and (min-width: $laptop) {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    @media screen and (min-width: $laptop) and (min-height: $tall) {
+      align-items: flex-end;
+      padding-bottom: 4rem;
+    }
+
+    @media screen and (min-width: $big-boi) {
       height: 100vh;
       display: flex;
       align-items: center;
@@ -57,6 +91,7 @@ $offset: calc(#{$radius} / 2.5 * -1);
     display: flex;
     justify-content: space-between;
     margin-bottom: 1rem;
+
     @media screen and (min-width: $tablet) {
       order: 3;
       width: 50%;
@@ -84,6 +119,22 @@ $offset: calc(#{$radius} / 2.5 * -1);
       left: 0;
       top: 0;
     }
+
+    @media screen and (min-width: $laptop) and (min-height: $tall) {
+      width: $tall-radius;
+      height: $tall-radius;
+      left: $tall-offset;
+      top: $tall-offset;
+    }
+
+    @media screen and (min-width: $big-boi) {
+      width: $laptop-radius;
+      height: $laptop-radius;
+      // max-height: 100vw;
+      // max-width: 100vw;
+      left: 4rem;
+      top: 0;
+    }
   }
 
   .time-segment {
@@ -99,9 +150,11 @@ $offset: calc(#{$radius} / 2.5 * -1);
     @media screen and (min-width: 834px) {
       transform: translateX(2.25rem);
     }
+
     @media screen and (min-width: $big-tablet) {
       transform: translateX(0.75rem);
     }
+
     @media screen and (min-width: $laptop) {
       transform: translateX(0);
     }
@@ -109,9 +162,11 @@ $offset: calc(#{$radius} / 2.5 * -1);
     // optically align .time-segments
     &:nth-child(3) {
       margin-right: -0.5em;
+
       @media screen and (min-width: $phone) {
         margin-right: -1.5em;
       }
+
       @media screen and (min-width: $tablet) {
         margin-right: 0;
       }
@@ -119,9 +174,11 @@ $offset: calc(#{$radius} / 2.5 * -1);
 
     &:last-child {
       width: 22%;
+
       @media screen and (min-width: $phone) {
         width: 25%;
       }
+
       @media screen and (min-width: $tablet) {
         width: 85%;
       }
@@ -200,9 +257,11 @@ $offset: calc(#{$radius} / 2.5 * -1);
 
   .logo-stacked {
     margin: 0.5rem 0;
+
     @media screen and (min-width: $big-tablet) {
       margin: 2rem 1.5rem;
     }
+
     @media screen and (min-width: $laptop) {
       max-width: 75%;
       margin: 0 auto;
@@ -218,11 +277,13 @@ $offset: calc(#{$radius} / 2.5 * -1);
     font-size: 1rem;
     margin-bottom: 1rem;
     line-height: 1.56rem;
+
     @media screen and (min-width: $big-tablet) {
       font-size: 1.56rem;
       margin-bottom: 1.56rem;
       line-height: 1.78rem;
     }
+
     @media screen and (min-width: $laptop) and (max-height: 850px) {
       font-size: 1rem;
       margin-bottom: 1rem;
@@ -248,6 +309,7 @@ $offset: calc(#{$radius} / 2.5 * -1);
     p:not(.caption) {
       margin-bottom: 1rem;
     }
+
     .beep-boop {
       margin-bottom: 0.25em;
       color: var(--accent-02);
@@ -264,30 +326,6 @@ $offset: calc(#{$radius} / 2.5 * -1);
       // -webkit-text-fill-color: transparent;
       animation: color-change 20s ease-in-out infinite;
     }
-
-    @keyframes color-change {
-      0% {
-        color: var(--primary);
-      }
-      12% {
-        color: var(--accent-01);
-      }
-      25% {
-        color: var(--secondary-02);
-      }
-      50% {
-        color: var(--secondary-01);
-      }
-      62% {
-        color: var(--accent-02);
-      }
-      75% {
-        color: var(--accent-03);
-      }
-      100% {
-        color: var(--primary);
-      }
-    }
   }
 
   .bot {
@@ -298,11 +336,12 @@ $offset: calc(#{$radius} / 2.5 * -1);
     }
   }
 
-  .social-media-links {
+  .scca-on-the-net {
     width: 100%;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0;
+
     @media screen and (min-width: $big-tablet) {
       justify-content: flex-start;
       padding: 2rem;
@@ -315,8 +354,9 @@ $offset: calc(#{$radius} / 2.5 * -1);
     }
   }
 
-  .social-media-links .logo-emblem {
+  .scca-on-the-net .logo-emblem {
     margin-top: 0.25em;
+
     @media screen and (min-width: $big-tablet) {
       display: none;
     }
@@ -324,6 +364,7 @@ $offset: calc(#{$radius} / 2.5 * -1);
 
   .hide-me {
     display: none;
+
     @media screen and (min-width: $big-tablet) {
       display: flex;
       align-items: center;
