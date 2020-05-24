@@ -71,6 +71,7 @@ $tall-offset: calc(#{$tall-radius} / 2.5 * -1);
       height: 100vh;
       display: flex;
       align-items: center;
+      padding-bottom: 0;
     }
 
     @media screen and (min-width: $laptop) and (min-height: $tall) {
@@ -82,6 +83,7 @@ $tall-offset: calc(#{$tall-radius} / 2.5 * -1);
       height: 100vh;
       display: flex;
       align-items: center;
+      padding-bottom: 0;
     }
   }
 
