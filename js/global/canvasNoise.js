@@ -22,6 +22,9 @@ function canvasNoise() {
   // });
 
   gradients.forEach(function (gradient, index) {
+    if (gradient.querySelector("canvas")) {
+      return;
+    }
     var canvas = document.createElement("canvas");
     canvas.id = index;
     canvas.classList.add("noise");

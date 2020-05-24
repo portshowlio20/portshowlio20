@@ -150,7 +150,7 @@
                       <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_29d9200913b86a01277bcfece_5804700c08" tabindex="-1" value=""></div>
                       <div class="clear">
                         <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-                        </div>
+                      </div>
                     </div>
                   </form>
                 </div>
