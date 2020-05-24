@@ -52,8 +52,10 @@
           <ul class="your-roles">
             <?php
             $tags = get_field('your_roles');
-            foreach ($tags as $tag) {
-              echo '<li>' . $tag->name . '</li>';
+            if ($tags) {
+              foreach ($tags as $tag) {
+                echo '<li>' . $tag->name . '</li>';
+              }
             }
             ?>
           </ul>

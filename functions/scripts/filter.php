@@ -97,25 +97,35 @@ function filter_ajax()
         $student_id = $student->ID;
         $link = esc_url(get_author_posts_url($student_id));
         $aof_list = get_field('focus', 'user_' . $student_id);
+        $program = get_field('program', 'user_' . $student_id);
+        $headshots = get_field('headshots', 'user_' . $student_id);
         ?>
 
-        <div>
+<div style="grid-column: span 4; grid-row: span 4;">
 
-          <pre>
-          <?php var_dump($aof_list); ?>
+<pre><?php var_dump($headshots); ?></pre>
+  <a href="<?php echo $link; ?>">
+  <?php echo $student->display_name; ?>
+  </a>
+  <img <?php responsive_image(
+    $headshots['without_mask'],
+    'thumb-640',
+    '640px'
+  ); ?>
+        loading="lazy"
+  />
+  <img <?php responsive_image($headshots['with_mask'], 'thumb-640', '640px'); ?>
+        loading="lazy"
+  />
+  <div><?php echo $program; ?></div>
+  <ul class="areas-of-focus">
+    <?php foreach ($aof_list as $aof) {
+      echo '<li>' . $aof->name . '</li>';
+    } ?>
+  </ul>
+</div>
 
-          </pre>
-
-          <a href="<?php echo $link; ?>">
-          <?php echo $student->display_name; ?>
-          </a>
-          <ul>
-            <?php foreach ($aof_list as $aof) {
-              echo '<li>' . $aof . '</li>';
-            } ?>
-          </ul>
-        </div>
-     <?php
+<?php
       }
     } else {
       echo "Nothin' found. Try some new filters!";
