@@ -2361,6 +2361,106 @@ main {
   padding: 1rem;
 }
 
+.projects .featured-image {
+  max-height: 20rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 1px solid var(--black);
+  border-bottom: 0;
+}
+
+.projects .project-card {
+  border: 1px solid var(--black);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.projects .project-meta,
+.projects .project-overview,
+.projects .project-owner,
+.projects .project-collaborators {
+  padding: 2rem;
+}
+
+.projects .project-meta-wrap {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 70%;
+          flex: 0 0 70%;
+}
+
+.projects .project-overview {
+  border-top: 1px solid var(--black);
+}
+
+.projects .project-roles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-left: 1px solid var(--black);
+}
+
+.projects .headshot {
+  margin-bottom: 1rem;
+}
+
+.projects .project-collaborators {
+  border-top: 1px solid var(--black);
+}
+
+.projects .project-collaborators > ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.projects .project-collaborator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1rem;
+}
+
+.projects .collaborator-headshot {
+  width: 25%;
+  height: 0;
+  padding-top: 25%;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  margin-right: 1rem;
+}
+
+.projects .collaborator-headshot img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.projects .collaborator-headshot + div {
+  margin-top: -0.5em;
+}
+
+.projects .collaborator-roles {
+  font-size: 0.78rem;
+  margin-bottom: 0;
+}
+
 .project-image-grid {
   display: -webkit-box;
   display: -ms-flexbox;

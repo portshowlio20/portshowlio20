@@ -16,12 +16,12 @@ $image_side = get_sub_field("image")["image_side"];
     </div>
     <div class="image">
       <img src="<?php echo $image["url"]; ?>" alt="">
-      <span><?php echo $image_caption; ?></span>
+      <span class="caption"><span class="section-info-title">full width image caption</span><?php echo $image_caption; ?></span>
     </div>
     <?php else: ?>
       <div class="image">
       <img src="<?php echo $image["url"]; ?>" alt="">
-      <span><?php echo $image_caption; ?></span>
+      <span class="caption"><span class="section-info-title">full width image caption</span><?php echo $image_caption; ?></span>
     </div>
       <div class="content">
       <h3><?php echo $title; ?></h3>

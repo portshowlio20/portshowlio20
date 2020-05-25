@@ -15,22 +15,33 @@
     ?>
 
     <li>
-      <a href="<?php echo esc_url(
-        $student_link
-      ); ?>" title="<?php echo $name; ?>'s Student Page">
-        <h2><?php echo $name; ?></h2>
+      <a
+        href="<?php echo esc_url($student_link); ?>"
+        title="<?php echo $name; ?>'s Student Page"
+        class="project-collaborator"
+      >
+        <div class="collaborator-headshot">
+          <img
+            <?php responsive_image(
+              $student_headshot[0],
+              'thumb-640',
+              '640px'
+            ); ?>
+            alt="<?php echo $name; ?>"
+          />
+        </div>
 
-        <img class="collaborator-headshot"
-          <?php responsive_image($student_headshot[0], 'thumb-640', '640px'); ?>
-          alt="thier headshot goes here"
-        />
-
-        <h4>Roles</h4>
-        <ul class="collaborator-roles list-reset areas-of-focus">
-          <?php foreach ($roles as $role) {
-            echo '<li>' . $role->name . '</li>';
-          } ?>
-        </ul>
+        <div>
+          <h3><?php echo $name; ?></h3>
+          <div>
+            <!-- <h4>Roles</h4> -->
+            <ul class="collaborator-roles list-reset areas-of-focus">
+              <?php foreach ($roles as $role) {
+                echo '<li>' . $role->name . '</li>';
+              } ?>
+            </ul>
+          </div>
+        </div>
       </a>
     </li>
 

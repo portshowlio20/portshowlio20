@@ -1,0 +1,87 @@
+.projects {
+  .featured-image {
+    max-height: 20rem;
+    object-fit: cover;
+    border: 1px solid var(--black);
+    border-bottom: 0;
+  }
+
+  .project-card {
+    border: 1px solid var(--black);
+    display: flex;
+  }
+
+  .project-meta,
+  .project-overview,
+  .project-owner,
+  .project-collaborators {
+    padding: 2rem;
+  }
+
+  .project-meta-wrap {
+    flex: 0 0 70%;
+  }
+
+  .project-overview {
+    border-top: 1px solid var(--black);
+  }
+
+  .project-roles {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid var(--black);
+  }
+
+  // .headshot {
+  //   object-fit: cover;
+  //   height: 0;
+  //   padding-top: 100%;
+  // }
+
+  .headshot {
+    margin-bottom: 1rem;
+  }
+
+  .project-collaborators {
+    border-top: 1px solid var(--black);
+  }
+
+  .project-collaborators > ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-collaborator {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  .collaborator-headshot {
+    width: 25%;
+    height: 0;
+    padding-top: 25%;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    margin-right: 1rem;
+  }
+
+  .collaborator-headshot img {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .collaborator-headshot + div {
+    margin-top: -0.5em;
+  }
+
+  .collaborator-roles {
+    font-size: 0.78rem;
+    margin-bottom: 0;
+  }
+}

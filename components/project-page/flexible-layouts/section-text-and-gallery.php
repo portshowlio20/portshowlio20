@@ -24,7 +24,7 @@ if ($images): ?>
           </li>
         <?php endforeach; ?>
       </ul>
-      <span><?php echo $gallery_caption; ?></span>
+      <span class="caption"><span class="section-info-title">full width image caption</span><?php echo $gallery_caption; ?></span>
     </div>
     <?php else: ?>
 
@@ -37,7 +37,7 @@ if ($images): ?>
           </li>
         <?php endforeach; ?>
       </ul>
-      <span><?php echo $gallery_caption; ?></span>
+      <span class="caption"><span class="section-info-title">full width image caption</span><?php echo $gallery_caption; ?></span>
     </div>
     <div class="text">
       <h3><?php echo $title; ?></h3>

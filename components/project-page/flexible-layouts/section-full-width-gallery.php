@@ -12,7 +12,7 @@ if ($images): ?>
             </li>
         <?php endforeach; ?>
     </ul>
-    <span><?php echo $gallery_caption; ?></span>
+    <span class="caption"><span class="section-info-title">full width image caption</span><?php echo $gallery_caption; ?></span>
   </div>
 </section>
 <?php endif; ?>
