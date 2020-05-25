@@ -132,7 +132,7 @@
                     <div id="mc_embed_signup_scroll">
 
                       <div class="mc-field-group">
-                        <label class="caption" for="mce-FNAME">First Name <span>(optional)</span></label>
+                        <label class="caption" for="mce-FNAME">First Name <span class="optional">(optional)</span></label>
                         <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
                       </div>
 
