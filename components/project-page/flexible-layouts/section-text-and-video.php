@@ -16,13 +16,17 @@ $video_side = get_sub_field("video")["video_side"];
       <p><?php echo $content; ?></p>
     </div>
     <div class="video">
-      <?php echo $video; ?>
-      <span><?php echo $video_caption; ?></span>
+      <div>
+        <div class="embed-container"><?php echo $video; ?></div>
+        <span><?php echo $video_caption; ?></span>
+      </div>
     </div>
     <?php else: ?>
-      <div class="video">
-      <?php echo $video; ?>
-      <span><?php echo $video_caption; ?></span>
+    <div class="video">
+      <div>
+        <div class="embed-container"><?php echo $video; ?></div>
+        <span><?php echo $video_caption; ?></span>
+      </div>
     </div>
       <div class="text">
       <h3><?php echo $title; ?></h3>
