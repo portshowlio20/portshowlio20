@@ -18,6 +18,13 @@
             'full-width-image'
           ); ?>
 
+      <?php elseif (get_row_layout() == 'full_width_pull_quote'): ?>
+
+          <?php get_template_part(
+            'components/project-page/flexible-layouts/section',
+            'full-width-pull-quote'
+          ); ?>
+
       <?php elseif (get_row_layout() == 'full_width_gallery'): ?>
           <?php get_template_part(
             'components/project-page/flexible-layouts/section',
