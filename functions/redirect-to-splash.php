@@ -10,7 +10,7 @@ function redirect_to_splash()
     new DateTimeZone('America/Los_Angeles')
   );
   if ($liveDate >= $date && !is_front_page() && !is_user_logged_in()) {
-    wp_redirect(home_url(), 301);
+    wp_redirect(home_url(), 302);
     exit();
   }
 }

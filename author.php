@@ -103,7 +103,7 @@ get_header(); ?>
 </div>
 
 
-<div class="social-media">
+<div class="across-the-net">
 <?php if (have_rows('social_media')): ?>
       <?php while (have_rows('social_media')):
         the_row(); ?>
@@ -187,6 +187,7 @@ $args = [
   'meta_key' => 'project_priority',
   'orderby' => 'meta_value', // acf that we want
   'order' => 'ASC',
+  'posts_per_page' => '3',
 ]; // get his posts 'ASC'
 $current_user_posts = get_posts($args);
 ?>
