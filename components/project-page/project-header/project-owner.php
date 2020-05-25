@@ -15,16 +15,18 @@ $student_link = get_author_posts_url(get_the_author_meta('ID'));
       alt="your headshot goes here"
     />
 
-    <span class="section-info-title">Your roles</span>
-    <ul class="your-roles list-reset areas-of-focus">
-      <?php
-      $roles = get_field('your_roles');
-      if ($roles) {
-        foreach ($roles as $role) {
-          echo '<li>' . $role->name . '</li>';
+    <div>
+      <span class="section-info-title">Your roles</span>
+      <ul class="your-roles list-reset areas-of-focus">
+        <?php
+        $roles = get_field('your_roles');
+        if ($roles) {
+          foreach ($roles as $role) {
+            echo '<li>' . $role->name . '</li>';
+          }
         }
-      }
-      ?>
-    </ul>
+        ?>
+      </ul>
+    </div>
   </a>
 </div>
