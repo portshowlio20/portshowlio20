@@ -63,10 +63,10 @@ get_header(); ?>
       $image = get_sub_field('without_mask');
       ?>
         <div>
-            <img src="<?php echo wp_get_attachment_image(
-              $image,
-              $size
-            ); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+        <img class="headshot"
+        <?php responsive_image($image, 'thumb-640', '640px'); ?>
+        alt="<?php echo $name; ?>"
+        />
         </div>
     <?php
     endwhile; ?>
@@ -80,10 +80,10 @@ get_header(); ?>
       $image = get_sub_field('with_mask');
       ?>
         <div>
-            <img src="<?php echo wp_get_attachment_image(
-              $image,
-              $size
-            ); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+          <img class="headshot"
+          <?php responsive_image($image, 'thumb-640', '640px'); ?>
+          alt="<?php echo $name; ?>"
+          />
         </div>
 
     <?php
