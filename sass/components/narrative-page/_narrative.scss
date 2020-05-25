@@ -1,26 +1,16 @@
 #narrative {
-  .narrative {
-    background: #000;
-    color: #fff;
-    height: 200vh;
+  .narrative-text {
+    min-height: 100vh;
+    z-index: 20;
+    position: absolute;
+    width: 100%;
+    color: var(--white);
     pointer-events: none;
+    position: fixed;
   }
 
   .headline {
-    font-family: Ogg, serif;
-    font-size: 3rem;
-    line-height: 1.2;
-
-    @media screen and (min-width: 511px) {
-      font-size: 4rem;
-    }
-    @media screen and (min-width: 640px) {
-      font-size: 4.67rem;
-    }
-  }
-
-  .headline .char {
-    opacity: 0;
+    pointer-events: inherit;
   }
 
   // kerning 🤓
@@ -28,60 +18,77 @@
     margin-left: -0.15em;
   }
 
-  .headline-wrap {
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    z-index: 100;
-  }
-
-  .headline-wrap .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
   .shape-wrap {
-    margin-top: -100vh;
-    width: 100%;
     position: relative;
-    overflow: hidden;
-    z-index: 0;
+    z-index: 10;
+    overflow-x: hidden;
     pointer-events: none;
-    border: 1px solid green;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
   }
 
-  .vh-spacer {
-    height: 100vh;
-    border: 1px solid red;
-    z-index: -2;
-    pointer-events: none;
+  .shape-wrap .background {
+    height: 200vh;
+    $percentage: 85%;
+    background-image: linear-gradient(
+      var(--black),
+      var(--black) $percentage,
+      rgba(255, 255, 255, 0) $percentage,
+      rgba(255, 255, 255, 0) 100%
+    );
   }
 
   .shape {
-    transform-origin: 50% 0%;
     min-width: 100vw;
     height: 0;
     padding-top: 100%;
-    overflow: hidden;
-    border-radius: 0 0 50% 50%;
-    pointer-events: none;
-    grid-column: 1;
-    grid-row: 1;
+    // overflow: hidden;
   }
 
-  .shape:nth-child(1) {
-    background: #000;
+  // this pseudo element covers up the gap between the "background" and the shapes
+  // does is slow down the animation tho?
+  .shape.animate.black::before {
+    content: "";
+    position: absolute;
+    background: var(--black);
+    height: 50%;
+    width: 100%;
+    top: 0;
+    transform: translateY(-50%);
+    // border: 1px solid var(--peach);
   }
-  .shape:nth-child(2) {
-    z-index: -1;
+
+  .shape.animate.black {
+    position: relative;
+    background: var(--black);
+    z-index: 5;
+    border-radius: 50%;
+  }
+
+  .shape.animate.planet {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .headline-wrap {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  #reveal-me {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    canvas {
+      // opacity: 0.2;
+      mix-blend-mode: hard-light;
+      // border: 1px solid yellow;
+    }
   }
 
   #our-planets {
@@ -90,7 +97,6 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    z-index: -1;
 
     display: flex;
     align-items: center;
