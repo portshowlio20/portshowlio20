@@ -43,7 +43,7 @@
     </div>
 
     <section id="our-planets">
-      <a href="./index.html">
+      <a href="./index/">
         <div class="planets">
           <h2 class="headline">Start Exploring →</h2>
           <div class="planet big-momma">
