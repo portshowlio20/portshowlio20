@@ -2361,6 +2361,134 @@ main {
   padding: 1rem;
 }
 
+#temp-student .section-info-title {
+  padding-right: 0.5rem;
+}
+
+#temp-student .headline {
+  margin: 0 0 2rem 0;
+}
+
+#temp-student .student-info {
+  border: 1px solid var(--black);
+  padding: 2rem;
+}
+
+#temp-student .student-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#temp-student .program {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#temp-student .student-focus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 0 2rem 0;
+}
+
+#temp-student .headshots {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#temp-student .headshot {
+  border-radius: 50%;
+  --radius: 20rem;
+  width: var(--radius);
+  height: var(--radius);
+  overflow: hidden;
+  left: calc(var(--radius) / 4 * -1);
+  margin: 0 1rem 0 1rem;
+}
+
+#temp-student img {
+  height: 100%;
+  width: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#temp-student .student-bio {
+  margin: 4rem 0 0 0;
+}
+
+#temp-student .website {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 2rem 0 0 0;
+}
+
+#temp-student .social-media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 2rem 0 0 0;
+}
+
+#temp-student .project-grid {
+  margin: 5rem 0 0 0;
+}
+
+#temp-student .project {
+  margin: 0 0 5rem 0;
+  border-bottom: 1px solid var(--black);
+  padding-bottom: 3rem;
+}
+
+#temp-student .featured-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#temp-student .project-grid li {
+  list-style-type: none;
+}
+
+#temp-student .project-grid ul {
+  padding: 0;
+}
+
+#temp-student .rectangle {
+  max-height: 20rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0 2rem 0 0;
+}
+
+#temp-student .square {
+  max-height: 20rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 2rem 2rem 2rem 0;
+}
+
+#temp-student .project-tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#temp-student .tagline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .projects .featured-image {
   max-height: 20rem;
   -o-object-fit: cover;
