@@ -70,7 +70,7 @@ if (in_array('author', (array) $user->roles)) {
   add_action('admin_footer', 'portshowlio20_remove_profile_fields');
   function portshowlio20_remove_profile_fields()
   {
-    ?>
+    global $user; ?>
     <script>
       jQuery(document).ready( function($) {
         $('#your-profile').children('h2').remove(); // All headers
@@ -82,6 +82,7 @@ if (in_array('author', (array) $user->roles)) {
         $('textarea#description').closest('table').remove(); // About
 
         // INSERT header for ACF section
+        $('<a href="/student/<?= $user->user_nicename ?>" class="wp-admin-review-profile"><span>😍</span><strong>After you update</strong> click here to review your profile page!</a>').insertAfter( $('#your-profile') );
         $('<h1>Student Info</h1>').insertBefore( $('.acf-field').closest('table') );
 
         // Wrap sections TBD...
@@ -111,6 +112,28 @@ if (in_array('author', (array) $user->roles)) {
         border: 3px solid gray;
         border-radius: 5px;
         margin-bottom: 2rem;
+      }
+
+      .wp-admin-review-profile span { margin-right: .5em; }
+      .wp-admin-review-profile {
+        box-sizing: border-box;
+        padding: 1rem;
+        background: #f08c21;
+        width: 100%;
+        display: inline-block;
+        /* padding: 4px 8px; */
+        position: relative;
+        top: -3px;
+        text-decoration: none;
+        border: 1px solid #0071a1;
+        border-radius: 2px;
+        text-shadow: none;
+        /* font-weight: 600; */
+        /* font-size: 13px; */
+        line-height: normal;
+        color: #0071a1;
+        background: #f3f5f6;
+        cursor: pointer;
       }
     </style>
     <?php
