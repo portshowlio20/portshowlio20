@@ -87,11 +87,11 @@
 @for $i from 1 through 53 {
   @if $i < 10 {
     .gradient-0#{$i} {
-      background-image: url("https://res.cloudinary.com/fartinmartin/image/upload/v1589069278/Portshowlio/gradient-0#{$i}.png");
+      background-image: url("./images/gradients/gradient-0#{$i}.png");
     }
   } @else {
     .gradient-#{$i} {
-      background-image: url("https://res.cloudinary.com/fartinmartin/image/upload/v1589069278/Portshowlio/gradient-#{$i}.png");
+      background-image: url("./images/gradients/gradient-#{$i}.png");
     }
   }
 }

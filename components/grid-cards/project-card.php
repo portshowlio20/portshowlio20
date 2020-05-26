@@ -13,7 +13,10 @@ $featured_images = get_field('featured_image');
   <div class="project-image">
     <a href="<?php the_permalink(); ?>">
       <div class="placeholder">
-        <div class="gradient gradient-10"></div>
+        <div class="gradient gradient-<?php echo sprintf(
+          '%02d',
+          rand(1, 59)
+        ); ?>"></div>
       </div>
       <?php if (strpos($random_card_class, 'square') === false) { ?>
       <img <?php responsive_image(

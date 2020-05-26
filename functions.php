@@ -168,6 +168,8 @@ require_once get_template_directory() .
   '/functions/wp-admin/author-to-student.php';
 require_once get_template_directory() . '/functions/responsive-images.php';
 require_once get_template_directory() . '/functions/redirect-to-splash.php';
+require_once get_template_directory() .
+  '/functions/scripts/google-analytics.php';
 require_once get_template_directory() . '/functions/scripts/filter.php';
 require_once get_template_directory() . '/functions/scripts/global-scripts.php';
 require_once get_template_directory() . '/functions/scripts/splash-scripts.php';
