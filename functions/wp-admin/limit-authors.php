@@ -96,8 +96,12 @@ if (in_array('author', (array) $user->roles)) {
         pointer-events: none;
       }
 
+      .acf-field-flexible-content div.ui-sortable-handle {
+        pointer-events: initial;
+      }
+
       /* remove h2s with "student info" */
-      #profile-page .acf-input h1,
+      .acf-input h1,
       .acf-input h2 {
         display: none;
       }
@@ -172,5 +176,27 @@ if (in_array('author', (array) $user->roles)) {
       $query['author'] = $user_id;
     }
     return $query;
+  }
+
+  // 9.
+  // Limit edit.php to only show projects by logged in author
+  add_action('pre_get_posts', 'query_set_only_author', 10, 2);
+  function query_set_only_author($wp_query)
+  {
+    global $current_user;
+
+    // Add here post types for which you want to fix counts ('post' added for example).
+    $allowed_types = ['projects'];
+    $current_type = get_query_var('post_type')
+      ? get_query_var('post_type')
+      : '';
+
+    if (
+      is_admin() &&
+      !current_user_can('edit_others_posts') &&
+      in_array($current_type, $allowed_types)
+    ) {
+      $wp_query->set('author', $current_user->ID);
+    }
   }
 }
