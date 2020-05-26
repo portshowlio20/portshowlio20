@@ -45,30 +45,45 @@
     <section id="our-planets">
       <a href="./index/">
         <div class="planets">
-          <h2 class="headline">Start Exploring →</h2>
+          <h2 class="headline">Start <em>Exploring →</em></h2>
           <div class="planet big-momma">
-            <!-- <div class="interactive-gradient"></div> -->
-            <div class="gradient gradient-11 spin"></div>
+            <div class="interactive-gradient"></div>
+            <div class="gradient gradient-51 spin"></div>
           </div>
           <div class="planet planet-one">
-            <!-- <div class="interactive-gradient"></div> -->
-            <div class="gradient gradient-10 spin"></div>
+            <div class="interactive-gradient"></div>
+            <div class="gradient gradient-<?php echo sprintf(
+              '%02d',
+              rand(1, 59)
+            ); ?> spin"></div>
           </div>
           <div class="planet planet-two">
-            <!-- <div class="interactive-gradient"></div> -->
-            <div class="gradient gradient-12 spin"></div>
+            <div class="interactive-gradient"></div>
+            <div class="gradient gradient-<?php echo sprintf(
+              '%02d',
+              rand(1, 59)
+            ); ?> spin"></div>
           </div>
           <div class="planet planet-three">
-            <!-- <div class="interactive-gradient"></div> -->
-            <div class="gradient gradient-13 spin"></div>
+            <div class="interactive-gradient"></div>
+            <div class="gradient gradient-<?php echo sprintf(
+              '%02d',
+              rand(1, 59)
+            ); ?> spin"></div>
           </div>
           <div class="planet planet-four">
-            <!-- <div class="interactive-gradient"></div> -->
-            <div class="gradient gradient-12 spin"></div>
+            <div class="interactive-gradient"></div>
+            <div class="gradient gradient-<?php echo sprintf(
+              '%02d',
+              rand(1, 59)
+            ); ?> spin"></div>
           </div>
           <div class="planet planet-five">
-            <!-- <div class="interactive-gradient"></div> -->
-            <div class="gradient gradient-11 spin"></div>
+            <div class="interactive-gradient"></div>
+            <div class="gradient gradient-<?php echo sprintf(
+              '%02d',
+              rand(1, 59)
+            ); ?> spin"></div>
           </div>
         </div>
       </a>

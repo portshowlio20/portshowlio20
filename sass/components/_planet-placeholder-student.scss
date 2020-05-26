@@ -84,7 +84,7 @@
   background-position: center;
 }
 
-@for $i from 1 through 53 {
+@for $i from 1 through 59 {
   @if $i < 10 {
     .gradient-0#{$i} {
       background-image: url("./images/gradients/gradient-0#{$i}.png");

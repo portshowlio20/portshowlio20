@@ -10,6 +10,7 @@ function gradientFeather() {
   can.width = win.w;
   can.height = win.h;
   var img = new Image();
+  // TODO: change to relative path for ./images/gradients/gradient-00.png (its not working rn for some reason)
   img.src =
     "https://res.cloudinary.com/fartinmartin/image/upload/f_auto,g_center,q_auto/v1588362303/artboard1.png";
   can.addEventListener(
