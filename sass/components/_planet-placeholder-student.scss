@@ -87,11 +87,11 @@
 @for $i from 1 through 59 {
   @if $i < 10 {
     .gradient-0#{$i} {
-      background-image: url("./images/gradients/gradient-0#{$i}.png");
+      background-image: url("./images/gradients-jpg/gradient-0#{$i}.jpg");
     }
   } @else {
     .gradient-#{$i} {
-      background-image: url("./images/gradients/gradient-#{$i}.png");
+      background-image: url("./images/gradients-jpg/gradient-#{$i}.jpg");
     }
   }
 }

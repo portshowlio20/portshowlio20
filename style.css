@@ -851,7 +851,6 @@ a.linear-gradient:hover {
   -ms-grid-columns: (minmax(99px, 1fr))[10];
       grid-template-columns: repeat(10, minmax(99px, 1fr));
   grid-auto-rows: 99px;
-  grid-auto-flow: dense;
   grid-gap: 1rem;
 }
 
@@ -1007,239 +1006,239 @@ a.linear-gradient:hover {
 }
 
 .gradient-01 {
-  background-image: url("./images/gradients/gradient-01.png");
+  background-image: url("./images/gradients-jpg/gradient-01.jpg");
 }
 
 .gradient-02 {
-  background-image: url("./images/gradients/gradient-02.png");
+  background-image: url("./images/gradients-jpg/gradient-02.jpg");
 }
 
 .gradient-03 {
-  background-image: url("./images/gradients/gradient-03.png");
+  background-image: url("./images/gradients-jpg/gradient-03.jpg");
 }
 
 .gradient-04 {
-  background-image: url("./images/gradients/gradient-04.png");
+  background-image: url("./images/gradients-jpg/gradient-04.jpg");
 }
 
 .gradient-05 {
-  background-image: url("./images/gradients/gradient-05.png");
+  background-image: url("./images/gradients-jpg/gradient-05.jpg");
 }
 
 .gradient-06 {
-  background-image: url("./images/gradients/gradient-06.png");
+  background-image: url("./images/gradients-jpg/gradient-06.jpg");
 }
 
 .gradient-07 {
-  background-image: url("./images/gradients/gradient-07.png");
+  background-image: url("./images/gradients-jpg/gradient-07.jpg");
 }
 
 .gradient-08 {
-  background-image: url("./images/gradients/gradient-08.png");
+  background-image: url("./images/gradients-jpg/gradient-08.jpg");
 }
 
 .gradient-09 {
-  background-image: url("./images/gradients/gradient-09.png");
+  background-image: url("./images/gradients-jpg/gradient-09.jpg");
 }
 
 .gradient-10 {
-  background-image: url("./images/gradients/gradient-10.png");
+  background-image: url("./images/gradients-jpg/gradient-10.jpg");
 }
 
 .gradient-11 {
-  background-image: url("./images/gradients/gradient-11.png");
+  background-image: url("./images/gradients-jpg/gradient-11.jpg");
 }
 
 .gradient-12 {
-  background-image: url("./images/gradients/gradient-12.png");
+  background-image: url("./images/gradients-jpg/gradient-12.jpg");
 }
 
 .gradient-13 {
-  background-image: url("./images/gradients/gradient-13.png");
+  background-image: url("./images/gradients-jpg/gradient-13.jpg");
 }
 
 .gradient-14 {
-  background-image: url("./images/gradients/gradient-14.png");
+  background-image: url("./images/gradients-jpg/gradient-14.jpg");
 }
 
 .gradient-15 {
-  background-image: url("./images/gradients/gradient-15.png");
+  background-image: url("./images/gradients-jpg/gradient-15.jpg");
 }
 
 .gradient-16 {
-  background-image: url("./images/gradients/gradient-16.png");
+  background-image: url("./images/gradients-jpg/gradient-16.jpg");
 }
 
 .gradient-17 {
-  background-image: url("./images/gradients/gradient-17.png");
+  background-image: url("./images/gradients-jpg/gradient-17.jpg");
 }
 
 .gradient-18 {
-  background-image: url("./images/gradients/gradient-18.png");
+  background-image: url("./images/gradients-jpg/gradient-18.jpg");
 }
 
 .gradient-19 {
-  background-image: url("./images/gradients/gradient-19.png");
+  background-image: url("./images/gradients-jpg/gradient-19.jpg");
 }
 
 .gradient-20 {
-  background-image: url("./images/gradients/gradient-20.png");
+  background-image: url("./images/gradients-jpg/gradient-20.jpg");
 }
 
 .gradient-21 {
-  background-image: url("./images/gradients/gradient-21.png");
+  background-image: url("./images/gradients-jpg/gradient-21.jpg");
 }
 
 .gradient-22 {
-  background-image: url("./images/gradients/gradient-22.png");
+  background-image: url("./images/gradients-jpg/gradient-22.jpg");
 }
 
 .gradient-23 {
-  background-image: url("./images/gradients/gradient-23.png");
+  background-image: url("./images/gradients-jpg/gradient-23.jpg");
 }
 
 .gradient-24 {
-  background-image: url("./images/gradients/gradient-24.png");
+  background-image: url("./images/gradients-jpg/gradient-24.jpg");
 }
 
 .gradient-25 {
-  background-image: url("./images/gradients/gradient-25.png");
+  background-image: url("./images/gradients-jpg/gradient-25.jpg");
 }
 
 .gradient-26 {
-  background-image: url("./images/gradients/gradient-26.png");
+  background-image: url("./images/gradients-jpg/gradient-26.jpg");
 }
 
 .gradient-27 {
-  background-image: url("./images/gradients/gradient-27.png");
+  background-image: url("./images/gradients-jpg/gradient-27.jpg");
 }
 
 .gradient-28 {
-  background-image: url("./images/gradients/gradient-28.png");
+  background-image: url("./images/gradients-jpg/gradient-28.jpg");
 }
 
 .gradient-29 {
-  background-image: url("./images/gradients/gradient-29.png");
+  background-image: url("./images/gradients-jpg/gradient-29.jpg");
 }
 
 .gradient-30 {
-  background-image: url("./images/gradients/gradient-30.png");
+  background-image: url("./images/gradients-jpg/gradient-30.jpg");
 }
 
 .gradient-31 {
-  background-image: url("./images/gradients/gradient-31.png");
+  background-image: url("./images/gradients-jpg/gradient-31.jpg");
 }
 
 .gradient-32 {
-  background-image: url("./images/gradients/gradient-32.png");
+  background-image: url("./images/gradients-jpg/gradient-32.jpg");
 }
 
 .gradient-33 {
-  background-image: url("./images/gradients/gradient-33.png");
+  background-image: url("./images/gradients-jpg/gradient-33.jpg");
 }
 
 .gradient-34 {
-  background-image: url("./images/gradients/gradient-34.png");
+  background-image: url("./images/gradients-jpg/gradient-34.jpg");
 }
 
 .gradient-35 {
-  background-image: url("./images/gradients/gradient-35.png");
+  background-image: url("./images/gradients-jpg/gradient-35.jpg");
 }
 
 .gradient-36 {
-  background-image: url("./images/gradients/gradient-36.png");
+  background-image: url("./images/gradients-jpg/gradient-36.jpg");
 }
 
 .gradient-37 {
-  background-image: url("./images/gradients/gradient-37.png");
+  background-image: url("./images/gradients-jpg/gradient-37.jpg");
 }
 
 .gradient-38 {
-  background-image: url("./images/gradients/gradient-38.png");
+  background-image: url("./images/gradients-jpg/gradient-38.jpg");
 }
 
 .gradient-39 {
-  background-image: url("./images/gradients/gradient-39.png");
+  background-image: url("./images/gradients-jpg/gradient-39.jpg");
 }
 
 .gradient-40 {
-  background-image: url("./images/gradients/gradient-40.png");
+  background-image: url("./images/gradients-jpg/gradient-40.jpg");
 }
 
 .gradient-41 {
-  background-image: url("./images/gradients/gradient-41.png");
+  background-image: url("./images/gradients-jpg/gradient-41.jpg");
 }
 
 .gradient-42 {
-  background-image: url("./images/gradients/gradient-42.png");
+  background-image: url("./images/gradients-jpg/gradient-42.jpg");
 }
 
 .gradient-43 {
-  background-image: url("./images/gradients/gradient-43.png");
+  background-image: url("./images/gradients-jpg/gradient-43.jpg");
 }
 
 .gradient-44 {
-  background-image: url("./images/gradients/gradient-44.png");
+  background-image: url("./images/gradients-jpg/gradient-44.jpg");
 }
 
 .gradient-45 {
-  background-image: url("./images/gradients/gradient-45.png");
+  background-image: url("./images/gradients-jpg/gradient-45.jpg");
 }
 
 .gradient-46 {
-  background-image: url("./images/gradients/gradient-46.png");
+  background-image: url("./images/gradients-jpg/gradient-46.jpg");
 }
 
 .gradient-47 {
-  background-image: url("./images/gradients/gradient-47.png");
+  background-image: url("./images/gradients-jpg/gradient-47.jpg");
 }
 
 .gradient-48 {
-  background-image: url("./images/gradients/gradient-48.png");
+  background-image: url("./images/gradients-jpg/gradient-48.jpg");
 }
 
 .gradient-49 {
-  background-image: url("./images/gradients/gradient-49.png");
+  background-image: url("./images/gradients-jpg/gradient-49.jpg");
 }
 
 .gradient-50 {
-  background-image: url("./images/gradients/gradient-50.png");
+  background-image: url("./images/gradients-jpg/gradient-50.jpg");
 }
 
 .gradient-51 {
-  background-image: url("./images/gradients/gradient-51.png");
+  background-image: url("./images/gradients-jpg/gradient-51.jpg");
 }
 
 .gradient-52 {
-  background-image: url("./images/gradients/gradient-52.png");
+  background-image: url("./images/gradients-jpg/gradient-52.jpg");
 }
 
 .gradient-53 {
-  background-image: url("./images/gradients/gradient-53.png");
+  background-image: url("./images/gradients-jpg/gradient-53.jpg");
 }
 
 .gradient-54 {
-  background-image: url("./images/gradients/gradient-54.png");
+  background-image: url("./images/gradients-jpg/gradient-54.jpg");
 }
 
 .gradient-55 {
-  background-image: url("./images/gradients/gradient-55.png");
+  background-image: url("./images/gradients-jpg/gradient-55.jpg");
 }
 
 .gradient-56 {
-  background-image: url("./images/gradients/gradient-56.png");
+  background-image: url("./images/gradients-jpg/gradient-56.jpg");
 }
 
 .gradient-57 {
-  background-image: url("./images/gradients/gradient-57.png");
+  background-image: url("./images/gradients-jpg/gradient-57.jpg");
 }
 
 .gradient-58 {
-  background-image: url("./images/gradients/gradient-58.png");
+  background-image: url("./images/gradients-jpg/gradient-58.jpg");
 }
 
 .gradient-59 {
-  background-image: url("./images/gradients/gradient-59.png");
+  background-image: url("./images/gradients-jpg/gradient-59.jpg");
 }
 
 .spin {
@@ -1345,6 +1344,642 @@ a.linear-gradient:hover {
 
 .project-card a {
   text-decoration: none;
+}
+
+.project-card:nth-child(1) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(2) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(3) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(4) img {
+  background: var(--tan);
+}
+
+.project-card:nth-child(5) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(6) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(7) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(8) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(9) img {
+  background: var(--blue);
+}
+
+.project-card:nth-child(10) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(11) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(12) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(13) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(14) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(15) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(16) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(17) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(18) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(19) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(20) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(21) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(22) img {
+  background: var(--tan);
+}
+
+.project-card:nth-child(23) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(24) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(25) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(26) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(27) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(28) img {
+  background: var(--tan);
+}
+
+.project-card:nth-child(29) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(30) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(31) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(32) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(33) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(34) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(35) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(36) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(37) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(38) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(39) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(40) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(41) img {
+  background: var(--tan);
+}
+
+.project-card:nth-child(42) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(43) img {
+  background: var(--tan);
+}
+
+.project-card:nth-child(44) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(45) img {
+  background: var(--tan);
+}
+
+.project-card:nth-child(46) img {
+  background: var(--blue);
+}
+
+.project-card:nth-child(47) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(48) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(49) img {
+  background: var(--tan);
+}
+
+.project-card:nth-child(50) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(51) img {
+  background: var(--blue);
+}
+
+.project-card:nth-child(52) img {
+  background: var(--tan);
+}
+
+.project-card:nth-child(53) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(54) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(55) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(56) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(57) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(58) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(59) img {
+  background: var(--blue);
+}
+
+.project-card:nth-child(60) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(61) img {
+  background: var(--tan);
+}
+
+.project-card:nth-child(62) img {
+  background: var(--blue);
+}
+
+.project-card:nth-child(63) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(64) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(65) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(66) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(67) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(68) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(69) img {
+  background: var(--blue);
+}
+
+.project-card:nth-child(70) img {
+  background: var(--tan);
+}
+
+.project-card:nth-child(71) img {
+  background: var(--blue);
+}
+
+.project-card:nth-child(72) img {
+  background: var(--blue);
+}
+
+.project-card:nth-child(73) img {
+  background: var(--blue);
+}
+
+.project-card:nth-child(74) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(75) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(76) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(77) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(78) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(79) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(80) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(81) img {
+  background: var(--blue);
+}
+
+.project-card:nth-child(82) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(83) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(84) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(85) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(86) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(87) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(88) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(89) img {
+  background: var(--tan);
+}
+
+.project-card:nth-child(90) img {
+  background: var(--blue);
+}
+
+.project-card:nth-child(91) img {
+  background: var(--blue);
+}
+
+.project-card:nth-child(92) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(93) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(94) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(95) img {
+  background: var(--tan);
+}
+
+.project-card:nth-child(96) img {
+  background: var(--blue);
+}
+
+.project-card:nth-child(97) img {
+  background: var(--blue);
+}
+
+.project-card:nth-child(98) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(99) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(100) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(101) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(102) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(103) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(104) img {
+  background: var(--tan);
+}
+
+.project-card:nth-child(105) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(106) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(107) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(108) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(109) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(110) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(111) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(112) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(113) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(114) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(115) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(116) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(117) img {
+  background: var(--tan);
+}
+
+.project-card:nth-child(118) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(119) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(120) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(121) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(122) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(123) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(124) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(125) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(126) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(127) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(128) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(129) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(130) img {
+  background: var(--tan);
+}
+
+.project-card:nth-child(131) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(132) img {
+  background: var(--tan);
+}
+
+.project-card:nth-child(133) img {
+  background: var(--blue);
+}
+
+.project-card:nth-child(134) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(135) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(136) img {
+  background: var(--tan);
+}
+
+.project-card:nth-child(137) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(138) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(139) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(140) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(141) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(142) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(143) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(144) img {
+  background: var(--orange);
+}
+
+.project-card:nth-child(145) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(146) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(147) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(148) img {
+  background: var(--blue);
+}
+
+.project-card:nth-child(149) img {
+  background: var(--blue);
+}
+
+.project-card:nth-child(150) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(151) img {
+  background: var(--orangered);
+}
+
+.project-card:nth-child(152) img {
+  background: var(--tan);
+}
+
+.project-card:nth-child(153) img {
+  background: var(--peach);
+}
+
+.project-card:nth-child(154) img {
+  background: var(--tan);
+}
+
+.project-card:nth-child(155) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(156) img {
+  background: var(--tan);
+}
+
+.project-card:nth-child(157) img {
+  background: var(--green);
+}
+
+.project-card:nth-child(158) img {
+  background: var(--tan);
+}
+
+.project-card:nth-child(159) img {
+  background: var(--orangered);
 }
 
 @media screen and (max-width: 511px) {

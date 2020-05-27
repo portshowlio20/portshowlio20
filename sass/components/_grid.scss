@@ -4,7 +4,7 @@ $main-grid-unit: 99px;
   display: grid;
   grid-template-columns: repeat(10, minmax($main-grid-unit, 1fr));
   grid-auto-rows: $main-grid-unit;
-  grid-auto-flow: dense;
+  // grid-auto-flow: dense;
   grid-gap: 1rem;
 
   @media screen and (max-width: $max-width) {

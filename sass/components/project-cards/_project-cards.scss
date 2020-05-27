@@ -6,6 +6,17 @@
   }
 }
 
+$colors: var(--blue), var(--orange), var(--tan), var(--peach), var(--orangered),
+  var(--green);
+$repeat: 159; // How often you want the pattern to repeat.
+// Warning: a higher number outputs more CSS.
+
+@for $i from 1 through $repeat {
+  .project-card:nth-child(#{$i}) img {
+    background: nth($colors, random(length($colors)));
+  }
+}
+
 @media screen and (max-width: 511px) {
   .spacer {
     display: none;

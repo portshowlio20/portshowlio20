@@ -8,7 +8,13 @@ $project_card_classes = [
 ];
 $random_card_class = $project_card_classes[rand(0, 4)];
 $featured_images = get_field('featured_image');
+$max_spacers = 4;
+$rand_before = rand(1, $max_spacers);
+$rand_after = rand(1, $max_spacers);
 ?>
+<?php for ($i = 1; $i <= $rand_before; $i++) { ?>
+<div class="spacer"></div>
+<?php } ?>
 <div class="project-card <?php echo $random_card_class; ?>">
   <div class="project-image">
     <a href="<?php the_permalink(); ?>">
@@ -49,7 +55,6 @@ $featured_images = get_field('featured_image');
             $categories[] = $category->name;
           }
         }
-
         if ($categories) {
           foreach ($categories as $category) {
             echo '<li>' . $category . '</li>';
@@ -60,3 +65,6 @@ $featured_images = get_field('featured_image');
     </a>
   </div>
 </div>
+<?php for ($i = 1; $i <= $rand_after; $i++) { ?>
+<div class="spacer"></div>
+<?php } ?>
