@@ -8,9 +8,10 @@ $project_card_classes = [
 ];
 $random_card_class = $project_card_classes[rand(0, 4)];
 $featured_images = get_field('featured_image');
+$min_spacers = 2;
 $max_spacers = 4;
-$rand_before = rand(1, $max_spacers);
-$rand_after = rand(1, $max_spacers);
+$rand_before = rand($min_spacers, $max_spacers);
+$rand_after = rand($min_spacers, $max_spacers);
 ?>
 <?php for ($i = 1; $i <= $rand_before; $i++) { ?>
 <div class="spacer"></div>
