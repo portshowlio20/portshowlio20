@@ -178,3 +178,8 @@ require_once get_template_directory() .
 require_once get_template_directory() . '/functions/scripts/index-scripts.php';
 // load scripts based on template page
 // https://mekshq.com/include-javascriptonly-on-specific-wordpress-page-templates/
+
+add_filter('user_search_columns', function ($search_columns) {
+  $search_columns[] = 'display_name';
+  return $search_columns;
+});

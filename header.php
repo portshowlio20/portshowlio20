@@ -32,19 +32,25 @@
 <?php if (!is_front_page()): ?>
   <header id="masthead" class="site-header">
     <div class="container">
-      <?php if (is_front_page() && is_home()): ?>
-        <h1 class="site-title">
-          <a href="<?php echo esc_url(home_url('/index')); ?>" rel="home">
-            <?php bloginfo('name'); ?>
-          </a>
-        </h1>
-      <?php else: ?>
-        <p class="site-title">
-          <a href="<?php echo esc_url(home_url('/index')); ?>" rel="home">
-            <?php bloginfo('name'); ?>
-          </a>
-        </p>
-      <?php endif; ?>
+      <div>
+        <?php if (is_front_page() && is_home()): ?>
+          <h1 class="site-title">
+            <a href="<?php echo esc_url(home_url('/index')); ?>" rel="home">
+              <?php bloginfo('name'); ?>
+            </a>
+          </h1>
+        <?php else: ?>
+          <p class="site-title">
+            <a href="<?php echo esc_url(home_url('/index')); ?>" rel="home">
+              <?php bloginfo('name'); ?>
+            </a>
+          </p>
+        <?php endif; ?>
+      </div>
+      <form class="search" action="<?php echo home_url('/'); ?>">
+        <input type="search" name="s" placeholder="Search&hellip;">
+        <input type="submit" value="Search">
+      </form>
     </div>
   </header>
 <?php else:endif; ?>

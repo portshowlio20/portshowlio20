@@ -26,5 +26,5 @@ function placeholderFade(target) {
   io.observe(target);
 }
 
-const placeholders = document.querySelectorAll("#index .placeholder");
+const placeholders = document.querySelectorAll(".works-grid .placeholder");
 placeholders.forEach((element) => placeholderFade(element));

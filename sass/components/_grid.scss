@@ -18,6 +18,6 @@ $main-grid-unit: 99px;
   }
 }
 
-#index .grid {
+.grid.works-grid {
   margin-bottom: 33vh; // same % as intersectionObserver AKA the placeholderFade thing
 }
