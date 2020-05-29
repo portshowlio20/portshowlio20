@@ -64,3 +64,29 @@ function add_splittingjs_script()
     true
   );
 }
+
+add_action('wp_enqueue_scripts', 'add_asteroids_script');
+function add_asteroids_script()
+{
+  wp_enqueue_script(
+    'asteroids', // name your script so that you can attach other scripts and de-register, etc.
+    get_template_directory_uri() . '/js/global/asteroids.min.js', // this is the location of your script file
+    ['jquery'],
+    // ['countdown_timer', 'interactive_gradients', 'canvas_noise'], // this array lists the scripts upon which your script depends
+    null,
+    true
+  );
+}
+
+add_action('wp_enqueue_scripts', 'add_secret_code_script');
+function add_secret_code_script()
+{
+  wp_enqueue_script(
+    'secret_code', // name your script so that you can attach other scripts and de-register, etc.
+    get_template_directory_uri() . '/js/global/secretCode.js', // this is the location of your script file
+    ['jquery', 'asteroids'],
+    // ['countdown_timer', 'interactive_gradients', 'canvas_noise'], // this array lists the scripts upon which your script depends
+    null,
+    true
+  );
+}
