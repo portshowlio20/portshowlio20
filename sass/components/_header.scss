@@ -38,11 +38,27 @@ body.admin-bar {
   padding-top: 3rem;
 }
 
+.mobile-logo {
+  display: block;
+  @media screen and (min-width: $big-phone) {
+    display: none;
+  }
+}
+
+.short-logo,
+.long-logo {
+  display: none;
+  @media screen and (min-width: $big-phone) {
+    display: block;
+  }
+}
+
 .logo {
   height: 3rem;
   width: auto;
 }
 
+.mobile-logo,
 .short-logo,
 .long-logo {
   position: absolute;
@@ -125,7 +141,7 @@ body.admin-bar {
   .search-icon {
     position: absolute;
     right: 0;
-    top: 0.5rem;
+    top: 0.35rem;
     width: 1rem;
     pointer-events: none;
 

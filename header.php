@@ -36,6 +36,19 @@
         <div class="site-title">
             <h1 class="hidden">Portshowlio 2020 / Creative Encounters</h1>
             <div class="logos">
+              <div class="logo mobile-logo">
+                <a <?php echo esc_url(home_url('/index')); ?>" rel="home">
+                  <svg viewBox="0 0 200 200">
+                    <g class="glyph">
+                      <path d="m100 7a93 93 0 1 1 -93 93 93.11 93.11 0 0 1 93-93m0-7a100 100 0 1 0 100 100 100 100 0 0 0 -100-100z"/>
+                      <path d="m52.21 103.68h44.11v-7.36h-36.76v-51.46h36.76v-7.36h-44.11z"/>
+                      <path d="m66.91 88.97h80.88v-7.35h-73.52v-7.35h73.52v-7.36h-73.52v-7.35h73.52v-7.35h-80.88z"/>
+                      <path d="m103.68 162.5h44.11v-66.18h-44.11v7.36h36.76v51.46h-36.76z"/>
+                      <path d="m52.21 147.79h80.88v-36.76h-80.88v7.35h73.52v7.35h-73.52v7.36h73.52v7.35h-73.52z"/>
+                    </g>
+                  </svg>
+                </a>
+              </div>
               <div class="logo long-logo">
                 <a href="<?php echo esc_url(home_url('/index')); ?>" rel="home">
                   <svg viewBox="0 0 413.08 46.94">
