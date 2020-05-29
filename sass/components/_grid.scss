@@ -21,3 +21,17 @@ $main-grid-unit: 99px;
 .grid.works-grid {
   margin-bottom: 33vh; // same % as intersectionObserver AKA the placeholderFade thing
 }
+
+.grid .no-results {
+  grid-column: 1 /-1;
+  background: var(--orangered);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-active="students"] {
+  // grid-gap: 2rem;
+  grid-row-gap: 2.5rem;
+}

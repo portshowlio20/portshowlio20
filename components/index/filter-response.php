@@ -1,6 +1,6 @@
 <section>
   <div class="container">
-    <div id="response" class="grid works-grid">
+    <div id="response" class="grid works-grid" data-active="works">
       <?php
       $loop = new WP_Query(['post_type' => 'projects', 'orderby' => 'rand']);
       if ($loop->have_posts()):

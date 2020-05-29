@@ -94,6 +94,7 @@
         activeFilters.push(check.val());
       });
       toggle = $("#works-students-toggle input:checked").val();
+      $("#response").attr("data-active", toggle);
 
       ajaxRequest();
     }

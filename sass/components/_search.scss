@@ -1,3 +1,11 @@
 .search-query {
   color: var(--blue);
 }
+
+.student-results .title,
+.work-results .title {
+  margin-bottom: 2rem;
+}
+.student-results {
+  margin-bottom: 6rem;
+}

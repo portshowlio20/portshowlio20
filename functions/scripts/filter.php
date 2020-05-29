@@ -74,13 +74,13 @@ function filter_ajax()
 
   // 4. create conditional WP queries based on:
   if ($filters == null && $toggle == "works") {
-    echo '<pre>';
-    echo "Can't find any works. For best results, please select at least one filter. 🙄";
-    echo '</pre>';
+    echo '<div class="no-results">';
+    echo "Can't find any works. For best results, please select at least one filter. 🤠";
+    echo '</div>';
   } elseif ($filters == null && $toggle == "students") {
-    echo '<pre>';
-    echo "Can't find any students. For best results, please select at least one filter. 🙄";
-    echo '</pre>';
+    echo '<div class="no-results">';
+    echo "Can't find any students. For best results, please select at least one filter. 🤠";
+    echo '</div>';
   } elseif ($toggle == "works") {
     $works_query = new WP_Query($works_args);
     if ($works_query->have_posts()):
@@ -93,32 +93,17 @@ function filter_ajax()
   } elseif ($toggle == "students") {
     $students_query = new WP_User_Query($students_args);
 
+    // echo '<pre>' . var_dump($students_query->results) . '</pre>';
+
     if (!empty($students_query->results)) {
       foreach ($students_query->results as $student) {
-
-        $student_id = $student->ID;
-        $link = esc_url(get_author_posts_url($student_id));
-        $aof_list = get_field('focus', 'user_' . $student_id);
-        $program = get_field('program', 'user_' . $student_id);
-        $headshots = get_field('headshots', 'user_' . $student_id);
-        ?>
-
-<div style="grid-column: span 4; grid-row: span 4;">
-  <a href="<?php echo $link; ?>">
-  <?php echo $student->display_name; ?>
-  </a>
-  <div><?php echo $program; ?></div>
-  <ul class="areas-of-focus">
-    <?php foreach ($aof_list as $aof) {
-      echo '<li>' . $aof->name . '</li>';
-    } ?>
-  </ul>
-</div>
-
-<?php
+        set_query_var('student_id', absint($student->ID));
+        get_template_part('components/grid-cards/student', 'card');
       }
     } else {
-      echo "Nothin' found. Try some new filters!";
+      echo '<div class="no-results">';
+      echo "[ 404 ] Nothin' found. Try some new filters!";
+      echo '</div>';
     }
     wp_reset_query();
   }

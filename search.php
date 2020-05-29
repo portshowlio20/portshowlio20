@@ -24,7 +24,7 @@ $authors_id_array = [];
         <div class="student-results">
           <div class="container">
             <h3 class="title">Students related to <span class="search-query"><?= get_search_query() ?></span></h3>
-            <div class="grid">
+            <div class="grid" data-active="students">
               <!-- https://www.smashingmagazine.com/2016/03/advanced-wordpress-search-with-wp_query/ -->
               <!-- https://wordpress.stackexchange.com/questions/70864/meta-query-compare-operator-explanation -->
               <!-- https://wordpress.stackexchange.com/questions/105168/how-can-i-search-for-a-worpress-user-by-display-name-or-a-part-of-it -->
@@ -60,12 +60,14 @@ $authors_id_array = [];
               if (!empty($users_by_name->results)) {
                 foreach ($users_by_name->results as $student) {
                   array_push($authors_id_array, $student->ID);
-                  echo '<h3>' . $student->display_name . '</h3>';
+                  set_query_var('student_id', absint($student->ID));
+                  get_template_part('components/grid-cards/student', 'card');
                   // echo '<h3>by name ran</h3>';
                 }
               } elseif (!empty($users_by_focus->results)) {
                 foreach ($users_by_focus->results as $student) {
-                  echo '<h3>' . $student->display_name . '</h3>';
+                  set_query_var('student_id', absint($student->ID));
+                  get_template_part('components/grid-cards/student', 'card');
                   // echo '<h3>by focus ran</h3>';
                 }
               } else {

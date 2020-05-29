@@ -1,0 +1,59 @@
+// $student-card-col: 3;
+// $student-card-row: 4;
+$student-card-col: 2;
+$student-card-row: 2;
+
+.student-card {
+  grid-column: span $student-card-col;
+  grid-row: span $student-card-row;
+
+  a {
+    // position: relative;
+    display: grid;
+    grid-gap: 1rem;
+
+    grid-template-columns: repeat(
+      $student-card-col,
+      minmax($main-grid-unit, 1fr)
+    );
+    grid-template-rows: repeat($student-card-row, minmax($main-grid-unit, 1fr));
+
+    @media screen and (max-width: 511px) {
+      grid-template-columns: repeat(3, minmax($main-grid-unit, 1fr));
+    }
+  }
+
+  .student-wrap {
+    position: relative;
+    grid-column: span $student-card-col;
+    grid-row: span $student-card-col;
+  }
+  .student-planet {
+    width: 100%;
+    height: 100%;
+    // position: relative;
+  }
+
+  .student-info {
+    position: absolute;
+    bottom: -2rem;
+    right: 0;
+    z-index: 100;
+    background: var(--white);
+    border: 1px solid var(--black);
+    width: 80%;
+  }
+
+  .student-name,
+  .student-program {
+    padding: 0.5rem;
+  }
+
+  .student-program {
+    border-top: 1px solid var(--black);
+  }
+
+  .areas-of-focus {
+    position: absolute;
+  }
+}

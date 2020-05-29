@@ -28,7 +28,7 @@
         <div class="filter-content-filters">
           <div id="aof-filters">
             <?php
-            $categories = get_categories();
+            $categories = get_categories('exclude=1');
             foreach ($categories as $cat): ?>
               <div >
                 <input

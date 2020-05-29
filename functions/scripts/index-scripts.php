@@ -36,3 +36,15 @@ function add_placeholder_observer_script()
     true
   );
 }
+
+add_action('wp_enqueue_scripts', 'add_proximity_fun_script');
+function add_proximity_fun_script()
+{
+  wp_enqueue_script(
+    'proximity_fun', // name your script so that you can attach other scripts and de-register, etc.
+    get_template_directory_uri() . '/js/index/proximityFun.js', // this is the location of your script file
+    ['jquery', 'animejs'], // this array lists the scripts upon which your script depends
+    null,
+    true
+  );
+}
