@@ -167,7 +167,7 @@
         type: "post",
         beforeSend: function () {
           // TODO: add animtion instead of "background: red"
-          $("#response").css("background", "red");
+          // $("#response").css("background", "red");
         },
         success: function (result) {
           $("#response").html(result);
@@ -178,7 +178,7 @@
         },
         complete: function () {
           canvasNoise();
-          $("#response").css("background", "white");
+          // $("#response").css("background", "white");
           // TODO: add random amount of spacer divs through PHP (filter.php specifically? also maybe filter-response.php? )
           // addSpacerDivs(document.querySelector("#index .grid"));
           const placeholders = document.querySelectorAll("#index .placeholder");

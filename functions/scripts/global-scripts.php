@@ -90,3 +90,16 @@ function add_secret_code_script()
     true
   );
 }
+
+add_action('wp_enqueue_scripts', 'add_header_script');
+function add_header_script()
+{
+  wp_enqueue_script(
+    'header', // name your script so that you can attach other scripts and de-register, etc.
+    get_template_directory_uri() . '/js/global/header.js', // this is the location of your script file
+    ['jquery', 'animejs'],
+    // ['countdown_timer', 'interactive_gradients', 'canvas_noise'], // this array lists the scripts upon which your script depends
+    null,
+    true
+  );
+}

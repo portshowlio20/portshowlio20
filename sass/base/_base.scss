@@ -51,8 +51,11 @@ img {
   }
 }
 
-main {
-  margin-top: 4rem;
+.search main,
+.author main,
+.single-projects main,
+.page-id-372 main {
+  margin-top: 6rem;
 }
 
 .list-reset {

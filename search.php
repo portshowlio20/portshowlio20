@@ -32,6 +32,7 @@ $authors_id_array = [];
               $users_by_name = new WP_User_Query([
                 'search' => "*{$search_string}*",
                 'search_columns' => ['display_name'],
+                'exclude' => '1',
               ]);
 
               if (isset($terms)) {
