@@ -65,8 +65,11 @@ function filter_ajax()
     }
 
     $students_args = [
+      'role' => 'author',
       'meta_query' => $meta_query_array,
     ];
+
+    // echo '<pre>' . var_dump($students_args) . '</pre>';
   }
 
   // 4. create conditional WP queries based on:
@@ -83,7 +86,6 @@ function filter_ajax()
     if ($works_query->have_posts()):
       while ($works_query->have_posts()):
         $works_query->the_post();
-        // TODO: randomly add .spacer divs here! (instead of with js!)
         get_template_part('components/grid-cards/project', 'card');
       endwhile;
     endif;
@@ -102,21 +104,9 @@ function filter_ajax()
         ?>
 
 <div style="grid-column: span 4; grid-row: span 4;">
-
-<pre><?php var_dump($headshots); ?></pre>
   <a href="<?php echo $link; ?>">
   <?php echo $student->display_name; ?>
   </a>
-  <img <?php responsive_image(
-    $headshots['without_mask'],
-    'thumb-640',
-    '640px'
-  ); ?>
-        loading="lazy"
-  />
-  <img <?php responsive_image($headshots['with_mask'], 'thumb-640', '640px'); ?>
-        loading="lazy"
-  />
   <div><?php echo $program; ?></div>
   <ul class="areas-of-focus">
     <?php foreach ($aof_list as $aof) {
