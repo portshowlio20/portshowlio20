@@ -11,7 +11,7 @@ get_header(); ?>
   }
 </style>
 
-<section id="temp-student">
+<main id="temp-student">
 <div class="container">
 
 <div class="student-info">
