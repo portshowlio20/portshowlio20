@@ -98,6 +98,7 @@ body.page-id-372.admin-bar {
   input[type="search"] {
     border: none;
     outline: none;
+    border-radius: 0;
 
     font-family: inherit;
     font-size: 100%;
@@ -115,6 +116,7 @@ body.page-id-372.admin-bar {
     width: 10rem;
     padding-left: 0;
     padding-bottom: 0.5rem;
+    border-radius: 0;
 
     border-color: var(--black);
     border-bottom: 1px solid var(--black);
