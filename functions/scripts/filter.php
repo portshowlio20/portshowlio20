@@ -39,6 +39,7 @@ function filter_ajax()
   // 3. prepare args for queries (works filters, students filters)
   $works_args = [
     'post_type' => 'projects',
+    'category__not_in' => 1,
     'orderby' => 'rand',
   ];
 

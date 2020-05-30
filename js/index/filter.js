@@ -24,6 +24,7 @@
     if (checked.length > 0) {
       // update heading and make sure it's interactive
       handleFilterHeading(true);
+      handleActiveChecked();
     }
 
     filters.each(function () {
@@ -135,6 +136,8 @@
         checked.forEach(function (checkbox) {
           activeList.push(checkbox.val());
         });
+
+        // loop over active list and create a div with a glyph class?
         filterActive.html(activeList);
         filterActiveGlyph.html(activeList);
       }
