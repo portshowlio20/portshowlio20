@@ -24,10 +24,39 @@ $student-card-row: 2;
   }
 
   .student-wrap {
+    padding: 2rem;
     position: relative;
     grid-column: span $student-card-col;
     grid-row: span $student-card-col;
   }
+
+  .gradient {
+    opacity: 0.5;
+  }
+
+  .noise {
+    mix-blend-mode: screen;
+    opacity: 0.1;
+  }
+
+  .headshot {
+    mix-blend-mode: soft-light;
+    width: 100%;
+    height: 0;
+    padding-top: 100%;
+    position: relative;
+  }
+
+  .headshot img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
   .student-planet {
     width: 100%;
     height: 100%;
@@ -36,7 +65,7 @@ $student-card-row: 2;
 
   .student-info {
     position: absolute;
-    bottom: -2rem;
+    bottom: -1rem;
     right: 0;
     z-index: 100;
     background: var(--white);

@@ -61,16 +61,7 @@
 }
 
 // headshot layer settings
-.headshot {
-  // mix-blend-mode: overlay;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-}
+// see _student-card.scss
 
 // interactive-gradient layer settings
 .interactive-gradient {
@@ -114,17 +105,18 @@
 }
 
 // student hover specifics
-.student-planet {
-  > .gradient {
+.student-card {
+  .noise,
+  .gradient {
     transition: opacity 0.4s ease;
   }
 
   &:hover {
     .gradient {
-      opacity: 0.2;
+      opacity: 0.1;
     }
     .noise {
-      mix-blend-mode: screen;
+      opacity: 0.05;
     }
   }
 }

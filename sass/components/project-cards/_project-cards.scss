@@ -23,12 +23,19 @@ $repeat: 159; // How often you want the pattern to repeat.
   }
 }
 
+@for $i from 1 through $repeat {
+  .student-card:nth-child(#{$i}) img {
+    background: nth($colors, random(length($colors)));
+  }
+}
+
 @media screen and (max-width: 511px) {
   .spacer {
     display: none;
   }
 }
 
+.search,
 .page {
   .project-image {
     position: relative;
