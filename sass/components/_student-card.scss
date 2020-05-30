@@ -7,6 +7,15 @@ $student-card-row: 2;
   grid-column: span $student-card-col;
   grid-row: span $student-card-row;
 
+  @media screen and (max-width: $max-width) {
+    grid-column: span $student-card-col;
+    grid-row: span $student-card-row;
+  }
+
+  @media screen and (max-width: 511px) {
+    grid-column: span 3;
+    grid-row: span 3;
+  }
   a {
     // position: relative;
     display: grid;
@@ -28,6 +37,10 @@ $student-card-row: 2;
     position: relative;
     grid-column: span $student-card-col;
     grid-row: span $student-card-col;
+
+    @media screen and (max-width: 511px) {
+      grid-column: span 3;
+    }
   }
 
   .gradient {
