@@ -16,9 +16,9 @@ $rand_after = rand($min_spacers, $max_spacers);
 <?php for ($i = 1; $i <= $rand_before; $i++) { ?>
 <div class="spacer"></div>
 <?php } ?>
-<div class="project-card <?php echo $random_card_class; ?>">
+<a href="<?php the_permalink(); ?>" class="project-card <?php echo $random_card_class; ?>">
   <div class="project-image">
-    <a href="<?php the_permalink(); ?>">
+
       <div class="placeholder">
         <div class="gradient gradient-<?php echo sprintf(
           '%02d',
@@ -43,9 +43,9 @@ $rand_after = rand($min_spacers, $max_spacers);
         />
       <?php } ?>
       </div>
-    </a>
+
   <div class="project-meta">
-    <a href="<?php the_permalink(); ?>">
+
       <h3 class="project-name"><?php echo get_the_title(); ?></h3>
       <ul class="areas-of-focus">
         <?php
@@ -63,9 +63,9 @@ $rand_after = rand($min_spacers, $max_spacers);
         }
         ?>
       </ul>
-    </a>
+
   </div>
-</div>
+</a>
 <?php for ($i = 1; $i <= $rand_after; $i++) { ?>
 <div class="spacer"></div>
 <?php } ?>

@@ -1,8 +1,14 @@
-.project-card {
+a.project-card {
   display: grid;
 
-  a {
-    text-decoration: none;
+  // a {
+  text-decoration: none;
+  // }
+
+  // need to make whole div an a i think
+  &:hover .project-image,
+  &:hover .project-meta {
+    animation: border-color-change linear infinite 10s;
   }
 }
 
@@ -25,6 +31,7 @@ $repeat: 159; // How often you want the pattern to repeat.
 
 .project-image {
   position: relative;
+  border: 1px solid var(--black);
 }
 
 .project-image img {
@@ -34,6 +41,11 @@ $repeat: 159; // How often you want the pattern to repeat.
 
 .project-meta {
   grid-column: 1 / -1;
+  margin-top: -1rem;
+  border: 1px solid var(--black);
+  border-top: none;
+  align-self: start;
+  padding: 1rem;
 }
 
 .areas-of-focus {

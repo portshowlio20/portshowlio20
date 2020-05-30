@@ -88,6 +88,30 @@ img {
   }
 }
 
+@keyframes border-color-change {
+  0% {
+    border-color: var(--primary);
+  }
+  12% {
+    border-color: var(--accent-01);
+  }
+  25% {
+    border-color: var(--secondary-02);
+  }
+  50% {
+    border-color: var(--secondary-01);
+  }
+  62% {
+    border-color: var(--accent-02);
+  }
+  75% {
+    border-color: var(--accent-03);
+  }
+  100% {
+    border-color: var(--primary);
+  }
+}
+
 @keyframes color-change-on-white {
   0% {
     color: var(--primary);
