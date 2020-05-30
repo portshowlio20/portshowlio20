@@ -45,14 +45,32 @@ function filter_ajax()
   if (isset($filters)) {
     // convert array of strings to an array of integers
     $filters = array_map('intval', $filters);
-    $works_args['category__in'] = $filters;
+    $works_args['tax_query'] = [
+      ['taxonomy' => 'category', 'field' => 'term_id', 'terms' => $filters],
+    ];
   }
 
+  //https://wordpress.stackexchange.com/questions/199627/how-would-i-format-a-query-that-depends-on-post-parent-taxonomy
+  // make array of all child categorie IDs from the $filter THEN check against THAT array
   // 3b. students filters
   if (isset($filters)) {
     $meta_query_array = ['relation' => 'OR'];
 
+    $temp_parent_and_child_cat_array = [];
     foreach ($filters as $filter) {
+      $child_cats = get_categories(['parent' => $filter]);
+
+      array_push($temp_parent_and_child_cat_array, $filter);
+
+      foreach ($child_cats as $child) {
+        array_push($temp_parent_and_child_cat_array, $child->term_id);
+      }
+    }
+
+    // echo '<pre>' . var_dump($filters) . '</pre>';
+    // echo '<pre>' . var_dump($temp_parent_and_child_cat_array) . '</pre>';
+
+    foreach ($temp_parent_and_child_cat_array as $filter) {
       // 1. make a temp array with first item of: 'key' => 'focus'
       $temp_key = ['key' => 'focus'];
       // 2. add second item of temp array: 'value' => $item in filters,

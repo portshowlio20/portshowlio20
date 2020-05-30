@@ -30,7 +30,12 @@
             <?php
             // TODO: update to just parent categories!
             // https://wordpress.stackexchange.com/questions/127872/get-only-the-top-level-categories-using-get-categories-without-foreach-loop
-            $categories = get_categories('exclude=1');
+            $args = [
+              'exclude' => 1,
+              'parent' => 0,
+              'hide_empty' => 0,
+            ];
+            $categories = get_categories($args);
             foreach ($categories as $cat): ?>
               <div >
                 <input

@@ -28,3 +28,9 @@
 // splitting
 @import "./splitting/splitting-cells";
 @import "./splitting/splitting";
+
+pre {
+  grid-column: 1 / -1;
+  background: white;
+  z-index: 1000;
+}
