@@ -10,7 +10,7 @@ function add_filter_script()
   wp_enqueue_script(
     'filter', // name your script so that you can attach other scripts and de-register, etc.
     get_template_directory_uri() . '/js/index/filter.js', // this is the location of your script file
-    ['jquery', 'shuffle', 'spacer', 'canvas_noise'], // this array lists the scripts upon which your script depends
+    ['jquery', 'canvas_noise'], // this array lists the scripts upon which your script depends
     null,
     true
   );
