@@ -13,6 +13,7 @@
     border-top: 1px dotted green;
     margin-top: 4rem;
   }
+
   .flexible-section {
     border-bottom: 1px dotted green;
     padding: 4rem 0;

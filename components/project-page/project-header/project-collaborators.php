@@ -1,5 +1,5 @@
 <div class="project-collaborators">
-  <span class="section-info-title">Collaborators</span>
+  <h3 class="body">Collaborators</h3>
   <ul class="list-reset">
   <?php if (have_rows('collaborators')): ?>
   <?php while (have_rows('collaborators')):
@@ -32,7 +32,7 @@
         </div>
 
         <div>
-          <h3><?php echo $name; ?></h3>
+          <h3 class="subhead"><?php echo $name; ?></h3>
           <div>
             <!-- <h4>Roles</h4> -->
             <ul class="collaborator-roles list-reset areas-of-focus">

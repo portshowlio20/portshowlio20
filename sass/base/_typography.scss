@@ -75,3 +75,7 @@ a.linear-gradient:hover {
   -webkit-text-fill-color: transparent;
   animation: bg-gradient-scroll 20s linear infinite;
 }
+
+p + P {
+  margin-top: 0.5em;
+}
