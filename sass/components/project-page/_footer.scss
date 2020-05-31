@@ -1,0 +1,30 @@
+.projects .entry-footer {
+  a {
+    text-decoration: none;
+  }
+
+  .explore-more {
+    padding: 4rem 0;
+  }
+
+  .project-card .project-image {
+    border: 1px solid var(--white);
+  }
+
+  .project-card .project-meta {
+    color: var(--white);
+    border: 1px solid var(--white);
+    border-top: none;
+    height: 100%;
+  }
+
+  .entry-footer-bottom {
+    background: var(--black);
+    padding: 4rem 0;
+    color: var(--white);
+
+    .project-name {
+      font-weight: 300;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-<div class="project-card">
+<div class="the-project-card">
 
   <div class="project-meta-wrap">
     <div class="project-meta">

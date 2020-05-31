@@ -14,6 +14,6 @@
 
   <?php get_template_part('components/project-page/project', 'content'); ?>
 
-	<footer class="entry-footer">
-	</footer><!-- .entry-footer -->
+  <?php get_template_part('components/project-page/project', 'footer'); ?>
+
 </article><!-- #post-<?php the_ID(); ?> -->

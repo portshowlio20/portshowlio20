@@ -1,4 +1,4 @@
-.projects {
+.projects .entry-header {
   a {
     text-decoration: none;
   }
@@ -10,7 +10,7 @@
     border-bottom: 0;
   }
 
-  .project-card {
+  .the-project-card {
     border: 1px solid var(--black);
     display: flex;
   }
