@@ -1,7 +1,8 @@
 
 <section class="flexible-section">
   <div class="container">
-    <span class="section-info-title">full width pull quote</span>
-    <p class="pull-quote"><?php the_sub_field('content'); ?></p>
+    <div class="full-width-wrap pull-quote-wrap">
+      <p class="pull-quote"><?php the_sub_field('content'); ?></p>
+    </div>
   </div>
 </section>

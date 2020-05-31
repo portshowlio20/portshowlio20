@@ -8,43 +8,32 @@ if ($images): ?>
 
 <section class="flexible-section">
   <div class="container">
-    <span class="section-info-title">text and gallery</span>
 
-    <?php if ($gallery_side == "right"): ?>
-    <div class="text">
-      <h3><?php echo $title; ?></h3>
-      <p><?php echo $content; ?></p>
-    </div>
-    <div class="gallery">
-      <ul>
-        <?php foreach ($images as $image): ?>
-          <li>
-            <!-- tbd... i think we'll want ACF to retun an array.. but thats not working right now... -->
-            <?php echo $image; ?>
-          </li>
-        <?php endforeach; ?>
-      </ul>
-      <span class="caption"><span class="section-info-title">full width image caption</span><?php echo $gallery_caption; ?></span>
-    </div>
-    <?php else: ?>
+    <div class="row <?= $gallery_side == "right" ? "flip-order" : "" ?>">
 
-    <div class="gallery">
-      <ul>
-        <?php foreach ($images as $image): ?>
-          <li>
-            <!-- tbd... i think we'll want ACF to retun an array.. but thats not working right now... -->
-            <?php echo $image; ?>
-          </li>
-        <?php endforeach; ?>
-      </ul>
-      <span class="caption"><span class="section-info-title">full width image caption</span><?php echo $gallery_caption; ?></span>
-    </div>
-    <div class="text">
-      <h3><?php echo $title; ?></h3>
-      <p><?php echo $content; ?></p>
+      <div class="column">
+        <div class="text">
+          <h3><?php echo $title; ?></h3>
+          <p><?php echo $content; ?></p>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="gallery">
+          <ul>
+            <?php foreach ($images as $image): ?>
+              <li>
+                <!-- tbd... i think we'll want ACF to retun an array.. but thats not working right now... -->
+                <?php echo $image; ?>
+              </li>
+            <?php endforeach; ?>
+          </ul>
+          <span class="caption"><?php echo $gallery_caption; ?></span>
+        </div>
+      </div>
+
     </div>
 
-    <?php endif; ?>
   </div>
 </section>
 
