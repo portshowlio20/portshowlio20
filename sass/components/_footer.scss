@@ -1,8 +1,3 @@
-.site-footer {
-  background: var(--green);
-  padding: 4rem;
-}
-
 // sticky footer
 #page {
   display: flex;
@@ -12,4 +7,163 @@
 
 main {
   flex: 1;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.site-footer {
+  background: var(--black);
+  color: var(--white);
+  padding: 4rem;
+  // border-top: 1px solid var(--white);
+}
+
+.site-footer .container {
+  position: relative;
+}
+
+.site-footer {
+  .footer-wrap {
+    display: flex;
+  }
+
+  $footer-flex-margin: 4rem;
+  .stats,
+  .footer-left {
+    width: calc(50% - #{$footer-flex-margin}/ 2);
+  }
+
+  .footer-left {
+    margin-right: $footer-flex-margin;
+  }
+
+  .footer-text p {
+    max-width: 50ch;
+  }
+
+  .graph {
+    margin-top: 4rem;
+    height: 20rem;
+    border: 1px solid var(--white);
+  }
+
+  .stats {
+    align-self: end;
+    border: 1px solid var(--white);
+    z-index: 10;
+    background: var(--black);
+  }
+
+  .stat-row-wrap {
+    display: flex;
+    border-bottom: 1px solid var(--white);
+  }
+
+  .stat-row-wrap > div {
+    padding: 2rem;
+  }
+
+  .stat-num {
+    flex: 0 0 8rem;
+    margin-bottom: 0;
+    border-right: 1px solid var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .stat-text {
+    flex: 1 1 75%;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .stat-text::before {
+    content: "";
+    position: absolute;
+    height: 1rem;
+    left: -1px;
+    bottom: -1rem;
+    border-left: 1px solid var(--white);
+    z-index: 100;
+  }
+
+  .stat-progress {
+    height: 1rem;
+    border-bottom: 1px solid var(--white);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .stat-progress > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .stat-progress .bar {
+    right: 0;
+    left: 20%;
+    background: var(--black);
+    height: 100%;
+    z-index: 90;
+  }
+
+  .stat-row:nth-child(3) .stat-progress {
+    border-bottom: none;
+  }
+
+  .stat-progress .gradient {
+    width: 100%;
+    height: 100%;
+  }
+
+  $footer-planet-radius: 50rem;
+  $tall-footer-planet-radius: 80rem;
+  $footer-planet-offset: calc(#{$footer-planet-radius} / 2.5 * -1);
+  $footer-planet-tall-offset: calc(#{$tall-footer-planet-radius} / 2.5 * -1);
+
+  .planet-wrapper {
+    position: absolute;
+    right: $footer-planet-offset;
+    top: calc(#{$footer-planet-radius} / 2.5 * -1);
+    z-index: 1;
+  }
+
+  .planet-large {
+    width: $footer-planet-radius;
+    height: $footer-planet-radius;
+  }
+
+  .footer-wrap {
+    margin-top: calc(#{$footer-planet-radius} / 6);
+  }
+
+  .footer-footer {
+    padding-top: 4rem;
+    .scca-bits {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+    }
+    .logo {
+      height: 3rem;
+      width: auto;
+    }
+    .glyph {
+      fill: var(--white);
+    }
+    .scca-on-the-net {
+      margin-top: 1rem;
+    }
+    .scca-on-the-net a {
+      color: var(--white);
+    }
+    .scca-on-the-net li:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
 }
