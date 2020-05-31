@@ -14,8 +14,12 @@ $video_side = get_sub_field("video")["video_side"];
 
       <div class="column">
         <div class="text">
-          <h3><?php echo $title; ?></h3>
-          <p><?php echo $content; ?></p>
+          <div class="text-wrap">
+            <?php if ($title): ?>
+              <h3 class="subhead"><?php echo $title; ?></h3>
+            <?php endif; ?>
+            <p><?php echo $content; ?></p>
+          </div>
         </div>
       </div>
 
@@ -23,7 +27,7 @@ $video_side = get_sub_field("video")["video_side"];
         <div class="video">
           <div>
             <div class="embed-container"><?php echo $video; ?></div>
-            <span class="caption"><span class="section-info-title">full width image caption</span><?php echo $video_caption; ?></span>
+            <span class="caption"><?php echo $video_caption; ?></span>
           </div>
         </div>
       </div>

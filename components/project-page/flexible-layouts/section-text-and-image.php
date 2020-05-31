@@ -13,8 +13,12 @@ $image_side = get_sub_field("image")["image_side"];
 
       <div class="column">
         <div class="text">
-          <h3><?php echo $title; ?></h3>
-          <p><?php echo $content; ?></p>
+          <div class="text-wrap">
+            <?php if ($title): ?>
+              <h3 class="subhead"><?php echo $title; ?></h3>
+            <?php endif; ?>
+            <p><?php echo $content; ?></p>
+          </div>
         </div>
       </div>
 

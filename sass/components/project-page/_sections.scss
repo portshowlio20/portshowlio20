@@ -1,0 +1,70 @@
+.projects {
+  .entry-content {
+    margin-bottom: 33vh;
+  }
+
+  .flexible-section:first-of-type {
+    margin-top: 4rem;
+  }
+
+  .flexible-section {
+    padding: 2rem 0;
+  }
+
+  .column:nth-of-type(1) {
+    margin-bottom: 2rem;
+  }
+
+  @media screen and (min-width: $tablet) {
+    .flexible-section {
+      padding: 4rem 0;
+    }
+
+    .row {
+      display: flex;
+    }
+
+    $flexible-content-margin: 4rem;
+    .column {
+      width: calc(50% - #{$flexible-content-margin}/ 2);
+      margin-bottom: 0;
+    }
+
+    // this will need to be revisited after "flip-order" class is applied
+    .column:nth-of-type(1) {
+      margin-right: $flexible-content-margin;
+    }
+
+    .column > div {
+      height: 100%;
+    }
+
+    .row.flip-order .column:nth-of-type(1) {
+      order: 2;
+      margin-right: 0;
+    }
+
+    .row.flip-order .column:nth-of-type(2) {
+      order: 1;
+      margin-right: $flexible-content-margin;
+    }
+  }
+
+  .full-width-wrap {
+    display: flex;
+    justify-content: center;
+  }
+
+  .full-width-wrap > div {
+    width: 100%;
+  }
+
+  .text-wrap {
+    max-width: 55ch;
+  }
+
+  .column .text {
+    display: flex;
+    align-items: center;
+  }
+}
