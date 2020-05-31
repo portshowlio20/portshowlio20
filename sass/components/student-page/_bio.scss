@@ -48,6 +48,7 @@
 
   .email,
   .website {
+    text-decoration: none;
     border: 1px solid var(--black);
     border-top: none;
 
@@ -83,10 +84,13 @@
   }
 
   .across-the-net {
-    display: grid;
     grid-column: 5 / -1;
     grid-row: 12 / span 1;
-    padding-left: 5rem;
+    width: 100%;
+    max-width: 55ch;
+    justify-self: center;
+
+    display: flex;
     align-items: center;
   }
 
