@@ -11,6 +11,8 @@
 
 get_header(); ?>
 
+<body id="our-index">
+
   <main id="index" class="site-main">
 
   <?php get_template_part('components/index/filter', 'form'); ?>
@@ -18,4 +20,5 @@ get_header(); ?>
 
 	</main><!-- #main -->
 
+</body>
 <?php get_footer();

@@ -6,31 +6,38 @@
 
 // specific component styles
 @import "./components/header";
+@import "./components/footer";
+
+@import "./components/filter";
 @import "./components/grid";
+
 @import "./components/glyphs";
 @import "./components/planet-placeholder-student";
-@import "./components/filter";
+
 @import "./components/project-cards/project-cards";
 @import "./components/student-card";
-@import "./components/footer";
 
 @import "./components/splash-page/splash";
 @import "./components/splash-page/mailchimp";
+
 @import "./components/narrative-page/narrative";
 @import "./components/narrative-page/our-planets";
+
 @import "./components/student-page/bio";
-@import "./components/student-page/temp";
+@import "./components/student-page/projects";
+
 @import "./components/project-page/temp";
 @import "./components/project-page/featured";
 @import "./components/project-page/embed";
+
 @import "./components/search";
 
 // splitting
 @import "./splitting/splitting-cells";
 @import "./splitting/splitting";
 
-pre {
-  grid-column: 1 / -1;
-  background: white;
-  z-index: 1000;
-}
+// pre {
+//   grid-column: 1 / -1;
+//   background: white;
+//   z-index: 1000;
+// }

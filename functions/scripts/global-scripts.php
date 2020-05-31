@@ -97,7 +97,20 @@ function add_header_script()
   wp_enqueue_script(
     'header', // name your script so that you can attach other scripts and de-register, etc.
     get_template_directory_uri() . '/js/global/header.js', // this is the location of your script file
-    ['jquery', 'animejs'],
+    ['jquery'],
+    // ['countdown_timer', 'interactive_gradients', 'canvas_noise'], // this array lists the scripts upon which your script depends
+    null,
+    true
+  );
+}
+
+add_action('wp_enqueue_scripts', 'add_smooth_scroll_script');
+function add_smooth_scroll_script()
+{
+  wp_enqueue_script(
+    'smooth_scroll', // name your script so that you can attach other scripts and de-register, etc.
+    get_template_directory_uri() . '/js/global/smoothScroll.js', // this is the location of your script file
+    ['jquery'],
     // ['countdown_timer', 'interactive_gradients', 'canvas_noise'], // this array lists the scripts upon which your script depends
     null,
     true

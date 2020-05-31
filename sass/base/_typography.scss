@@ -23,7 +23,7 @@ body {
 }
 
 .subhead {
-  font-weight: 400;
+  font-weight: 300; // off brand book, but on brand visually...
   font-size: 1.56rem;
   margin-bottom: 1.56rem;
   line-height: 1.78rem; // this is what branding wants....
@@ -74,10 +74,4 @@ a.linear-gradient:hover {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: bg-gradient-scroll 20s linear infinite;
-}
-
-pre {
-  position: absolute;
-  background: white;
-  z-index: 1000;
 }

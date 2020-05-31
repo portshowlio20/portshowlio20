@@ -1,53 +1,96 @@
-#student-page {
-  .biosection {
-    // display: flex;
-    // padding: 1rem;
-    border-left: 1px solid var(--black);
-    border-bottom: 1px solid var(--black);
-    grid-template-rows: unset;
-    grid-auto-rows: unset;
-    padding: 4rem 0;
+.stewdent-bio {
+  .bio-grid {
+    display: grid;
+    grid-template-columns: repeat(10, minmax($main-grid-unit, 1fr));
+    grid-gap: 0 1rem;
+
+    grid-auto-rows: calc(#{$main-grid-unit} / 2);
+
+    @media screen and (max-width: $max-width) {
+      grid-template-columns: repeat(auto-fit, minmax($main-grid-unit, 1fr));
+    }
+
+    @media screen and (max-width: 511px) {
+      grid-template-columns: repeat(3, minmax($main-grid-unit, 1fr));
+    }
   }
-  .studentimg img {
-    border-radius: 50%;
-    --radius: 20rem;
-    width: var(--radius);
-    height: var(--radius);
-    overflow: hidden;
-    position: relative;
-    left: calc(var(--radius) / 4 * -1);
+
+  .gradient {
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 2;
+
+    border: 1px solid var(--black);
+    border-bottom: none;
   }
-  .studentimg {
-    position: absolute;
-    overflow: hidden;
+
+  .headshot {
+    grid-column: 1 / span 4;
+    grid-row: 3 / span 9;
+
+    border: 1px solid var(--black);
+  }
+
+  .headshot img {
     width: 100%;
-    grid-column: span 3;
-  }
-  img {
     height: 100%;
-    width: auto;
     object-fit: cover;
   }
 
-  .social {
-    align-self: flex-start;
+  .email {
+    grid-column: 1 / span 4;
+    grid-row: 12 / span 1;
   }
 
-  .scca-on-the-net {
+  .website {
+    grid-column: 1 / span 4;
+    grid-row: 13 / span 1;
+  }
+
+  .email,
+  .website {
+    border: 1px solid var(--black);
+    border-top: none;
+
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+
+    .subhead {
+      margin-bottom: 0;
+      line-height: 1;
+    }
   }
 
-  .bio p {
+  .bio {
+    grid-column: 5 / -1;
+    grid-row: 3 / span 6;
+    justify-self: center;
+    width: 100%;
     max-width: 55ch;
   }
-  .bio {
-    grid-column: 4 / span 6;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
+
+  .student-name > svg {
+    fill: none;
+    stroke: var(--black);
+    stroke-width: 3px;
+    width: 2rem;
+    height: auto;
   }
-  .studentname {
-    padding: 1rem;
+
+  .bio-copy {
+    max-width: 55ch;
+    // padding-top: 5rem;
+  }
+
+  .across-the-net {
+    display: grid;
+    grid-column: 5 / -1;
+    grid-row: 12 / span 1;
+    padding-left: 5rem;
+    align-items: center;
+  }
+
+  .across-the-net li {
+    padding-right: 2rem;
   }
 }

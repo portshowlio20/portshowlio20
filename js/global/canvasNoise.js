@@ -6,7 +6,9 @@
 
 function canvasNoise() {
   // responsive canvas element for each gradient on page
-  var gradients = document.querySelectorAll(".planet, .placeholder, .student");
+  var gradients = document.querySelectorAll(
+    ".planet, .placeholder, .student, .stewdent-bio .gradient"
+  );
 
   // const observer = new ResizeObserver((entries) => {
   //   entries.forEach((entry) => {

@@ -31,3 +31,11 @@
     url("./fonts/hk-grotesk/HKGrotesk-Regular.eot") format("eot");
   font-weight: 400;
 }
+
+@font-face {
+  font-family: "HK Grotesk";
+  src: url("./fonts/hk-grotesk/HKGrotesk-Light.woff2") format("woff2"),
+    url("./fonts/hk-grotesk/HKGrotesk-Light.woff") format("woff"),
+    url("./fonts/hk-grotesk/HKGrotesk-Light.eot") format("eot");
+  font-weight: 300;
+}

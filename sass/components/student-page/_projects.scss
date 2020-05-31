@@ -1,0 +1,79 @@
+#student-profile {
+  .student-projects {
+    margin-top: 4rem;
+    margin-bottom: 33vh;
+  }
+
+  .student-projects-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .student-project {
+    border: 1px solid var(--black);
+    display: flex;
+    flex-direction: column;
+
+    text-decoration: none;
+
+    &:hover,
+    &:hover .featured-image,
+    &:hover .project-glyph,
+    &:hover .project-tagline {
+      animation: border-color-change linear infinite 10s;
+    }
+  }
+
+  .featured-image {
+    height: 15rem;
+    border-bottom: 1px solid var(--black);
+  }
+
+  .featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .project-overview {
+    display: flex;
+    height: 100%;
+  }
+
+  .project-meta {
+    flex: 1 1 100%;
+  }
+
+  .project-glyph,
+  .project-tagline,
+  .project-info {
+    padding: 2rem;
+  }
+
+  .project-tagline {
+    border-top: 1px solid var(--black);
+  }
+
+  .project-glyph {
+    flex: 1 1 4rem;
+    border-left: 1px solid var(--black);
+  }
+
+  $margin: 4rem;
+  .student-project:nth-of-type(1) {
+    width: 100%;
+    margin-bottom: $margin;
+  }
+
+  .student-project:nth-of-type(2),
+  .student-project:nth-of-type(3) {
+    width: calc(50% - #{$margin}/ 2);
+  }
+
+  .student-project:nth-of-type(2) {
+    margin-right: $margin;
+  }
+}
