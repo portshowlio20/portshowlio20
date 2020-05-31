@@ -62,6 +62,14 @@
     }
   }
 
+  .field .area-of-focus {
+    margin-bottom: 1.56rem;
+  }
+
+  .field .subhead {
+    margin-bottom: 0;
+  }
+
   .bio {
     grid-column: 5 / -1;
     grid-row: 3 / span 6;
