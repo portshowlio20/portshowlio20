@@ -27,7 +27,9 @@ $video_side = get_sub_field("video")["video_side"];
         <div class="video">
           <div>
             <div class="embed-container"><?php echo $video; ?></div>
-            <span class="caption"><?php echo $video_caption; ?></span>
+            <?php if ($video_caption): ?>
+              <span class="caption"><?php echo $video_caption; ?></span>
+            <?php endif; ?>
           </div>
         </div>
       </div>

@@ -176,8 +176,8 @@ require_once get_template_directory() . '/functions/scripts/splash-scripts.php';
 require_once get_template_directory() .
   '/functions/scripts/narrative-scripts.php';
 require_once get_template_directory() . '/functions/scripts/index-scripts.php';
-// load scripts based on template page
-// https://mekshq.com/include-javascriptonly-on-specific-wordpress-page-templates/
+require_once get_template_directory() .
+  '/functions/scripts/project-scripts.php';
 
 /**
  * Add support for the "display_name" search column in WP_User_Query

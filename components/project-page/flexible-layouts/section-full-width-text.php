@@ -6,7 +6,7 @@
         <?php if (get_sub_field('title')): ?>
           <h3 class="subhead"><?php the_sub_field('title'); ?></h3>
         <?php endif; ?>
-        <p><?php the_sub_field('content'); ?></p>
+        <?php the_sub_field('content'); ?>
       </div>
     </div>
   </div>
