@@ -122,7 +122,8 @@
     padding: 0.25rem 0.5rem;
     text-decoration: none;
     background: var(--white);
-    opacity: 0.5;
+    // opacity: 0.5;
+    border: 1px solid var(--black);
     top: 0;
     left: 0;
     pointer-events: none;
