@@ -28,12 +28,28 @@
     grid-row: 3 / span 9;
 
     border: 1px solid var(--black);
+    position: relative;
   }
 
   .headshot img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .without-mask {
+    z-index: 70;
+  }
+
+  .with-mask {
+    z-index: 20;
+  }
+
+  .headshot.mask-time .without-mask {
+    display: none;
   }
 
   .email {

@@ -178,6 +178,8 @@ require_once get_template_directory() .
 require_once get_template_directory() . '/functions/scripts/index-scripts.php';
 require_once get_template_directory() .
   '/functions/scripts/project-scripts.php';
+require_once get_template_directory() .
+  '/functions/scripts/student-scripts.php';
 
 /**
  * Add support for the "display_name" search column in WP_User_Query

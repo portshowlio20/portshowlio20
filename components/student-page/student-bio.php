@@ -15,17 +15,28 @@
 
             the_row();
             $headshot_without_mask = get_sub_field('without_mask');
-            $headshot_with_mask = get_sub_field('without_mask');
+            $headshot_with_mask = get_sub_field('with_mask');
             ?>
 
-                <img
+              <img
+                class="without-mask"
                 <?php responsive_image(
                   $headshot_without_mask,
                   'thumb-640',
                   '640px'
                 ); ?>
                 alt="<?php echo "$name"; ?>"
-                />
+              />
+
+              <img
+                class="with-mask"
+                <?php responsive_image(
+                  $headshot_with_mask,
+                  'thumb-640',
+                  '640px'
+                ); ?>
+                alt="<?php echo "$name"; ?>"
+              />
 
             <?php
           endwhile; ?>
