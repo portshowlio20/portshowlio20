@@ -21,10 +21,10 @@ if (!is_front_page()): ?>
         <div class="graph"></div>
       </div>
       <div class="stats">
-        <div class="stat-row">
+        <div class="stat-row stat-projects">
           <div class="stat-row-wrap">
-            <div class="stat-num pull-quote">71%</div>
-            <div class="stat-text"><span>You've explored <strong>75</strong> out of <strong>106 projects</strong></span></div>
+            <div class="stat-num pull-quote"><span class="percent">0</span>%</div>
+            <div class="stat-text"><span>You've explored <strong class="num">0</strong> out of <strong>106 projects</strong></span></div>
           </div>
           <div class="stat-progress">
             <div class="bar"></div>
@@ -36,10 +36,10 @@ if (!is_front_page()): ?>
             </div>
           </div>
         </div>
-        <div class="stat-row">
+        <div class="stat-row stat-students">
           <div class="stat-row-wrap">
-            <div class="stat-num pull-quote">1%</div>
-            <div class="stat-text"><span>You’ve viewed work by <strong>15</strong> out of <strong>53 Creative Academy students</strong></span></div>
+            <div class="stat-num pull-quote"><span class="percent">0</span>%</div>
+            <div class="stat-text"><span>You’ve viewed work by <strong class="num">0</strong> out of <strong>53 Creative Academy students</strong></span></div>
           </div>
           <div class="stat-progress">
             <div class="bar"></div>

@@ -15,7 +15,7 @@ $program_value = $program_field['value'];
 $program_label = $program_field['choices'][$program_value];
 ?>
 
-<main id="student-profile">
+<main id="student-profile" class="student-<?php echo $id; ?>" data-id="<?php echo $id; ?>">
 
   <?php
   set_query_var('name', $current_student->display_name);

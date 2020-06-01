@@ -118,3 +118,16 @@ function add_smooth_scroll_script()
     true
   );
 }
+
+add_action('wp_enqueue_scripts', 'add_localStorage_stats_script');
+function add_localStorage_stats_script()
+{
+  wp_enqueue_script(
+    'localStorage_stats', // name your script so that you can attach other scripts and de-register, etc.
+    get_template_directory_uri() . '/js/global/localStorageStats.js', // this is the location of your script file
+    ['jquery'],
+    // ['countdown_timer', 'interactive_gradients', 'canvas_noise'], // this array lists the scripts upon which your script depends
+    null,
+    true
+  );
+}

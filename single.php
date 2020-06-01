@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<main id="primary" class="site-main">
+<main id="primary" class="site-main project-page"  data-id="<?php the_ID(); ?>">
 
   <?php while (have_posts()):
     the_post();

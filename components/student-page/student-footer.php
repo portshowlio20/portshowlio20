@@ -5,8 +5,13 @@
       <div class="grid" data-active="students">
 
         <?php
-        $tags = get_field('focus');
+        // $tags = get_field('focus');
         $tag_list = [];
+
+        // echo '<pre style="position: absolute; width: 100%; z-index: 1000; background: white;">';
+        // echo var_dump($tags);
+        // echo '</pre>';
+
         foreach ($tags as $tag) {
           array_push($tag_list, $tag->term_id);
         }
