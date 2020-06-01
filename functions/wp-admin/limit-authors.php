@@ -193,8 +193,8 @@ if (in_array('author', (array) $user->roles)) {
     $user_id = get_current_user_id();
     if (
       $user_id &&
-      !current_user_can('activate_plugins') &&
-      !current_user_can('edit_others_posts')
+      !current_user_can('administrator') &&
+      !current_user_can('editor')
     ) {
       $query['author'] = $user_id;
     }
