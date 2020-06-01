@@ -83,20 +83,25 @@
   .gallery-image {
     grid-column: span 1;
     grid-row: span 1;
-    overflow: hidden;
-    position: relative;
-    height: 0;
     padding-top: 100%;
-    display: block;
   }
 
+  .solo-image {
+    padding-top: 75%;
+  }
+
+  .gallery-image,
   .solo-image {
     display: block;
     overflow: hidden;
     position: relative;
     height: 0;
     width: 100%;
-    padding-top: 75%;
+  }
+
+  .gallery-image:hover,
+  .solo-image:hover {
+    cursor: zoom-in;
   }
 
   .solo-image img,
@@ -114,12 +119,13 @@
     content: "Click to expand";
     display: block;
     position: absolute;
-    padding: 0.25rem;
+    padding: 0.25rem 0.5rem;
     text-decoration: none;
     background: var(--white);
     opacity: 0.5;
     top: 0;
     left: 0;
+    pointer-events: none;
   }
 
   .pull-quote {
