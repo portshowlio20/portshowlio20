@@ -48,6 +48,9 @@ function secretCode() {
     if (userSequence == "boom") {
       runAsteroids();
     }
+    if (userSequence == "clear") {
+      localStorage.clear();
+    }
   }
 }
 

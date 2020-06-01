@@ -42,18 +42,20 @@ window.addEventListener("load", function () {
   }
 
   function handleData(item, data) {
-    if (item === "students") {
-      console.log("students", data.length);
-      const percentageStew = Math.floor((data.length / totalStudents) * 100);
-      studentsProgressBar.style.left = `${percentageStew}%`;
-      studentsPercentage.innerHTML = percentageStew;
-      studentsNumber.innerHTML = data.length;
-    } else if (item === "projects") {
-      console.log("projects", data.length);
-      const percentageProj = Math.floor((data.length / totalProjects) * 100);
-      projectsProgressBar.style.left = `${percentageProj}%`;
-      projectsPercentage.innerHTML = percentageProj;
-      projectsNumber.innerHTML = data.length;
+    if (data) {
+      if (item === "students") {
+        console.log("students", data.length);
+        const percentageStew = Math.floor((data.length / totalStudents) * 100);
+        studentsProgressBar.style.left = `${percentageStew}%`;
+        studentsPercentage.innerHTML = percentageStew;
+        studentsNumber.innerHTML = data.length;
+      } else if (item === "projects") {
+        console.log("projects", data.length);
+        const percentageProj = Math.floor((data.length / totalProjects) * 100);
+        projectsProgressBar.style.left = `${percentageProj}%`;
+        projectsPercentage.innerHTML = percentageProj;
+        projectsNumber.innerHTML = data.length;
+      }
     }
   }
 
