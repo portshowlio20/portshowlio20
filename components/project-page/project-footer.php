@@ -22,7 +22,6 @@
       <div class="similar-projects grid">
         <?php
         $tags = get_field('project_tags');
-        $featured_images = get_field('featured_image');
         $tag_list = [];
         foreach ($tags as $tag) {
           array_push($tag_list, $tag->term_id);
@@ -35,7 +34,10 @@
         ]);
         if ($the_query->have_posts()):
           while ($the_query->have_posts()):
-            $the_query->the_post(); ?>
+
+            $the_query->the_post();
+            $featured_images = get_field('featured_image');
+            ?>
 
         <a href="<?php the_permalink(); ?>" class="project-card square-small">
           <div class="project-image">
