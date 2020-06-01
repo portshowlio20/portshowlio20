@@ -16,7 +16,7 @@ body {
 .site-footer {
   background: var(--black);
   color: var(--white);
-  padding: 4rem;
+  padding: 4rem 0;
   // border-top: 1px solid var(--white);
 }
 
@@ -33,6 +33,7 @@ body {
   .stats,
   .footer-left {
     width: calc(50% - #{$footer-flex-margin}/ 2);
+    z-index: 100;
   }
 
   .footer-left {
@@ -164,6 +165,23 @@ body {
     }
     .scca-on-the-net li:not(:last-child) {
       margin-right: 1rem;
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    .footer-wrap {
+      flex-direction: column;
+    }
+
+    .stats,
+    .footer-left {
+      width: 100%;
+      margin: 0;
+    }
+
+    .footer-left {
+      margin-top: 15rem;
+      margin-bottom: 2rem;
     }
   }
 }
