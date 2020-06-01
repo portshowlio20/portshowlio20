@@ -16,6 +16,7 @@ $program_label = $program_field['choices'][$program_value];
 ?>
 
 <main id="student-profile">
+
   <?php
   set_query_var('name', $current_student->display_name);
   set_query_var('program', $program_label);
@@ -26,8 +27,9 @@ $program_label = $program_field['choices'][$program_value];
   get_template_part('components/student-page/student', 'bio');
 
   get_template_part('components/student-page/student', 'projects');
-  ?>
 
+  get_template_part('components/student-page/student', 'footer');
+  ?>
 
 </main>
 <?php get_footer(); ?>
