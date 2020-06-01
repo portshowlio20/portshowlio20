@@ -17,7 +17,7 @@ $image_side = get_sub_field("image")["image_side"];
             <?php if ($title): ?>
               <h3 class="subhead"><?php echo $title; ?></h3>
             <?php endif; ?>
-            <p><?php echo $content; ?></p>
+            <?php echo $content; ?>
           </div>
         </div>
       </div>
