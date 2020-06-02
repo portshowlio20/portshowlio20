@@ -87,8 +87,6 @@ function filter_ajax()
       'role' => 'author',
       'meta_query' => $meta_query_array,
     ];
-
-    // echo '<pre>' . var_dump($students_args) . '</pre>';
   }
 
   // 4. create conditional WP queries based on:
@@ -114,8 +112,11 @@ function filter_ajax()
 
     // echo '<pre>' . var_dump($students_query->results) . '</pre>';
 
-    if (!empty($students_query->results)) {
-      foreach ($students_query->results as $student) {
+    $students_results = $students_query->results;
+    shuffle($students_results);
+
+    if (!empty($students_results)) {
+      foreach ($students_results as $student) {
         set_query_var('student_id', absint($student->ID));
         get_template_part('components/grid-cards/student', 'card');
       }
