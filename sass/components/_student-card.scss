@@ -81,22 +81,41 @@ $student-card-row: 2;
     position: absolute;
     bottom: -1rem;
     right: 0;
+    // right: 50%;
+    // transform: translateX(50%);
     z-index: 100;
     background: var(--white);
     border: 1px solid var(--black);
     width: 80%;
   }
 
-  .student-name,
-  .student-program {
+  .general {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .student-name {
     padding: 0.5rem;
   }
 
   .student-program {
-    border-top: 1px solid var(--black);
+    padding: 0.5rem;
+    width: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid var(--black);
   }
 
   .areas-of-focus {
-    position: absolute;
+    border-top: 1px solid var(--black);
+    padding: 0.5rem;
+    display: flex;
+    min-height: 4rem;
+  }
+
+  .glyph {
+    width: 1rem;
+    margin-top: -0.125em;
   }
 }

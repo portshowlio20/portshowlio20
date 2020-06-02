@@ -25,15 +25,19 @@ $headshots = get_field('headshots', 'user_' . $student_id);
         </div>
       </div>
       <div class="student-info">
-        <div class="student-name"><strong class=""><?php echo $name; ?></strong></div>
-        <div class="student-program"><?php echo $program; ?></div>
+        <div class="general">
+          <div class="student-name"><strong class=""><?php echo $name; ?></strong></div>
+          <div class="student-program" title="<?php echo $program; ?>" >
+            <?php get_template_part('components/glyphs/glyph', $program); ?>
+          </div>
+        </div>
+        <ul class="areas-of-focus">
+          <?php foreach ($aof_list as $aof) {
+            echo '<li>' . $aof->name . '</li>';
+          } ?>
+        </ul>
       </div>
     </div>
-    <ul class="areas-of-focus">
-      <?php foreach ($aof_list as $aof) {
-        echo '<li>' . $aof->name . '</li>';
-      } ?>
-    </ul>
   </a>
 </div>
 

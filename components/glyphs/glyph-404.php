@@ -1,3 +1,3 @@
-<div class="glyph visual-design">
+<div class="glyph 404">
   TBD
 </div>
