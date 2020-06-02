@@ -100,12 +100,16 @@ function filter_ajax()
     echo '</div>';
   } elseif ($toggle == "works") {
     $works_query = new WP_Query($works_args);
-    if ($works_query->have_posts()):
+    if ($works_query->have_posts()) {
       while ($works_query->have_posts()):
         $works_query->the_post();
         get_template_part('components/grid-cards/project', 'card');
       endwhile;
-    endif;
+    } else {
+      echo '<div class="no-results">';
+      echo "[ 404 ] Nothin' found. Try some new filters!";
+      echo '</div>';
+    }
     wp_reset_postdata();
   } elseif ($toggle == "students") {
     $students_query = new WP_User_Query($students_args);
