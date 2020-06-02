@@ -81,6 +81,7 @@ if (in_array('author', (array) $user->roles)) {
         $('input#url').closest('tr').remove(); // Website (will handle with ACF)
         $('textarea#description').closest('table').remove(); // About
         $('#tagsdiv-role').remove();
+
         // INSERT header for ACF section
         $('<a href="/student/<?= $user->user_nicename ?>" class="wp-admin-review-profile"><span>😍</span><strong>After you update</strong> click here to review your profile page!</a>').insertAfter( $('#your-profile') );
         $('<h1>Student Info</h1>').insertBefore( $('.acf-field').closest('table') );
