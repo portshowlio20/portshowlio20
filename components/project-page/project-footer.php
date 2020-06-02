@@ -39,24 +39,26 @@
             $featured_images = get_field('featured_image');
             ?>
 
-        <a href="<?php the_permalink(); ?>" class="project-card square-small">
-          <div class="project-image">
+        <div class="project-card-wrap square-small">
+          <a href="<?php the_permalink(); ?>" class="project-card-link square-small">
+            <div class="project-image">
 
-                <img <?php responsive_image(
-                  $featured_images['square'],
-                  'thumb-640',
-                  '640px'
-                ); ?>  alt="<?php echo get_the_title(); ?>"
-                  loading="lazy"
-                />
-              </div>
+                  <img <?php responsive_image(
+                    $featured_images['square'],
+                    'thumb-640',
+                    '640px'
+                  ); ?>  alt="<?php echo get_the_title(); ?>"
+                    loading="lazy"
+                  />
+                </div>
 
-          <div class="project-meta">
+            <div class="project-meta">
 
-              <h3 class="project-name"><?php echo get_the_title(); ?></h3>
+                <h3 class="project-name"><?php echo get_the_title(); ?></h3>
 
-          </div>
-        </a>
+            </div>
+          </a>
+        </div>
 
         <?php
           endwhile; ?>

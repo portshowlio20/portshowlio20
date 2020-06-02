@@ -7,7 +7,6 @@ $project_card_classes = [
   'rectangle-large',
 ];
 $random_card_class = $project_card_classes[rand(0, 4)];
-// $random_card_class = "rectangle-large";
 $featured_images = get_field('featured_image');
 $min_spacers = 2;
 $max_spacers = 4;

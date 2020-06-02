@@ -7,17 +7,6 @@
     padding: 4rem 0;
   }
 
-  .project-card .project-image {
-    border: 1px solid var(--white);
-  }
-
-  .project-card .project-meta {
-    color: var(--white);
-    border: 1px solid var(--white);
-    border-top: none;
-    height: 100%;
-  }
-
   .entry-footer-bottom {
     background: var(--black);
     padding: 4rem 0;
@@ -26,6 +15,33 @@
 
     .project-name {
       font-weight: 300;
+    }
+  }
+
+  .similar-projects.grid {
+    .square-small {
+      display: grid;
+    }
+
+    .project-image {
+      border: 1px solid var(--white);
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .project-meta {
+      color: var(--white);
+      border: 1px solid var(--white);
+      border-top: none;
+      // height: 100%;
+      grid-column: span 2;
+      padding: 1rem;
     }
   }
 }
