@@ -1,5 +1,3 @@
-// $student-card-col: 3;
-// $student-card-row: 4;
 $student-card-col: 2;
 $student-card-row: 2;
 
@@ -18,7 +16,6 @@ $student-card-row: 2;
   }
 
   a {
-    // position: relative;
     display: grid;
     grid-gap: 1rem;
 
@@ -74,19 +71,21 @@ $student-card-row: 2;
   .student-planet {
     width: 100%;
     height: 100%;
-    // position: relative;
   }
 
   .student-info {
     position: absolute;
-    bottom: -1rem;
     right: 0;
-    // right: 50%;
-    // transform: translateX(50%);
+    transform: translateY(-3rem);
     z-index: 100;
     background: var(--white);
     border: 1px solid var(--black);
     width: 80%;
+
+    @media screen and (max-width: 511px) {
+      right: 50%;
+      transform: translateX(50%) translateY(-4rem);
+    }
   }
 
   .general {
