@@ -1,0 +1,39 @@
+$mobile-override-col: 3;
+$mobile-override-row: 5;
+
+@media screen and (max-width: 511px) {
+  .square-small,
+  .square-medium,
+  .square-large,
+  .rectangle-medium,
+  .rectangle-large {
+    grid-template-columns: repeat(
+      $mobile-override-col,
+      minmax($main-grid-unit, 1fr)
+    );
+    grid-template-rows: repeat(
+      $mobile-override-row,
+      minmax($main-grid-unit, 1fr)
+    );
+    grid-column: span $mobile-override-col;
+    grid-row: span $mobile-override-row;
+    grid-gap: 0;
+  }
+
+  .project-card-link.square-small,
+  .project-card-link.square-medium,
+  .project-card-link.square-large,
+  .project-card-link.rectangle-medium,
+  .project-card-link.rectangle-large {
+    grid-row: unset;
+
+    .project-image {
+      grid-column: span $mobile-override-col;
+      grid-row: span $mobile-override-col;
+    }
+
+    .project-meta {
+      grid-row: $mobile-override-row - 1;
+    }
+  }
+}

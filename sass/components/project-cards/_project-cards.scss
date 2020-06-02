@@ -1,11 +1,12 @@
-a.project-card {
+.project-card-wrap,
+.project-card-link {
   display: grid;
+  grid-gap: 0 1rem;
+}
 
-  // a {
+.project-card-link {
   text-decoration: none;
-  // }
 
-  // need to make whole div an a i think
   &:hover .project-image,
   &:hover .project-meta {
     animation: border-color-change linear infinite 10s;
@@ -15,7 +16,6 @@ a.project-card {
 $colors: var(--blue), var(--orange), var(--tan), var(--peach), var(--orangered),
   var(--green);
 $repeat: 159; // How often you want the pattern to repeat.
-// Warning: a higher number outputs more CSS.
 
 @for $i from 1 through $repeat {
   .project-card:nth-child(#{$i}) img {
@@ -34,9 +34,8 @@ $repeat: 159; // How often you want the pattern to repeat.
     display: none;
   }
 }
-.entry-footer,
-.search,
-.page {
+
+.project-card-link {
   .project-image {
     position: relative;
     border: 1px solid var(--black);
@@ -49,7 +48,7 @@ $repeat: 159; // How often you want the pattern to repeat.
 
   .project-meta {
     grid-column: 1 / -1;
-    margin-top: -1rem;
+    // margin-top: -1rem;
     border: 1px solid var(--black);
     border-top: none;
     align-self: start;
@@ -74,3 +73,4 @@ $repeat: 159; // How often you want the pattern to repeat.
 @import "./square-large";
 @import "./rectangle-medium";
 @import "./rectangle-large";
+@import "./mobile-override";

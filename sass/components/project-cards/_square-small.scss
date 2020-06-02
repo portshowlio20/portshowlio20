@@ -1,5 +1,5 @@
 $square-small-col: 2;
-$square-small-row: 3;
+$square-small-row: 4;
 
 .square-small {
   grid-template-columns: repeat(
@@ -7,16 +7,20 @@ $square-small-row: 3;
     minmax($main-grid-unit, 1fr)
   );
   grid-template-rows: repeat($square-small-row, minmax($main-grid-unit, 1fr));
-  grid-gap: 1rem;
+  grid-gap: 0 1rem;
   grid-column: span $square-small-col;
   grid-row: span $square-small-row;
+}
 
-  > .project-image {
+.project-card-link.square-small {
+  grid-row: unset;
+
+  .project-image {
     grid-column: span $square-small-col;
     grid-row: span $square-small-col;
   }
 
-  > .project-meta {
-    grid-row: $square-small-row;
+  .project-meta {
+    grid-row: $square-small-row - 1;
   }
 }
