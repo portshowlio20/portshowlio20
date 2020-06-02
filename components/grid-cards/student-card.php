@@ -27,7 +27,9 @@ $headshots = get_field('headshots', 'user_' . $student_id);
       <div class="student-info">
         <div class="general">
           <div class="student-name"><strong class=""><?php echo $name; ?></strong></div>
-          <div class="student-program" title="<?php echo $program; ?>" >
+          <div class="student-program" title="<?php echo $program == "gd"
+            ? "Graphic Design"
+            : "Visual Media"; ?>" >
             <?php get_template_part('components/glyphs/glyph', $program); ?>
           </div>
         </div>
