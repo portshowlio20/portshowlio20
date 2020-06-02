@@ -9,6 +9,6 @@ $liveDate = new DateTime(
 if ($liveDate <= $date) {
   get_template_part('components/static-pages/narrative', 'index');
 } else {
-  // get_template_part('components/static-pages/narrative', 'index');
-  get_template_part('components/static-pages/splash', 'index');
+  get_template_part('components/static-pages/narrative', 'index');
+  // get_template_part('components/static-pages/splash', 'index');
 }

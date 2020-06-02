@@ -10,7 +10,6 @@ $headshots = get_field('headshots', 'user_' . $student_id);
   <a href="<?php echo $link; ?>">
     <div class="student-wrap">
       <div class="student student-planet">
-        <!-- <div class="interactive-gradient"></div> -->
         <div class="gradient gradient-<?php echo sprintf(
           '%02d',
           rand(1, 59)

@@ -7,17 +7,20 @@
             <input type="radio" id="works-toggle" name="mainToggle" value="works" checked>
             <label for="works-toggle" class="subhead">Works</label>
           </div>
+          <span class="toggle-divider">/</span>
           <div class="toggle-option">
             <input type="radio" id="students-toggle" name="mainToggle" value="students">
             <label for="students-toggle" class="subhead">Students</label>
           </div>
         </div>
         <div id="filter-dropdown-toggle">
-          <div id="filter-active-glyph"></div>
+          <div id="filter-active-glyph">
+            <?php get_template_part('components/glyphs/glyph', 'all'); ?>
+          </div>
           <span id="filter-state">
             Filter by area of focus
           </span>
-          <div class="chevron">\/</div>
+          <div class="chevron">▼</div>
         </div>
       </div>
       <div class="filter-content">
@@ -42,6 +45,7 @@
                   type="checkbox"
                   id="<?php echo $cat->slug; ?>"
                   value="<?php echo $cat->term_id; ?>"
+                  data-name="<?php echo $cat->name; ?>"
                   checked
                 >
                 <label for="<?php echo $cat->slug; ?>"><?php echo $cat->name; ?></label>

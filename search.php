@@ -23,7 +23,7 @@ $authors_id_array = [];
 
         <div class="student-results">
           <div class="container">
-            <h3 class="subhead">Students related to <span class="search-query"><?= get_search_query() ?></span></h3>
+            <div class="search-result-heading"><h3 class="subhead">Students related to <span class="search-query"><?= get_search_query() ?></span></h3><div class="chevron">▲</div></div>
             <div class="grid" data-active="students">
               <!-- https://www.smashingmagazine.com/2016/03/advanced-wordpress-search-with-wp_query/ -->
               <!-- https://wordpress.stackexchange.com/questions/70864/meta-query-compare-operator-explanation -->
@@ -85,7 +85,7 @@ $authors_id_array = [];
 
         <div class="work-results">
           <div class="container">
-            <h3 class="subhead">Works related to <span class="search-query"><?= get_search_query() ?></span></h3>
+            <div class="search-result-heading"><h3 class="subhead">Works related to <span class="search-query"><?= get_search_query() ?></span></h3><div class="chevron">▲</div></div>
             <div class="grid works-grid">
               <?php
               $terms_id_array = [];

@@ -18,3 +18,14 @@
 .search .results {
   margin-bottom: 33vh;
 }
+
+.search-result-heading:hover .chevron {
+  opacity: 1;
+}
+
+.search-result-heading {
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  font-weight: 400;
+}

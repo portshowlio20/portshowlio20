@@ -20,11 +20,16 @@
 
     // on load, check if filters are set, if so update the filter heading!
     checkboxStatus();
-    // if any checkboxes are check
+    // if any checkboxes are checked
     if (checked.length > 0) {
       // update heading and make sure it's interactive
       handleFilterHeading(true);
       handleActiveChecked();
+    }
+
+    // if all checkboxes are checked
+    if (checked.length === filters.length) {
+      handleFilterHeading(false);
     }
 
     filters.each(function () {
@@ -130,16 +135,18 @@
     function handleActiveChecked() {
       if (checked.length === filters.length) {
         filterActive.html("");
-        filterActiveGlyph.html("");
+        filterActiveGlyph.removeClass();
       } else {
         var activeList = [];
+        var activeListID = [];
         checked.forEach(function (checkbox) {
-          activeList.push(checkbox.val());
+          activeList.push(checkbox.attr("data-name"));
+          activeListID.push(checkbox.attr("id"));
         });
 
         // loop over active list and create a div with a glyph class?
-        filterActive.html(activeList);
-        filterActiveGlyph.html(activeList);
+        filterActive.html(activeList.join(", "));
+        filterActiveGlyph.addClass(activeListID.join(" "));
       }
     }
 
@@ -148,10 +155,10 @@
       // var options = { duration: 400, easing: easing.speedInOut };
       filterContent.slideToggle(400, function () {
         if (filterContent.is(":visible")) {
-          filterDropdownToggle.children().last().html("/\\");
+          filterDropdownToggle.children().last().html("▲");
           // TODO: remove "clear filters" from filter-header
         } else {
-          filterDropdownToggle.children().last().html("\\/");
+          filterDropdownToggle.children().last().html("▼");
           // TODO: add "clear filters" from filter-header
           // TODO: will need to code functionailty for that fucker
         }

@@ -1,0 +1,3 @@
+<div class="glyph branding">
+  <svg viewBox="0 0 126 162" xmlns="http://www.w3.org/2000/svg"><clipPath id="a"><path d="m0 0h126v162h-126z"/></clipPath><g clip-path="url(#a)" fill="currentColor"><path d="m43.71 54h46.29v-18h-54v18z"/><path d="m43.71 90h46.29v-18h-54v18z"/><path d="m43.71 126h46.29v-18h-54v18z"/><path d="m108 36v108h-108v18h126v-126z"/><path d="m0 0v126h18v-108h108v-18z"/></g></svg>
+</div>

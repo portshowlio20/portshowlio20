@@ -4,7 +4,6 @@
 // }
 
 #filter {
-  border: 1px dotted tomato;
   width: 100%;
   margin-bottom: 4rem;
 }
@@ -13,7 +12,7 @@
 .filter-content-header {
   display: flex;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  padding: 1rem 0;
 }
 
 .filter-content {
@@ -27,6 +26,25 @@
 
 #filter-dropdown-toggle {
   display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+#filter-dropdown-toggle:hover .chevron {
+  opacity: 1;
+}
+
+.chevron {
+  width: 2rem;
+  text-align: center;
+  opacity: 0.5;
+  transition: opacity 0.4s ease;
+}
+
+.filter-content-header {
+  border: 1px solid var(--black);
+  border-bottom: none;
+  padding: 1rem 2rem;
 }
 
 #aof-filters {
@@ -36,35 +54,109 @@
   justify-content: space-between;
 
   padding: 2rem;
-  border: 1px solid green;
+  border: 1px solid var(--black);
 
   > div {
     flex: 1 1 20%;
+    padding: 0.25em 0;
+    margin: 0.25em 0;
+
+    > label {
+      opacity: 0.5;
+      transition: opacity 0.3s ease;
+      font-weight: 300;
+    }
+
+    > input:checked + label {
+      opacity: 1;
+      font-weight: 400;
+    }
   }
 }
 
-// input#works-toggle,
-// input#students-toggle {
-// //   appearance: none;
-// //   width: 0.1%;
-// //   opacity: 0;
-// //   height: 4px;
-// //   background: #000;
-// //   margin: 0;
-// //   transition: width 0.4s ease;
+.toggle-option {
+  cursor: pointer;
+  position: relative;
+}
 
-// //   + label {
-// //     opacity: 0.5;
-// //     transition: opacity 0.3s ease;
-// //   }
-// }
-// input#works-toggle:checked,
-// input#students-toggle:checked {
-//   // transition: width 1s ease;
-//   // opacity: 1;
-//   // color: var(--blue);
-//   // width: 100%;
-//   // + label {
-//   //   opacity: 1;
-//   // }
-// }
+.toggle-option > input {
+  position: absolute;
+  bottom: 0.5em;
+  left: 0;
+  width: 100%;
+}
+
+.toggle-divider {
+  display: inline-block;
+  position: relative;
+  top: -0.25em;
+  font-size: 1.56rem;
+  font-weight: 300;
+  opacity: 0.5;
+  margin: 0 0.25em;
+}
+
+input#works-toggle,
+input#students-toggle {
+  appearance: none;
+  width: 0.1%;
+  opacity: 0;
+  height: 1px;
+  background: #000;
+  margin: 0;
+  transition: width 0.4s ease;
+  will-change: width;
+
+  + label {
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    margin-bottom: 0;
+  }
+}
+
+input#works-toggle:checked,
+input#students-toggle:checked {
+  transition: width 1s ease;
+  opacity: 1;
+  color: var(--blue);
+  width: 100%;
+  + label {
+    opacity: 1;
+    font-weight: 400;
+  }
+}
+
+label,
+#filter-heading {
+  cursor: pointer;
+}
+
+#filter-active {
+  width: 50%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#filter-active-glyph {
+  margin-right: 0.75rem;
+  display: flex;
+}
+
+#filter-active-glyph > div {
+  display: none;
+
+  width: 1rem;
+  margin-right: 0.5rem;
+  margin-top: -0.25em;
+}
+
+// get list of all parent cats
+$cats: "advertising", "ar-vr", "art-direction", "branding", "illustration",
+  "motion", "packaging", "portraiture", "post-production", "type-layout",
+  "ui-ux", "video", "visual-design", "web";
+@each $cat in $cats {
+  #filter-active-glyph.#{$cat} > .#{$cat} {
+    display: block;
+  }
+}

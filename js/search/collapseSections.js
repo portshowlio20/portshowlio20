@@ -3,6 +3,8 @@
   var workToggle = $(".work-results .subhead");
   var studentContent = $('.student-results [data-active="students"]');
   var workContent = $(".work-results .works-grid");
+  var studentChevron = $(".student-results .chevron");
+  var workChevron = $(".work-results .chevron");
 
   studentToggle.click(handleStudentToggle);
   workToggle.click(handleWorkToggle);
@@ -10,9 +12,9 @@
   function handleStudentToggle() {
     studentContent.slideToggle(400, function () {
       if (studentContent.is(":visible")) {
-        studentToggle.children().last().html("/\\");
+        studentChevron.html("▲");
       } else {
-        studentToggle.children().last().html("\\/");
+        studentChevron.html("▼");
       }
     });
   }
@@ -20,9 +22,9 @@
   function handleWorkToggle() {
     workContent.slideToggle(400, function () {
       if (workContent.is(":visible")) {
-        workToggle.children().last().html("/\\");
+        workChevron.html("▲");
       } else {
-        workToggle.children().last().html("\\/");
+        workChevron.html("▼");
       }
     });
   }
