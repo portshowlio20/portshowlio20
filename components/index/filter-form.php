@@ -40,7 +40,7 @@
             ];
             $categories = get_categories($args);
             foreach ($categories as $cat): ?>
-              <div >
+              <div class="filter-item">
                 <input
                   type="checkbox"
                   id="<?php echo $cat->slug; ?>"
@@ -48,7 +48,12 @@
                   data-name="<?php echo $cat->name; ?>"
                   checked
                 >
-                <label for="<?php echo $cat->slug; ?>"><?php echo $cat->name; ?></label>
+                <label for="<?php echo $cat->slug; ?>">
+                  <?php
+                  get_template_part('components/glyphs/glyph', $cat->slug);
+                  echo $cat->name;
+                  ?>
+                </label>
               </div>
             <?php endforeach;
             ?>
