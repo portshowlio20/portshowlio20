@@ -55,8 +55,6 @@ function filter_ajax()
   // make array of all child categorie IDs from the $filter THEN check against THAT array
   // 3b. students filters
   if (isset($filters)) {
-    $meta_query_array = ['relation' => 'OR'];
-
     $temp_parent_and_child_cat_array = [];
     foreach ($filters as $filter) {
       $child_cats = get_categories(['parent' => $filter]);
@@ -68,20 +66,17 @@ function filter_ajax()
       }
     }
 
-    // echo '<pre>' . var_dump($filters) . '</pre>';
-    // echo '<pre>' . var_dump($temp_parent_and_child_cat_array) . '</pre>';
-
+    $meta_query_array = ['relation' => 'OR'];
     foreach ($temp_parent_and_child_cat_array as $filter) {
-      // 1. make a temp array with first item of: 'key' => 'focus'
-      $temp_key = ['key' => 'focus'];
-      // 2. add second item of temp array: 'value' => $item in filters,
-      $temp_value = ['value' => $filter];
-      $temp_compare = ['compare' => 'LIKE'];
-      // array_push($temp_array, $temp_item);
-      $temp_merge = $temp_key + $temp_value + $temp_compare;
-      // 3. push this temp array to $meta_query_array
-      array_push($meta_query_array, $temp_merge);
+      $meta_query_array[] = [
+        'key' => 'focus',
+        'value' => sprintf(':"%s";', $filter),
+        'compare' => 'LIKE',
+      ];
     }
+
+    // echo '<pre>' . var_dump($temp_parent_and_child_cat_array) . '</pre>';
+    // echo '<pre>' . var_dump($meta_query_array) . '</pre>';
 
     $students_args = [
       'role' => 'author',
