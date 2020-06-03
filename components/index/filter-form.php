@@ -30,33 +30,72 @@
         </div>
         <div class="filter-content-filters">
           <div id="aof-filters">
-            <?php
-            // TODO: update to just parent categories!
-            // https://wordpress.stackexchange.com/questions/127872/get-only-the-top-level-categories-using-get-categories-without-foreach-loop
-            $args = [
-              'exclude' => 1,
-              'parent' => 0,
-              'hide_empty' => 0,
-            ];
-            $categories = get_categories($args);
-            foreach ($categories as $cat): ?>
-              <div class="filter-item">
-                <input
-                  type="checkbox"
-                  id="<?php echo $cat->slug; ?>"
-                  value="<?php echo $cat->term_id; ?>"
-                  data-name="<?php echo $cat->name; ?>"
-                  checked
-                >
-                <label for="<?php echo $cat->slug; ?>">
-                  <?php
-                  get_template_part('components/glyphs/glyph', $cat->slug);
-                  echo $cat->name;
-                  ?>
-                </label>
+            <div class="sub-filters">
+              <h3 class="subhead">Visual Media</h3>
+              <div class="the-filters">
+                <?php
+                // TODO: update to just parent categories!
+                // https://wordpress.stackexchange.com/questions/127872/get-only-the-top-level-categories-using-get-categories-without-foreach-loop
+                $photo_args = [
+                  'exclude' => 1,
+                  'parent' => 77,
+                  'hide_empty' => 0,
+                ];
+                $photo_categories = get_categories($photo_args);
+                foreach ($photo_categories as $cat): ?>
+                  <div class="filter-item">
+                    <input
+                      type="checkbox"
+                      id="<?php echo $cat->slug; ?>"
+                      value="<?php echo $cat->term_id; ?>"
+                      data-name="<?php echo $cat->name; ?>"
+                      checked
+                    >
+                    <label for="<?php echo $cat->slug; ?>">
+                      <?php
+                      get_template_part('components/glyphs/glyph', $cat->slug);
+                      echo $cat->name;
+                      ?>
+                    </label>
+                  </div>
+                <?php endforeach;
+                ?>
               </div>
-            <?php endforeach;
-            ?>
+            </div>
+            <div class="sub-filters">
+              <h3 class="subhead">Graphic Design</h3>
+              <div class="the-filters">
+                <?php
+                // TODO: update to just parent categories!
+                // https://wordpress.stackexchange.com/questions/127872/get-only-the-top-level-categories-using-get-categories-without-foreach-loop
+                $graphic_design_args = [
+                  'exclude' => 1,
+                  'parent' => 78,
+                  'hide_empty' => 0,
+                ];
+                $graphic_design_categories = get_categories(
+                  $graphic_design_args
+                );
+                foreach ($graphic_design_categories as $cat): ?>
+                  <div class="filter-item">
+                    <input
+                      type="checkbox"
+                      id="<?php echo $cat->slug; ?>"
+                      value="<?php echo $cat->term_id; ?>"
+                      data-name="<?php echo $cat->name; ?>"
+                      checked
+                    >
+                    <label for="<?php echo $cat->slug; ?>">
+                      <?php
+                      get_template_part('components/glyphs/glyph', $cat->slug);
+                      echo $cat->name;
+                      ?>
+                    </label>
+                  </div>
+                <?php endforeach;
+                ?>
+              </div>
+            </div>
           </div>
         </div>
       </div>
