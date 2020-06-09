@@ -4,14 +4,20 @@
     <div class="project-meta">
       <h1 class="headline entry-title"><?php the_title(); ?></h1>
 
-        <ul class="areas-of-focus">
+        <div class="areas-of-focus">
+          <span class="subhead">
           <?php
           $tags = get_field('project_tags');
-          foreach ($tags as $tag) {
-            echo '<li class="subhead">' . $tag->name . '</li>';
+          $lastKey = array_key_last($tags);
+          foreach ($tags as $i => $tag) {
+            echo $tag->name;
+            if ($i !== $lastKey) {
+              echo ', ';
+            }
           }
           ?>
-        </ul>
+          </span>
+        </div>
 
         <p><?php the_field('tagline'); ?></p>
     </div>
