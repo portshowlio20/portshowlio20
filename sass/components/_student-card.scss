@@ -26,7 +26,7 @@ $student-card-row: 2;
     grid-template-rows: repeat($student-card-row, minmax($main-grid-unit, 1fr));
 
     @media screen and (max-width: 511px) {
-      grid-template-columns: repeat(3, minmax($main-grid-unit, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 
@@ -38,6 +38,7 @@ $student-card-row: 2;
 
     @media screen and (max-width: 511px) {
       grid-column: span 3;
+      padding: 0;
     }
   }
 

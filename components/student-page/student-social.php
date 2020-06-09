@@ -22,7 +22,7 @@
     <li class="social-network">
       <a href="https://www.youtube.com/channel/<?php echo the_sub_field(
         'youtube'
-      ); ?>" target="_blank" rel="noopener noreferrer">youtube</a>
+      ); ?>" target="_blank" rel="noopener noreferrer">YouTube</a>
     </li>
     <?php endif; ?>
 

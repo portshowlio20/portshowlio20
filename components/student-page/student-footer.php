@@ -47,6 +47,7 @@
           'orderby' => 'rand',
           'meta_query' => $meta_query_array,
           'number' => 4,
+          'exclude' => [$current_stew->ID],
         ];
 
         $the_query = new WP_User_Query($students_args);

@@ -61,11 +61,19 @@
           <!-- PHP for AOF glyphs here -->
         </div>
         <div class="field">
-          <ul class="areas-of-focus">
-            <?php foreach ($tags as $tag) {
-              echo '<li class="focus subhead">' . $tag->name . '</li>';
-            } ?>
-          </ul>
+          <div class="areas-of-focus">
+            <span class="subhead">
+            <?php
+            $lastKey = array_key_last($tags);
+            foreach ($tags as $i => $tag) {
+              echo $tag->name;
+              if ($i !== $lastKey) {
+                echo ', ';
+              }
+            }
+            ?>
+            </span>
+          </div>
         </div>
         <div class="bio-copy">
           <p><?php the_field('bio'); ?></p>

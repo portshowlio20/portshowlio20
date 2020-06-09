@@ -28,6 +28,7 @@ $program_label = $program_field['choices'][$program_value];
 
   get_template_part('components/student-page/student', 'projects');
 
+  set_query_var('current_stew', $current_student);
   get_template_part('components/student-page/student', 'footer');
   ?>
 

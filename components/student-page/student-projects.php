@@ -23,7 +23,17 @@ $current_user_posts = get_posts($args);
 
               <div class="featured-image">
                 <?php $featured_image = get_field('featured_image'); ?>
-                <img class="rectangle"
+                <img
+                class="two-by-one"
+                <?php responsive_image(
+                  $featured_image['two-by-one'],
+                  'thumb-640',
+                  '640px'
+                ); ?>
+                alt="<?php echo the_title(); ?>"
+                />
+                <img
+                class="rectangle"
                 <?php responsive_image(
                   $featured_image['rectangle'],
                   'thumb-640',
