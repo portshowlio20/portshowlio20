@@ -1,8 +1,8 @@
 window.addEventListener("load", function () {
   // const button = document.querySelector("#clear-local");
   const main = document.querySelector("main");
-  const totalProjects = 106;
-  const totalStudents = 53;
+  const totalProjects = 153;
+  const totalStudents = 51;
   const projectsProgressBar = document.querySelector(".stat-projects .bar");
   const projectsPercentage = document.querySelector(".stat-projects .percent");
   const projectsNumber = document.querySelector(".stat-projects .num");
