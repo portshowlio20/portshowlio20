@@ -204,3 +204,40 @@ $cats: "advertising", "ar-vr", "art-direction", "branding", "illustration",
     display: block;
   }
 }
+
+@media screen and (max-width: $big-phone) {
+  .filter-header {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  #filter-dropdown-toggle {
+    margin-top: 0.5rem;
+  }
+
+  #filter-active-glyph {
+    order: 3;
+  }
+
+  #filter-active {
+    display: none;
+  }
+
+  #aof-filters {
+    flex-direction: column;
+  }
+
+  .sub-filters:nth-child(1) {
+    border: none;
+    border-bottom: 1px solid var(--black);
+  }
+
+  .sub-filters .the-filters {
+    display: block;
+  }
+
+  .filter-item {
+    padding: 0.5em 0;
+    margin: 0.5em 0;
+  }
+}
