@@ -114,7 +114,7 @@ body {
     z-index: 90;
   }
 
-  .stat-row:nth-child(3) .stat-progress {
+  .stat-row:last-child .stat-progress {
     border-bottom: none;
   }
 

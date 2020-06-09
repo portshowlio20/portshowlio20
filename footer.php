@@ -50,21 +50,7 @@ if (!is_front_page()): ?>
               ); ?>">
             </div>
           </div>
-        <div class="stat-row">
-          <div class="stat-row-wrap">
-            <div class="stat-num pull-quote">☒%</div>
-            <div class="stat-text"><span>You’ve hired <strong>☒?☒</strong> out of <strong>53 stellar creatives available for work</strong></span></div>
-          </div>
-          <div class="stat-progress">
-            <div class="bar"></div>
-            <div
-              class="gradient gradient-<?php echo sprintf(
-                '%02d',
-                rand(1, 59)
-              ); ?>">
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
     <div class="planet-wrapper">
