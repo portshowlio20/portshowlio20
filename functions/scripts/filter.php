@@ -41,6 +41,7 @@ function filter_ajax()
     'post_type' => 'projects',
     'category__not_in' => 1,
     'orderby' => 'rand',
+    'post_status' => 'publish',
   ];
 
   if (isset($filters)) {

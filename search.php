@@ -95,16 +95,19 @@ $authors_id_array = [];
 
               $work_by_focus = new WP_Query([
                 'post_type' => 'projects',
+                'post_status' => 'publish',
                 'category__in' => $terms_id_array,
               ]);
 
               $work_by_author = new WP_Query([
                 'post_type' => 'projects',
+                'post_status' => 'publish',
                 'author__in' => $authors_id_array,
               ]);
 
               $work_by_title = new WP_Query([
                 'post_type' => 'projects',
+                'post_status' => 'publish',
                 's' => $search_string,
               ]);
 
