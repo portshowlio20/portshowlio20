@@ -21,14 +21,16 @@
         class="project-collaborator"
       >
         <div class="collaborator-headshot">
-          <img
-            <?php responsive_image(
-              $student_headshot[0],
-              'thumb-640',
-              '640px'
-            ); ?>
-            alt="<?php echo $name; ?>"
-          />
+          <div class="collaborator-headshot-wrap">
+            <img
+              <?php responsive_image(
+                $student_headshot[0],
+                'thumb-640',
+                '640px'
+              ); ?>
+              alt="<?php echo $name; ?>"
+            />
+          </div>
         </div>
 
         <div>

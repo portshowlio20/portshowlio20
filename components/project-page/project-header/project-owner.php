@@ -11,10 +11,12 @@ $student_link = get_author_posts_url(get_the_author_meta('ID'));
     rel="author"
   >
 
-    <img class="headshot"
-      <?php responsive_image($student_headshot[0], 'thumb-640', '640px'); ?>
-      alt="your headshot goes here"
-    />
+    <div class="headshot-wrap">
+      <img class="headshot"
+        <?php responsive_image($student_headshot[0], 'thumb-640', '640px'); ?>
+        alt="<?php echo $student_name; ?>"
+      />
+    </div>
 
     <h2 class="subhead"><?php echo $student_name; ?></h2>
 

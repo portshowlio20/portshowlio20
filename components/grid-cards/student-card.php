@@ -33,11 +33,19 @@ $headshots = get_field('headshots', 'user_' . $student_id);
             <?php get_template_part('components/glyphs/glyph', $program); ?>
           </div>
         </div>
-        <ul class="areas-of-focus">
-          <?php foreach ($aof_list as $aof) {
-            echo '<li>' . $aof->name . '</li>';
-          } ?>
-        </ul>
+        <div class="areas-of-focus">
+          <span class="caption">
+          <?php
+          $lastKey = array_key_last($aof_list);
+          foreach ($aof_list as $i => $aof) {
+            echo $aof->name;
+            if ($i !== $lastKey) {
+              echo ', ';
+            }
+          }
+          ?>
+          </span>
+        </div>
       </div>
     </div>
   </a>

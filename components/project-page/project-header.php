@@ -3,10 +3,21 @@
     <div class="featured-image">
       <?php
       $featured_image = get_field('featured_image');
+      echo '<pre>' . var_dump($featured_image) . '</pre>';
       if ($featured_image): ?>
         <img
+          class="two-to-one"
           <?php responsive_image(
-            $featured_image['rectangle'],
+            $featured_image['two-to-one'],
+            'thumb-640',
+            '640px'
+          ); ?>
+          alt="<?php the_title(); ?>"
+        />
+        <img
+          class="square-for-mobile"
+          <?php responsive_image(
+            $featured_image['square'],
             'thumb-640',
             '640px'
           ); ?>
