@@ -42,6 +42,7 @@ function filter_ajax()
     'category__not_in' => 1,
     'orderby' => 'rand',
     'post_status' => 'publish',
+    'posts_per_page' => -1,
   ];
 
   if (isset($filters)) {
