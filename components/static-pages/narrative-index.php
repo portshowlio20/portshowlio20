@@ -15,32 +15,11 @@
       <div class="container">
         <div class="headline-wrap">
           <p class="headline two" data-splitting>
-            Separated by circumstance but connected by our creativity, we come
-            together united by a common mission...
+            Separated by distance but connected by our creativity, <br/> we’re here to showcase the Seattle Central Creative Academy Class of 2020.
           </p>
         </div>
       </div>
     </section>
-
-    <section class="narrative-text three">
-      <div class="container">
-        <div class="headline-wrap">
-          <p class="headline three" data-splitting>
-            Showcasing the Seattle Central Creative Academy Class of 2020.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <div class="shape-wrap">
-      <div class="shape background"></div>
-      <div class="shape animate black"></div>
-      <div class="shape animate planet gradient gradient-10"></div>
-    </div>
-
-    <div id="reveal-me">
-      <canvas id="gradient-feather"></canvas>
-    </div>
 
     <section id="our-planets">
       <a href="./index/">
