@@ -26,7 +26,7 @@ $current_user_posts = get_posts($args);
                 <img
                 class="two-by-one"
                 <?php responsive_image(
-                  $featured_image['two-by-one'],
+                  $featured_image['two-to-one'],
                   'thumb-640',
                   '640px'
                 ); ?>
