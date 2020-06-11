@@ -3,7 +3,6 @@
     <div class="featured-image">
       <?php
       $featured_image = get_field('featured_image');
-      echo '<pre>' . var_dump($featured_image) . '</pre>';
       if ($featured_image): ?>
         <img
           class="two-to-one"
