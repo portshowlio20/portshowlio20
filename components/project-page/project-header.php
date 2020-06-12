@@ -9,7 +9,7 @@
           <?php responsive_image(
             $featured_image['two-to-one'],
             'thumb-640',
-            '640px'
+            '1200px'
           ); ?>
           alt="<?php the_title(); ?>"
         />
