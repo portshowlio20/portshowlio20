@@ -17,6 +17,7 @@ if (!is_front_page()): ?>
         <div class="footer-text">
           <div class="headline">We stand on the shoulders of giants</div>
           <p>The SCCA class of 2020 owes a huge debt of gratitude to the incredible teachers, staff, alumni, speakers, and designers of past and present who have educated and inspired us on our journey through this program. Thank you for showing us the way. We look forward to joining this amazingly creative and collaborative design community.</p>
+          <p>Additional thanks to alumni <a href="http://www.jmdmcreative.com/" target="_blank" rel="noopener noreferrer">Jake Magraw</a> for the use of his studio space throughout this project.</p>
         </div>
       </div>
       <div class="stats">

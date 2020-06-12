@@ -45,6 +45,11 @@ body {
     max-width: 50ch;
   }
 
+  .footer-text a {
+    color: var(--white);
+    text-decoration: underline;
+  }
+
   .graph {
     margin-top: 4rem;
     height: 20rem;
@@ -161,20 +166,42 @@ body {
   $footer-planet-offset: calc(#{$footer-planet-radius} / 2.5 * -1);
   $footer-planet-tall-offset: calc(#{$tall-footer-planet-radius} / 2.5 * -1);
 
+  $mobile-footer-planet-radius: 25rem;
+  $mobile-tall-footer-planet-radius: 40rem;
+  $mobile-footer-planet-offset: calc(
+    #{$mobile-footer-planet-radius} / 2.5 * -1
+  );
+  $mobile-footer-planet-tall-offset: calc(
+    #{$mobile-tall-footer-planet-radius} / 2.5 * -1
+  );
+
   .planet-wrapper {
     position: absolute;
     right: $footer-planet-offset;
     top: calc(#{$footer-planet-radius} / 2.5 * -1);
     z-index: 1;
+
+    @media screen and (max-width: $tablet) {
+      right: $mobile-footer-planet-offset;
+      top: calc(#{$mobile-footer-planet-radius} / 2 * -1);
+    }
   }
 
   .planet-large {
     width: $footer-planet-radius;
     height: $footer-planet-radius;
+
+    @media screen and (max-width: $tablet) {
+      width: $mobile-footer-planet-radius;
+      height: $mobile-footer-planet-radius;
+    }
   }
 
   .footer-wrap {
     margin-top: calc(#{$footer-planet-radius} / 6);
+    @media screen and (max-width: $tablet) {
+      margin-top: calc(#{$mobile-footer-planet-radius} / 12);
+    }
   }
 
   .footer-footer {
@@ -204,6 +231,7 @@ body {
         transform: translate3d(-500px, 0, 0); /* The image width */
       }
     }
+
     .scca-bits {
       display: flex;
       flex-direction: column;
@@ -270,7 +298,7 @@ body {
     }
 
     .footer-left {
-      margin-top: 15rem;
+      margin-top: calc(#{$mobile-footer-planet-radius} / 6);
       margin-bottom: 2rem;
     }
 
