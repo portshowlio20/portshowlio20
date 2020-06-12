@@ -198,7 +198,8 @@ label,
 // get list of all parent cats
 $cats: "advertising", "ar-vr", "art-direction", "branding", "illustration",
   "motion", "packaging", "portraiture", "post-production", "type-layout",
-  "ui-ux", "video", "visual-design", "web-design";
+  "ui-ux", "video", "visual-design", "web-design", "fine-art-photography",
+  "editorial-photography", "retail-photography", "experiential-design";
 @each $cat in $cats {
   #filter-active-glyph.#{$cat} > .#{$cat} {
     display: block;

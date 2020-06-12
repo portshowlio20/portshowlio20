@@ -43,3 +43,12 @@
 <div class="glyph web">
   <svg viewBox="0 0 126 162" xmlns="http://www.w3.org/2000/svg"><clipPath id="a"><path d="m0 0h126v162h-126z"/></clipPath><g clip-path="url(#a)"><path d="m18 18h90v18h-90zm-18-18v162h126v-18h-108v-90h90v18h-72v18h72v18h-72v18h90v-126z" fill="currentColor"/></g></svg>
 </div>
+<div class="glyph editorial-photography">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 126 162" fill="currentColor"><path d="M126 72v54H90v18h36v18H72v-54h36V90H36V72h90zM0 0v126h36v18H0v18h54v-54H18V18h90v18H36v18h90V0H0z"/></svg>
+</div>
+<div class="glyph fine-art-photography">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 126 162" fill="currentColor"><path d="M72 108v36h54v18H0v-18h54v-36h18zM36 36h54v54H36V36zm36 18H54v18h18V54zM0 0v126h36v-18H18V18h90v90H90v18h36V0H0z"/></svg>
+</div>
+<div class="glyph retail-photography">
+  <svg viewBox="0 0 126 162" xmlns="http://www.w3.org/2000/svg"><clipPath id="a"><path d="m0 0h126v162h-126z"/></clipPath><g clip-path="url(#a)" fill="currentColor"><path d="m36 90h54v-54h-54zm36-18h-18v-18h18z"/><path d="m0 0v126h36v18h-36v18h54v-54h-36v-90h36v-18z"/><path d="m72 0v18h36v90h-36v54h54v-18h-36v-18h36v-126z"/></g></svg>
+</div>
