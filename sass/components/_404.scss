@@ -1,0 +1,46 @@
+.error404 {
+  // padding-top: 8rem;
+  main {
+    background: var(--black);
+    color: var(--white);
+    padding-bottom: 15.5vh;
+  }
+
+  .not-found {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .error-msg .headline {
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+  }
+
+  .error-msg p {
+    text-align: center;
+  }
+
+  .ticker-404 {
+    height: 1.28541875rem;
+    width: 100%;
+    // position: absolute;
+    margin: 4.85rem 0;
+    width: 1892.4399px; /* The image width times 3 */
+    background: url("./images/glyph-scroll-404.svg") repeat-x;
+    animation: tickerScroll 50s linear infinite;
+    z-index: 0;
+  }
+
+  @keyframes tickerScroll {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-630.8133px, 0, 0); /* The image width */
+    }
+  }
+}
