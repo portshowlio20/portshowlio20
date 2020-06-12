@@ -12,7 +12,7 @@ $image_caption = get_sub_field('image_caption');
           data-fancybox="gallery-<?php echo get_row_index(); ?>"
         >
           <img
-            <?php responsive_image($image["id"], 'thumb-640', '640px'); ?>
+            <?php responsive_image($image["id"], 'thumb-640', '1200px'); ?>
             alt="<?php echo $image["alt"]; ?>"
             data-caption="<?php echo $image["caption"]; ?>"
             />

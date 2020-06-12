@@ -28,7 +28,7 @@ $current_user_posts = get_posts($args);
                 <?php responsive_image(
                   $featured_image['two-to-one'],
                   'thumb-640',
-                  '640px'
+                  '1200px'
                 ); ?>
                 alt="<?php echo the_title(); ?>"
                 />
