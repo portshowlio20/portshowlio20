@@ -9,7 +9,7 @@ $image_side = get_sub_field("image")["image_side"];
 <section class="flexible-section">
   <div class="container">
 
-    <div class="row <?= $gallery_side == "right" ? "flip-order" : "" ?>">
+    <div class="row <?= $image_side == "right" ? "flip-order" : "" ?>">
 
       <div class="column">
         <div class="text">

@@ -10,7 +10,7 @@ $video_side = get_sub_field("video")["video_side"];
 <section class="flexible-section">
   <div class="container">
 
-    <div class="row <?= $gallery_side == "right" ? "flip-order" : "" ?>">
+    <div class="row <?= $video_side == "right" ? "flip-order" : "" ?>">
 
       <div class="column">
         <div class="text">
