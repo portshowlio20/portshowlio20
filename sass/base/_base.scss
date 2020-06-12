@@ -50,12 +50,18 @@ img {
     padding: 0 $site-padding;
   }
 }
+
+.page-template-default main,
 .error404 main,
 .search main,
 .author main,
 .single-projects main,
 .page-id-372 main {
   margin-top: 8rem;
+}
+
+.page-temp {
+  margin-bottom: 33vh;
 }
 
 .list-reset {
