@@ -18,7 +18,6 @@ if (!is_front_page()): ?>
           <div class="headline">We stand on the shoulders of giants</div>
           <p>The SCCA class of 2020 owes a huge debt of gratitude to the incredible teachers, staff, alumni, speakers, and designers of past and present who have educated and inspired us on our journey through this program. Thank you for showing us the way. We look forward to joining this amazingly creative and collaborative design community.</p>
         </div>
-        <div class="graph"></div>
       </div>
       <div class="stats">
         <div class="stat-row stat-projects">
@@ -50,7 +49,27 @@ if (!is_front_page()): ?>
               ); ?>">
             </div>
           </div>
-
+        </div>
+        <div class="stat-row">
+          <?php $rl = new WP_Query([
+            'post_type' => 'projects',
+            'posts_per_page' => 1,
+            'orderby' => 'rand',
+            'fields' => 'ids',
+          ]); ?>
+          <a
+            class="rando-proj"
+            href="<?php echo get_permalink($rl->posts[0]); ?>"
+            title="<?php echo get_the_title($rl->posts[0]); ?>">
+            <span>Set course to the nearest project</span>
+            <div class="stat-progress">
+              <div class="gradient gradient-<?php echo sprintf(
+                '%02d',
+                rand(1, 59)
+              ); ?>"></div>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
     <div class="planet-wrapper">
