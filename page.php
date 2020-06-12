@@ -14,20 +14,20 @@
 
 get_header(); ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main page-temp">
+    <div class="container">
+      <?php
+      while (have_posts()):
+        the_post(); ?>
+            <div class="entry-content-page">
+                <?php the_content(); ?>
+            </div>
 
-  <?php
-  while (have_posts()):
-    the_post(); ?>
-        <div class="entry-content-page">
-            <?php the_content(); ?>
-        </div>
-
-    <?php
-  endwhile;
-  wp_reset_query();
-  ?>
-
+        <?php
+      endwhile;
+      wp_reset_query();
+      ?>
+    </div>
 	</main>
 
 <?php get_footer();
