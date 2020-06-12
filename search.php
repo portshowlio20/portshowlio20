@@ -25,14 +25,13 @@ $authors_id_array = [];
           <div class="container">
             <div class="search-result-heading"><h3 class="subhead">Students related to <span class="search-query"><?= get_search_query() ?></span></h3><div class="chevron">▲</div></div>
             <div class="grid" data-active="students">
-              <!-- https://www.smashingmagazine.com/2016/03/advanced-wordpress-search-with-wp_query/ -->
-              <!-- https://wordpress.stackexchange.com/questions/70864/meta-query-compare-operator-explanation -->
-              <!-- https://wordpress.stackexchange.com/questions/105168/how-can-i-search-for-a-worpress-user-by-display-name-or-a-part-of-it -->
               <?php
               $users_by_name = new WP_User_Query([
                 'search' => "*{$search_string}*",
                 'search_columns' => ['display_name'],
                 'exclude' => '1',
+                'role' => 'author',
+                'has_published_posts' => ['projects'],
               ]);
 
               if (isset($terms)) {
@@ -42,7 +41,9 @@ $authors_id_array = [];
                   // 1. make a temp array with first item of: 'key' => 'focus'
                   $temp_key = ['key' => 'focus'];
                   // 2. add second item of temp array: 'value' => $item in terms,
-                  $temp_value = ['value' => $term->term_id];
+                  $temp_value = [
+                    'value' => serialize(strval($term->term_id)),
+                  ];
                   $temp_compare = ['compare' => 'LIKE'];
                   // array_push($temp_array, $temp_item);
                   $temp_merge = $temp_key + $temp_value + $temp_compare;
@@ -52,6 +53,7 @@ $authors_id_array = [];
 
                 $user_focus_meta_query_array = [
                   'role' => 'author',
+                  'has_published_posts' => ['projects'],
                   'meta_query' => $meta_query_array,
                 ];
               }
@@ -63,18 +65,17 @@ $authors_id_array = [];
                   array_push($authors_id_array, $student->ID);
                   set_query_var('student_id', absint($student->ID));
                   get_template_part('components/grid-cards/student', 'card');
-                  // echo '<h3>by name ran</h3>';
                 }
               } elseif (!empty($users_by_focus->results)) {
                 foreach ($users_by_focus->results as $student) {
                   set_query_var('student_id', absint($student->ID));
                   get_template_part('components/grid-cards/student', 'card');
-                  // echo '<h3>by focus ran</h3>';
                 }
               } else {
-                echo "<span>[ 404 ] Oop, we couldn't any students related to " .
-                  $search_string .
-                  "</span>";
+                echo '<span class="no-results">';
+                echo "[ 404 ] Oop, we couldn't any students related to " .
+                  $search_string;
+                echo "</span>";
               }
 
               wp_reset_postdata();
