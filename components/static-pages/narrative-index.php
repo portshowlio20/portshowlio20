@@ -29,35 +29,28 @@
             <div class="interactive-gradient"></div>
             <div class="gradient gradient-51 spin"></div>
           </div>
-          <div class="planet planet-one">
+          <div class="planet planet-one rellax" data-relax-speed="-2">
             <div class="interactive-gradient"></div>
             <div class="gradient gradient-<?php echo sprintf(
               '%02d',
               rand(1, 59)
             ); ?> spin"></div>
           </div>
-          <div class="planet planet-two">
+          <div class="planet planet-two rellax" data-relax-speed="2">
             <div class="interactive-gradient"></div>
             <div class="gradient gradient-<?php echo sprintf(
               '%02d',
               rand(1, 59)
             ); ?> spin"></div>
           </div>
-          <div class="planet planet-three">
+          <div class="planet planet-three rellax" data-relax-speed="-5">
             <div class="interactive-gradient"></div>
             <div class="gradient gradient-<?php echo sprintf(
               '%02d',
               rand(1, 59)
             ); ?> spin"></div>
           </div>
-          <div class="planet planet-four">
-            <div class="interactive-gradient"></div>
-            <div class="gradient gradient-<?php echo sprintf(
-              '%02d',
-              rand(1, 59)
-            ); ?> spin"></div>
-          </div>
-          <div class="planet planet-five">
+          <div class="planet planet-four rellax" data-relax-speed="-7">
             <div class="interactive-gradient"></div>
             <div class="gradient gradient-<?php echo sprintf(
               '%02d',

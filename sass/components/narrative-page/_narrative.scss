@@ -11,6 +11,7 @@
 
   main {
     min-height: 300vh;
+    overflow: hidden;
   }
 
   .headline {
@@ -27,71 +28,4 @@
   span[data-word="We"] span[data-char="e"] {
     margin-left: -0.15em;
   }
-
-  // .shape-wrap {
-  //   position: relative;
-  //   z-index: 10;
-  //   overflow-x: hidden;
-  //   pointer-events: none;
-  // }
-
-  // .shape-wrap .background {
-  //   height: 200vh;
-  //   $percentage: 85%;
-  //   background-image: linear-gradient(
-  //     var(--black),
-  //     var(--black) $percentage,
-  //     rgba(255, 255, 255, 0) $percentage,
-  //     rgba(255, 255, 255, 0) 100%
-  //   );
-  // }
-
-  // .shape {
-  //   min-width: 100vw;
-  //   height: 0;
-  //   padding-top: 100%;
-  //   // overflow: hidden;
-  // }
-
-  // // this pseudo element covers up the gap between the "background" and the shapes
-  // // does is slow down the animation tho?
-  // .shape.animate.black::before {
-  //   content: "";
-  //   position: absolute;
-  //   background: var(--black);
-  //   height: 50%;
-  //   width: 100%;
-  //   top: 0;
-  //   transform: translateY(-50%);
-  //   // border: 1px solid var(--peach);
-  // }
-
-  // .shape.animate.black {
-  //   position: relative;
-  //   background: var(--black);
-  //   z-index: 5;
-  //   border-radius: 50%;
-  // }
-
-  // .shape.animate.planet {
-  //   position: absolute;
-  //   bottom: 0;
-  //   left: 0;
-  //   width: 100%;
-  // }
-
-  // #reveal-me {
-  //   position: fixed;
-  //   height: 100vh;
-  //   width: 100vw;
-  //   top: 0;
-  //   left: 0;
-  //   z-index: 100;
-
-  //   canvas {
-  //     // opacity: 0.2;
-  //     mix-blend-mode: hard-light;
-  //     // border: 1px solid yellow;
-  //   }
-  // }
 }

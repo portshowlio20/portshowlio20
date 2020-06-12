@@ -45,6 +45,21 @@ function add_disable_enable_scroll_script()
   }
 }
 
+add_action('wp_enqueue_scripts', 'add_rellax_script');
+function add_rellax_script()
+{
+  if (is_front_page()) {
+    wp_enqueue_script(
+      'rellax', // name your script so that you can attach other scripts and de-register, etc.
+      get_template_directory_uri() . '/js/narrative/rellax.min.js', // this is the location of your script file
+      ['jquery'],
+      // ['countdown_timer', 'interactive_gradients', 'canvas_noise'], // this array lists the scripts upon which your script depends
+      null,
+      true
+    );
+  }
+}
+
 add_action('wp_enqueue_scripts', 'add_narrative_anime_script');
 function add_narrative_anime_script()
 {
@@ -54,6 +69,7 @@ function add_narrative_anime_script()
       get_template_directory_uri() . '/js/narrative/narrativeAnime.js', // this is the location of your script file
       [
         'jquery',
+        'rellax',
         'animejs',
         'splittingjs',
         'get_scroll_percent',

@@ -68,3 +68,5 @@ function narrativeAnime() {
 
 Splitting();
 narrativeAnime();
+
+var rellax = new Rellax(".rellax");
