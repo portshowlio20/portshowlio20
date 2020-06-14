@@ -102,12 +102,11 @@
             </div>
           </a>
         </div>
-        <form class="search" action="<?php echo home_url('/'); ?>">
-          <div class="search-icon">
-            <svg width="24" height="26" viewBox="0 0 24 26" fill="none">
-              <path d="M16.24 10.0585C16.24 14.1314 13.0145 17.3641 9.12 17.3641C5.22552 17.3641 2 14.1314 2 10.0585C2 5.98557 5.22552 2.75293 9.12 2.75293C13.0145 2.75293 16.24 5.98557 16.24 10.0585Z" stroke="black" stroke-width="4" stroke-linejoin="round"/>
-              <line y1="-2" x2="10.1591" y2="-2" transform="matrix(0.63786 0.770152 -0.757343 0.653017 13.6799 17.4172)" stroke="black" stroke-width="4" stroke-linejoin="round"/>
-            </svg>
+        <form class="search" action="<?php echo home_url(
+          '/'
+        ); ?>" title="Search">
+          <div class="search-icon" >
+            <?php get_template_part('components/glyphs/glyph', 'search'); ?>
           </div>
           <input type="search" name="s" placeholder="Search&hellip;">
           <input type="submit" value="Search">
