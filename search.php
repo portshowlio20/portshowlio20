@@ -23,7 +23,10 @@ $authors_id_array = [];
 
         <div class="student-results">
           <div class="container">
-            <div class="search-result-heading"><h3 class="subhead">Students related to <span class="search-query"><?= get_search_query() ?></span></h3><div class="chevron">▲</div></div>
+            <div class="search-result-heading"><h3 class="subhead">Students related to <span class="search-query"><?= get_search_query() ?></span></h3><div class="chevron"><?php get_template_part(
+  'components/glyphs/glyph',
+  'arrow'
+); ?></div></div>
             <div class="grid" data-active="students">
               <?php
               $users_by_name = new WP_User_Query([
@@ -86,7 +89,10 @@ $authors_id_array = [];
 
         <div class="work-results">
           <div class="container">
-            <div class="search-result-heading"><h3 class="subhead">Works related to <span class="search-query"><?= get_search_query() ?></span></h3><div class="chevron">▲</div></div>
+            <div class="search-result-heading"><h3 class="subhead">Works related to <span class="search-query"><?= get_search_query() ?></span></h3><div class="chevron"><?php get_template_part(
+  'components/glyphs/glyph',
+  'arrow'
+); ?></div></div>
             <div class="grid works-grid">
               <?php
               $terms_id_array = [];

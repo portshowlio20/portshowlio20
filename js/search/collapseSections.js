@@ -12,9 +12,9 @@
   function handleStudentToggle() {
     studentContent.slideToggle(400, function () {
       if (studentContent.is(":visible")) {
-        studentChevron.html("▲");
+        studentChevron.addClass("up");
       } else {
-        studentChevron.html("▼");
+        studentChevron.removeClass("up");
       }
     });
   }
@@ -22,9 +22,9 @@
   function handleWorkToggle() {
     workContent.slideToggle(400, function () {
       if (workContent.is(":visible")) {
-        workChevron.html("▲");
+        workChevron.addClass("up");
       } else {
-        workChevron.html("▼");
+        workChevron.removeClass("up");
       }
     });
   }

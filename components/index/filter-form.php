@@ -20,7 +20,10 @@
           <span id="filter-state">
             Filter by area of focus
           </span>
-          <div class="chevron">▼</div>
+          <div class="chevron"><?php get_template_part(
+            'components/glyphs/glyph',
+            'arrow'
+          ); ?></div>
         </div>
       </div>
       <div class="filter-content">

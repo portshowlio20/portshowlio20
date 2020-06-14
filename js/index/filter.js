@@ -155,10 +155,10 @@
       // var options = { duration: 400, easing: easing.speedInOut };
       filterContent.slideToggle(400, function () {
         if (filterContent.is(":visible")) {
-          filterDropdownToggle.children().last().html("▲");
+          filterDropdownToggle.children(".chevron").addClass("up");
           // TODO: remove "clear filters" from filter-header
         } else {
-          filterDropdownToggle.children().last().html("▼");
+          filterDropdownToggle.children(".chevron").removeClass("up");
           // TODO: add "clear filters" from filter-header
           // TODO: will need to code functionailty for that fucker
         }
