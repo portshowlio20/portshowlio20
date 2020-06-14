@@ -1,0 +1,30 @@
+// Martin's Motion Reel
+#post-626 {
+  &.projects .gallery-image {
+    padding-top: 56.25%;
+  }
+}
+
+// Martin's Swauk Creek
+#post-1322 {
+  &.projects .gallery-image {
+    padding-top: 66.65%;
+  }
+  &.projects .full-width-wrap .solo-image {
+    padding-top: 50%;
+  }
+}
+
+// Enrique's LatinX
+#post-1179 {
+  &.projects .gallery-image img {
+    object-position: top;
+  }
+}
+
+#post-1225 {
+  &.projects .flexible-section:nth-of-type(2) .gallery-image img,
+  &.projects .flexible-section:nth-of-type(3) .gallery-image img {
+    object-position: top;
+  }
+}
