@@ -22,10 +22,15 @@
         <p><?php the_field('tagline'); ?></p>
     </div>
 
-    <div class="project-overview">
-      <h2 class="subhead">Project Overview</h2>
-      <?php the_field('overview'); ?>
-    </div>
+    <?php if (get_field('overview')): ?>
+
+      <div class="project-overview">
+        <h2 class="subhead">Project Overview</h2>
+        <?php the_field('overview'); ?>
+      </div>
+
+    <?php endif; ?>
+
   </div>
 
   <div class="project-roles">
