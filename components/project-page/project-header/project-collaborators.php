@@ -36,10 +36,15 @@
         <div>
           <h3 class="subhead"><?php echo $name; ?></h3>
           <div>
-            <!-- <h4>Roles</h4> -->
             <ul class="collaborator-roles list-reset areas-of-focus">
-              <?php foreach ($roles as $role) {
-                echo '<li>' . $role->name . '</li>';
+              <?php if ($roles) {
+                $lastKey = array_key_last($roles);
+                foreach ($roles as $role) {
+                  echo $role->name;
+                  if ($i !== $lastKey) {
+                    echo ', ';
+                  }
+                }
               } ?>
             </ul>
           </div>

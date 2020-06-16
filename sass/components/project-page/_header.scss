@@ -11,7 +11,7 @@
     width: 100%;
     padding-top: 50%;
     overflow: hidden;
-    @media screen and (max-width: $big-phone) {
+    @media screen and (max-width: $tablet) {
       padding-top: 100%;
     }
   }
@@ -27,14 +27,14 @@
 
   .two-to-one {
     display: none;
-    @media screen and (min-width: $big-phone) {
+    @media screen and (min-width: $tablet) {
       display: block;
     }
   }
 
   .square-for-mobile {
     display: block;
-    @media screen and (min-width: $big-phone) {
+    @media screen and (min-width: $tablet) {
       display: none;
     }
   }
@@ -42,14 +42,29 @@
   .the-project-card {
     border: 1px solid var(--black);
     display: flex;
-    @media screen and (max-width: $big-phone) {
+    @media screen and (max-width: $tablet) {
       flex-direction: column;
 
       .project-roles {
         border-left: none;
         border-top: 1px solid var(--black);
       }
-      .project-owner {
+      .project-owner a {
+        display: flex;
+        align-items: center;
+
+        .proj-owner-deets {
+          margin-top: -1rem;
+        }
+        .headshot-wrap {
+          max-width: 25%;
+          margin-right: 2rem;
+
+          .headshot {
+            border-radius: 50%;
+            overflow: hidden;
+          }
+        }
       }
     }
   }

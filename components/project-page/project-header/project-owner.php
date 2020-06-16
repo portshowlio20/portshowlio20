@@ -18,17 +18,23 @@ $student_link = get_author_posts_url(get_the_author_meta('ID'));
       />
     </div>
 
-    <h2 class="subhead"><?php echo $student_name; ?></h2>
+    <div class="proj-owner-deets">
+      <h2 class="subhead"><?php echo $student_name; ?></h2>
 
-    <ul class="your-roles list-reset areas-of-focus">
+      <ul class="your-roles list-reset areas-of-focus">
       <?php
       $roles = get_field('your_roles');
       if ($roles) {
+        $lastKey = array_key_last($roles);
         foreach ($roles as $role) {
-          echo '<li>' . $role->name . '</li>';
+          echo $role->name;
+          if ($i !== $lastKey) {
+            echo ', ';
+          }
         }
       }
       ?>
-    </ul>
+      </ul>
+    </div>
   </a>
 </address>

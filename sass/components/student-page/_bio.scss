@@ -125,6 +125,15 @@
     }
   }
 
+  @media screen and (min-width: $tablet) and (max-width: $big-tablet) {
+    .gradient,
+    .headshot,
+    .email,
+    .website {
+      grid-column: 1 / span 2;
+    }
+  }
+
   .field .areas-of-focus {
     margin-bottom: 1.56rem;
   }
