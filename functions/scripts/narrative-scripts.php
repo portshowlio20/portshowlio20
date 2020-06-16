@@ -1,19 +1,30 @@
 <?php
 
-// add_action('wp_enqueue_scripts', 'add_gradient_feather_script');
-// function add_gradient_feather_script()
-// {
-//   if (is_front_page()) {
-//     wp_enqueue_script(
-//       'gradient_feather', // name your script so that you can attach other scripts and de-register, etc.
-//       get_template_directory_uri() . '/js/narrative/gradientFeather.js', // this is the location of your script file
-//       ['jquery'],
-//       // ['countdown_timer', 'interactive_gradients', 'canvas_noise'], // this array lists the scripts upon which your script depends
-//       null,
-//       true
-//     );
-//   }
-// }
+add_action('wp_enqueue_scripts', 'add_animejs_script');
+function add_animejs_script()
+{
+  wp_enqueue_script(
+    'animejs', // name your script so that you can attach other scripts and de-register, etc.
+    get_template_directory_uri() . '/js/global/anime.min.js', // this is the location of your script file
+    ['jquery'],
+    // ['countdown_timer', 'interactive_gradients', 'canvas_noise'], // this array lists the scripts upon which your script depends
+    null,
+    true
+  );
+}
+
+add_action('wp_enqueue_scripts', 'add_splittingjs_script');
+function add_splittingjs_script()
+{
+  wp_enqueue_script(
+    'splittingjs', // name your script so that you can attach other scripts and de-register, etc.
+    get_template_directory_uri() . '/js/global/splitting.min.js', // this is the location of your script file
+    ['jquery'],
+    // ['countdown_timer', 'interactive_gradients', 'canvas_noise'], // this array lists the scripts upon which your script depends
+    null,
+    true
+  );
+}
 
 add_action('wp_enqueue_scripts', 'add_get_scroll_percent_script');
 function add_get_scroll_percent_script()
