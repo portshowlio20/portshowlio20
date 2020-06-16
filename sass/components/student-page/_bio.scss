@@ -10,55 +10,8 @@
       grid-template-columns: repeat(auto-fit, minmax($main-grid-unit, 1fr));
     }
 
-    @media screen and (max-width: $big-phone) {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    @media screen and (max-width: $tablet) {
-      $unit: calc(#{$main-grid-unit} / 2);
-      display: block;
-
-      .gradient {
-        height: $unit;
-      }
-
-      .headshot {
-        height: 0;
-        position: relative;
-        padding-top: 100%;
-        overflow: hidden;
-      }
-
-      .email,
-      .website {
-        height: $unit;
-      }
-
-      .bio {
-        margin-top: 2rem;
-
-        .headline {
-          margin-bottom: 1rem;
-        }
-      }
-
-      .email .subhead,
-      .website .subhead {
-        font-size: 1rem;
-      }
-
-      .across-the-net {
-        margin-top: 1rem;
-      }
-
-      .across-the-net-links {
-        width: 100%;
-        flex-wrap: wrap;
-      }
-
-      .across-the-net li:last-child {
-        padding-right: 0;
-      }
+    @media screen and (max-width: 511px) {
+      grid-template-columns: repeat(3, minmax($main-grid-unit, 1fr));
     }
   }
 

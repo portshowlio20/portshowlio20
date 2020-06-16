@@ -9,11 +9,8 @@
     position: relative;
     height: 0;
     width: 100%;
-    padding-top: 50%;
+    padding-top: 45%;
     overflow: hidden;
-    @media screen and (max-width: $big-phone) {
-      padding-top: 100%;
-    }
   }
 
   .featured-image img {
@@ -25,33 +22,9 @@
     top: 0;
   }
 
-  .two-to-one {
-    display: none;
-    @media screen and (min-width: $big-phone) {
-      display: block;
-    }
-  }
-
-  .square-for-mobile {
-    display: block;
-    @media screen and (min-width: $big-phone) {
-      display: none;
-    }
-  }
-
   .the-project-card {
     border: 1px solid var(--black);
     display: flex;
-    @media screen and (max-width: $big-phone) {
-      flex-direction: column;
-
-      .project-roles {
-        border-left: none;
-        border-top: 1px solid var(--black);
-      }
-      .project-owner {
-      }
-    }
   }
 
   .project-meta,
@@ -112,16 +85,12 @@
 
   .collaborator-headshot {
     width: 25%;
-    margin-right: 1rem;
-  }
-
-  .collaborator-headshot-wrap {
     height: 0;
-    width: 100%;
-    padding-top: 100%;
+    padding-top: 25%;
     border-radius: 50%;
     overflow: hidden;
     position: relative;
+    margin-right: 1rem;
   }
 
   .collaborator-headshot img {

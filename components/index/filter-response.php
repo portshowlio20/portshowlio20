@@ -1,5 +1,8 @@
 <section>
-  <div class="container">
+  <div class="container" id="loading-container">
+    <div id="loading">
+      <span>Hang tight, we're fetching new projects!</span>
+    </div>
     <div id="response" class="grid works-grid" data-active="works">
       <?php
       $loop = new WP_Query([
@@ -7,7 +10,7 @@
         'category__not_in' => 1,
         'orderby' => 'rand',
         'post_status' => 'publish',
-        'posts_per_page' => -1,
+        'posts_per_page' => 10,
       ]);
       if ($loop->have_posts()):
         while ($loop->have_posts()):

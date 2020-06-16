@@ -176,8 +176,9 @@
         },
         type: "post",
         beforeSend: function () {
-          // TODO: add animtion instead of "background: red"
-          // $("#response").css("background", "red");
+          $("#loading").fadeIn("fast", function () {
+            $(this).css("display", "flex");
+          });
         },
         success: function (result) {
           $("#response").html(result);
@@ -188,11 +189,11 @@
         },
         complete: function () {
           canvasNoise();
-          // $("#response").css("background", "white");
-          // TODO: add random amount of spacer divs through PHP (filter.php specifically? also maybe filter-response.php? )
-          // addSpacerDivs(document.querySelector("#index .grid"));
           const placeholders = document.querySelectorAll("#index .placeholder");
           placeholders.forEach((element) => placeholderFade(element));
+          $("#loading").fadeOut("slow", function () {
+            $(this).css("display", "none");
+          });
         },
       });
     }

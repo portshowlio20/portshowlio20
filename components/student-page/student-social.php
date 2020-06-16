@@ -74,6 +74,14 @@
     </li>
     <?php endif; ?>
 
+    <?php if (get_sub_field('github')): ?>
+    <li class="social-network">
+      <a href="https://github.com/<?php echo the_sub_field(
+        'github'
+      ); ?>" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </li>
+    <?php endif; ?>
+
   <?php
   endwhile; ?>
 <?php endif; ?>

@@ -10,6 +10,8 @@
  * 6. Limit published posts to 3
  * 7. Remove quick edit feature
  * 8. Limit media library access
+ * 9.
+ * 10. Remove Yoast crap
  */
 $user = wp_get_current_user();
 if (in_array('author', (array) $user->roles)) {
@@ -222,5 +224,22 @@ if (in_array('author', (array) $user->roles)) {
     ) {
       $wp_query->set('author', $current_user->ID);
     }
+  }
+
+  add_filter('user_contactmethods', 'yoast_seo_admin_user_remove_social', 99);
+
+  function yoast_seo_admin_user_remove_social($contactmethods)
+  {
+    unset($contactmethods['facebook']);
+    unset($contactmethods['instagram']);
+    unset($contactmethods['linkedin']);
+    unset($contactmethods['myspace']);
+    unset($contactmethods['pinterest']);
+    unset($contactmethods['soundcloud']);
+    unset($contactmethods['tumblr']);
+    unset($contactmethods['twitter']);
+    unset($contactmethods['youtube']);
+    unset($contactmethods['wikipedia']);
+    return $contactmethods;
   }
 }

@@ -23,19 +23,6 @@
   opacity: 1;
 }
 
-.search-result-heading .chevron {
-  margin-top: 0.25em;
-
-  .glyph {
-    width: 1rem;
-    transition: transform 0.4s ease;
-  }
-
-  &.up .glyph {
-    transform: rotate(-180deg);
-  }
-}
-
 .search-result-heading {
   cursor: pointer;
   display: flex;

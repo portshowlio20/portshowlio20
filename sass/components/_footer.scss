@@ -9,7 +9,6 @@ main {
   flex: 1;
 }
 
-#page,
 body {
   overflow-x: hidden;
 }
@@ -43,11 +42,6 @@ body {
 
   .footer-text p {
     max-width: 50ch;
-  }
-
-  .footer-text a {
-    color: var(--white);
-    text-decoration: underline;
   }
 
   .graph {
@@ -119,7 +113,7 @@ body {
     z-index: 90;
   }
 
-  .stat-row:last-child .stat-progress {
+  .stat-row:nth-child(3) .stat-progress {
     border-bottom: none;
   }
 
@@ -128,110 +122,29 @@ body {
     height: 100%;
   }
 
-  .rando-proj {
-    color: var(--white);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    padding: 0.5rem;
-    margin-bottom: 0;
-    position: relative;
-
-    span {
-      z-index: 100;
-      text-align: center;
-    }
-
-    .stat-progress {
-      opacity: 0;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      transition: opacity 1s ease;
-    }
-
-    &:hover .stat-progress {
-      opacity: 1;
-    }
-  }
-
   $footer-planet-radius: 50rem;
   $tall-footer-planet-radius: 80rem;
   $footer-planet-offset: calc(#{$footer-planet-radius} / 2.5 * -1);
   $footer-planet-tall-offset: calc(#{$tall-footer-planet-radius} / 2.5 * -1);
-
-  $mobile-footer-planet-radius: 25rem;
-  $mobile-tall-footer-planet-radius: 40rem;
-  $mobile-footer-planet-offset: calc(
-    #{$mobile-footer-planet-radius} / 2.5 * -1
-  );
-  $mobile-footer-planet-tall-offset: calc(
-    #{$mobile-tall-footer-planet-radius} / 2.5 * -1
-  );
 
   .planet-wrapper {
     position: absolute;
     right: $footer-planet-offset;
     top: calc(#{$footer-planet-radius} / 2.5 * -1);
     z-index: 1;
-
-    @media screen and (max-width: $tablet) {
-      right: $mobile-footer-planet-offset;
-      top: calc(#{$mobile-footer-planet-radius} / 2 * -1);
-    }
   }
 
   .planet-large {
     width: $footer-planet-radius;
     height: $footer-planet-radius;
-
-    @media screen and (max-width: $tablet) {
-      width: $mobile-footer-planet-radius;
-      height: $mobile-footer-planet-radius;
-    }
   }
 
   .footer-wrap {
     margin-top: calc(#{$footer-planet-radius} / 6);
-    @media screen and (max-width: $tablet) {
-      margin-top: calc(#{$mobile-footer-planet-radius} / 12);
-    }
   }
 
   .footer-footer {
     padding-top: 4rem;
-    position: relative;
-
-    .conatiner {
-      z-index: 50;
-    }
-
-    .ticker {
-      height: 1.28541875rem;
-      width: 100%;
-      position: absolute;
-      top: 4.85rem;
-      width: 1500px; /* The image width times 3 */
-      background: url("./images/glyph-scroll.svg") repeat-x;
-      animation: tickerScroll 50s linear infinite;
-      z-index: 0;
-    }
-
-    @keyframes tickerScroll {
-      0% {
-        transform: translate3d(0, 0, 0);
-      }
-      100% {
-        transform: translate3d(-500px, 0, 0); /* The image width */
-      }
-    }
-
     .scca-bits {
       display: flex;
       flex-direction: column;
@@ -240,33 +153,6 @@ body {
     .logo {
       height: 3rem;
       width: auto;
-      background: var(--black);
-      position: relative;
-    }
-    .logo::before {
-      content: "";
-      display: block;
-      position: absolute;
-      left: -2rem;
-      width: 2rem;
-      top: 0;
-      height: 100%;
-      background: var(--black);
-      background: linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 1) 75%
-      );
-    }
-    .logo::after {
-      content: "";
-      display: block;
-      position: absolute;
-      right: -50vw;
-      width: 50vw;
-      top: 0;
-      height: 100%;
-      background: var(--black);
     }
     .glyph {
       fill: var(--white);
@@ -283,10 +169,6 @@ body {
   }
 
   @media screen and (max-width: $tablet) {
-    .ticker {
-      display: none;
-    }
-
     .footer-wrap {
       flex-direction: column;
     }
@@ -298,13 +180,8 @@ body {
     }
 
     .footer-left {
-      margin-top: calc(#{$mobile-footer-planet-radius} / 6);
+      margin-top: 15rem;
       margin-bottom: 2rem;
-    }
-
-    .footer-footer .logo {
-      max-width: 100%;
-      height: auto;
     }
   }
 }
