@@ -36,13 +36,24 @@ function filter_ajax()
   $toggle = $_POST['toggle'];
   $filters = $_POST['filters'];
 
+  $post_limit = -1;
+  $iphone = strpos($_SERVER['HTTP_USER_AGENT'], "iPhone");
+  $android = strpos($_SERVER['HTTP_USER_AGENT'], "Android");
+  // $ipad = strpos($_SERVER['HTTP_USER_AGENT'],"iPad");
+  $berry = strpos($_SERVER['HTTP_USER_AGENT'], "BlackBerry");
+  $ipod = strpos($_SERVER['HTTP_USER_AGENT'], "iPod");
+
+  if ($iphone || $android || $ipod || $berry == true) {
+    $post_limit = 25;
+  }
+
   // 3. prepare args for queries (works filters, students filters)
   $works_args = [
     'post_type' => 'projects',
     'category__not_in' => 1,
     'orderby' => 'rand',
     'post_status' => 'publish',
-    'posts_per_page' => -1,
+    'posts_per_page' => $post_limit,
   ];
 
   if (isset($filters)) {
