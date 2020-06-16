@@ -7,10 +7,7 @@ $mobile-override-row: 5;
   .square-large,
   .rectangle-medium,
   .rectangle-large {
-    grid-template-columns: repeat(
-      $mobile-override-col,
-      minmax($main-grid-unit, 1fr)
-    );
+    grid-template-columns: repeat($mobile-override-col, minmax(0, 1fr));
     grid-template-rows: repeat(
       $mobile-override-row,
       minmax($main-grid-unit, 1fr)

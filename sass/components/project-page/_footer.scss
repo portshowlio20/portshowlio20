@@ -10,7 +10,7 @@
   .entry-footer-bottom {
     background: var(--black);
     padding: 4rem 0;
-    padding-bottom: 15rem;
+    padding-bottom: 5rem;
     color: var(--white);
 
     .project-name {
@@ -27,6 +27,11 @@
       border: 1px solid var(--white);
       grid-column: span 2;
       grid-row: span 2;
+
+      @media screen and (max-width: 511px) {
+        grid-column: span 3;
+        grid-row: span 3;
+      }
     }
 
     .project-image img {
@@ -42,6 +47,9 @@
       // height: 100%;
       grid-column: span 2;
       padding: 1rem;
+      @media screen and (max-width: 511px) {
+        grid-column: span 3;
+      }
     }
   }
 }

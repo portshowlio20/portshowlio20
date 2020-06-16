@@ -1,7 +1,21 @@
-// containers
-// .filter {
-//   margin: 4rem 0;
-// }
+#loading-container {
+  position: relative;
+}
+
+#loading {
+  display: flex;
+  position: absolute;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  height: 100%;
+  background: var(--white);
+
+  justify-content: center;
+  z-index: 500;
+}
 
 #filter {
   width: 100%;
@@ -13,6 +27,10 @@
   display: flex;
   justify-content: space-between;
   padding: 1rem 0;
+}
+
+.filter-header {
+  padding-top: 0;
 }
 
 .filter-content {
@@ -36,9 +54,19 @@
 
 .chevron {
   width: 2rem;
-  text-align: center;
+  display: flex;
+  justify-content: flex-end;
   opacity: 0.5;
   transition: opacity 0.4s ease;
+
+  .glyph {
+    width: 1rem;
+    transition: transform 0.4s ease;
+  }
+
+  &.up .glyph {
+    transform: rotate(-180deg);
+  }
 }
 
 .filter-content-header {
@@ -67,7 +95,9 @@
 }
 
 .sub-filters:nth-child(2) .the-filters {
-  grid-template-columns: repeat(4, 1fr);
+  // grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(0, max-content));
+  // grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
   grid-template-rows: repeat(3, 1fr);
 }
 
@@ -76,7 +106,7 @@
   display: flex;
   border: 1px solid var(--black);
 
-  > .filter-item {
+  .filter-item {
     flex: 0 0 20%;
     padding: 0.25em 0;
     margin: 0.25em 0;
@@ -84,7 +114,7 @@
     > label {
       opacity: 0.5;
       transition: opacity 0.3s ease;
-      font-weight: 300;
+      // font-weight: 300;
       .glyph {
         opacity: 0.25;
       }
@@ -92,7 +122,7 @@
 
     > input:checked + label {
       opacity: 1;
-      font-weight: 400;
+      // font-weight: 400;
       .glyph {
         opacity: 1;
       }
@@ -198,9 +228,56 @@ label,
 // get list of all parent cats
 $cats: "advertising", "ar-vr", "art-direction", "branding", "illustration",
   "motion", "packaging", "portraiture", "post-production", "type-layout",
-  "ui-ux", "video", "visual-design", "web-design";
+  "ui-ux", "video", "visual-design", "web-design", "fine-art-photography",
+  "editorial-photography", "retail-photography", "experiential-design";
 @each $cat in $cats {
   #filter-active-glyph.#{$cat} > .#{$cat} {
+    display: block;
+  }
+}
+
+@media screen and (max-width: $big-phone) {
+  .filter-header {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  #filter-dropdown-toggle {
+    margin-top: 0.5rem;
+  }
+
+  #filter-active-glyph {
+    order: 3;
+  }
+
+  #filter-active {
+    display: none;
+  }
+
+  #aof-filters {
+    flex-direction: column;
+  }
+
+  .sub-filters:nth-child(1) {
+    border: none;
+    border-bottom: 1px solid var(--black);
+  }
+
+  .sub-filters .the-filters {
+    display: block;
+  }
+
+  .filter-item {
+    padding: 0.5em 0;
+    margin: 0.5em 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .sub-filters {
+    flex: 1;
+  }
+  .sub-filters .the-filters {
     display: block;
   }
 }

@@ -18,7 +18,7 @@ $colors: var(--blue), var(--orange), var(--tan), var(--peach), var(--orangered),
 $repeat: 159; // How often you want the pattern to repeat.
 
 @for $i from 1 through $repeat {
-  .project-card:nth-child(#{$i}) img {
+  .project-card-wrap:nth-child(#{$i}) .project-image {
     background: nth($colors, random(length($colors)));
   }
 }

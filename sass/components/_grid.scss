@@ -13,7 +13,7 @@ $main-grid-unit: 99px;
   }
 
   @media screen and (max-width: 511px) {
-    grid-template-columns: repeat(3, minmax($main-grid-unit, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-auto-rows: $main-grid-unit;
   }
 }
@@ -41,7 +41,7 @@ $main-grid-unit: 99px;
   }
 
   @media screen and (max-width: 511px) {
-    grid-template-columns: repeat(3, minmax($main-grid-unit, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-auto-rows: $main-grid-unit;
   }
 }
