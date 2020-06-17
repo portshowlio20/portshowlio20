@@ -36,7 +36,7 @@ function filter_ajax()
   $toggle = $_POST['toggle'];
   $filters = $_POST['filters'];
 
-  $post_limit = -1;
+  $post_limit = 50;
   $iphone = strpos($_SERVER['HTTP_USER_AGENT'], "iPhone");
   $android = strpos($_SERVER['HTTP_USER_AGENT'], "Android");
   // $ipad = strpos($_SERVER['HTTP_USER_AGENT'],"iPad");
@@ -113,6 +113,10 @@ function filter_ajax()
         $works_query->the_post();
         get_template_part('components/grid-cards/project', 'card');
       endwhile;
+
+      if ($works_query->post_count >= 50) {
+        get_template_part('components/index/fifty', 'results');
+      }
     } else {
       echo '<div class="no-results">';
       echo "[ 404 ] Nothin' found. Try some new filters!";

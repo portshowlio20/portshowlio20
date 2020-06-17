@@ -1,7 +1,7 @@
 <section>
   <div class="container" id="loading-container">
     <div id="loading">
-      <span>Hang tight, we're recieving transmissions...</span>
+      <span>Hang tight, we're receiving transmissions...</span>
     </div>
     <div id="response" class="grid works-grid" data-active="works">
       <?php

@@ -117,9 +117,7 @@
             </div>
             <div class="mid">
               <p class="subhead">
-                Separated by circumstance but connected by our creativity, we
-                come together united by a common mission: showcasing the SCCA
-                Class of 2020.
+                Separated by distance but connected by our creativity, we’re here to showcase the Seattle Central Creative Academy Class of 2020.
               </p>
               <div class="mailchimp">
                 <p class="caption beep-boop">[ Beep boop ]</p>

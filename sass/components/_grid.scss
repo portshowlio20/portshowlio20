@@ -31,6 +31,48 @@ $main-grid-unit: 99px;
   justify-content: center;
 }
 
+.grid .fifty-results {
+  grid-column: 1 /-1;
+  grid-row: span 2;
+  display: flex;
+  text-align: center;
+  border: 1px solid var(--black);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 2rem;
+
+  .search {
+    margin-top: 1rem;
+  }
+
+  input[type="search"] {
+    border: none;
+    outline: none;
+    border-radius: 0;
+
+    font-family: inherit;
+    font-size: 1rem;
+    background: transparent;
+
+    padding: 0.5rem;
+    width: 15rem;
+    // cursor: pointer;
+
+    transition: all 0.5s;
+    border-bottom: 1px solid var(--black);
+  }
+
+  .search-icon {
+    width: 1rem;
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
 [data-active="students"] {
   // grid-gap: 2rem;
   grid-row-gap: 4rem;

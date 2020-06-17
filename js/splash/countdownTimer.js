@@ -2,8 +2,10 @@
 
 // TODO: set time to PDT (-7hours? before calculations?)
 function countdownTimer() {
-  var difference = +new Date("2020-06-17T00:00:00") - +new Date();
+  var difference = +new Date("2020-06-17T12:00:00") - +new Date();
   var parts = "Time's up!";
+
+  console.log("hello");
 
   if (difference > 0) {
     parts = {

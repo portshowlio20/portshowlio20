@@ -94,6 +94,14 @@ body.page-id-372.admin-bar {
   transform: translateX(0%);
 }
 
+.header-right {
+  display: flex;
+  align-items: center;
+  > a {
+    margin-right: 0.5rem;
+  }
+}
+
 #masthead {
   input[type="search"] {
     border: none;

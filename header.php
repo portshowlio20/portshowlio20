@@ -102,15 +102,18 @@
             </div>
           </a>
         </div>
-        <form class="search" action="<?php echo home_url(
-          '/'
-        ); ?>" title="Search">
-          <div class="search-icon" >
-            <?php get_template_part('components/glyphs/glyph', 'search'); ?>
-          </div>
-          <input type="search" name="s" placeholder="Search&hellip;">
-          <input type="submit" value="Search">
-        </form>
+        <div class="header-right">
+          <a href="/video-reels/">2020 Video Reels</a>
+          <form class="search" action="<?php echo home_url(
+            '/'
+          ); ?>" title="Search">
+            <div class="search-icon" >
+              <?php get_template_part('components/glyphs/glyph', 'search'); ?>
+            </div>
+            <input type="search" name="s" placeholder="Search&hellip;">
+            <input type="submit" value="Search">
+          </form>
+        </div>
       </div>
     </div>
   </header>
