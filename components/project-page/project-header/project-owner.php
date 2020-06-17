@@ -24,9 +24,9 @@ $student_link = get_author_posts_url(get_the_author_meta('ID'));
       <ul class="your-roles list-reset areas-of-focus">
       <?php
       $roles = get_field('your_roles');
+      $lastKey = array_key_last($roles);
       if ($roles) {
-        $lastKey = array_key_last($roles);
-        foreach ($roles as $role) {
+        foreach ($roles as $i => $role) {
           echo $role->name;
           if ($i !== $lastKey) {
             echo ', ';

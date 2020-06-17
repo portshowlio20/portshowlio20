@@ -39,7 +39,7 @@
             <ul class="collaborator-roles list-reset areas-of-focus">
               <?php if ($roles) {
                 $lastKey = array_key_last($roles);
-                foreach ($roles as $role) {
+                foreach ($roles as $i => $role) {
                   echo $role->name;
                   if ($i !== $lastKey) {
                     echo ', ';

@@ -167,7 +167,6 @@ require_once get_template_directory() . '/functions/wp-admin/limit-focus.php';
 require_once get_template_directory() .
   '/functions/wp-admin/author-to-student.php';
 require_once get_template_directory() . '/functions/responsive-images.php';
-// require_once get_template_directory() . '/functions/redirect-to-splash.php';
 require_once get_template_directory() .
   '/functions/scripts/google-analytics.php';
 require_once get_template_directory() . '/functions/scripts/filter.php';
